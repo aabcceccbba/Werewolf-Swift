@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D7610BA20508D9100A862CE /* PlayerNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7610B920508D9100A862CE /* PlayerNumberViewController.swift */; };
 		0D8B151720453D48005575A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B151620453D48005575A9 /* AppDelegate.swift */; };
 		0D8B151920453D48005575A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B151820453D48005575A9 /* ViewController.swift */; };
 		0D8B151C20453D48005575A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8B151A20453D48005575A9 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D7610B920508D9100A862CE /* PlayerNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNumberViewController.swift; sourceTree = "<group>"; };
 		0D8B151320453D48005575A9 /* Werewolf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Werewolf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D8B151620453D48005575A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D8B151820453D48005575A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				0D8B151D20453D48005575A9 /* Assets.xcassets */,
 				0D8B151F20453D48005575A9 /* LaunchScreen.storyboard */,
 				0D8B152220453D48005575A9 /* Info.plist */,
+				0D7610B920508D9100A862CE /* PlayerNumberViewController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				0D8B151920453D48005575A9 /* ViewController.swift in Sources */,
 				0D8B151720453D48005575A9 /* AppDelegate.swift in Sources */,
+				0D7610BA20508D9100A862CE /* PlayerNumberViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
