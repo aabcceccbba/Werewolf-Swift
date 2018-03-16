@@ -10,19 +10,19 @@ import UIKit
 
 class PlayerNumberController: UIViewController {
 
-    /*@IBOutlet weak var playerNumberTF: UITextField!
+    @IBOutlet weak var playerNumberTF: UITextField!
     
-    @IBAction func enterNumber(_ sender: Any) {
-        if playerNumberTF.text != ""
+    @IBAction func enter(_ sender: Any) {
+        if playerNumberTF.text == ""
         {
-     
+            //performSegue(withIdentifier: "playerSegue", sender: self)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextController = segue.destination as! RoleConformationController
-        nextController.player = Int(playerNumberTF.text!)!
-    }*/
+        nextController.player = playerNumberTF.text!
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

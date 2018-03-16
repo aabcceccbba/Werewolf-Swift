@@ -86,7 +86,7 @@
         <!--Player Number-->
         <scene sceneID="PWZ-hV-ijd">
             <objects>
-                <viewController title="Player Number" id="Fnh-ZZ-w1v" sceneMemberID="viewController">
+                <viewController title="Player Number" id="Fnh-ZZ-w1v" customClass="PlayerNumberController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f4y-17-Zm2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,14 +103,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pl-Kl-SQe">
                                 <rect key="frame" x="172" y="467" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="OK"/>
                                 <connections>
-                                    <segue destination="wIH-yb-u5C" kind="push" id="Onz-Et-7zF"/>
+                                    <action selector="enter:" destination="Fnh-ZZ-w1v" eventType="touchUpInside" id="PMC-V3-fnV"/>
+                                    <segue destination="wIH-yb-u5C" kind="push" identifier="playerSegue" id="Onz-Et-7zF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,7 +119,8 @@
                         <viewLayoutGuide key="safeArea" id="oxM-b6-SpP"/>
                     </view>
                     <connections>
-                        <segue destination="wIH-yb-u5C" kind="show" id="U12-Hh-xdb"/>
+                        <outlet property="playerNumberTF" destination="r7c-Sq-U0L" id="7vS-yH-ZdW"/>
+                        <segue destination="wIH-yb-u5C" kind="show" identifier="naviSegue" id="U12-Hh-xdb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJa-7H-Der" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -128,14 +130,26 @@
         <!--Role-->
         <scene sceneID="ZeS-7y-Sf6">
             <objects>
-                <viewController id="wIH-yb-u5C" sceneMemberID="viewController">
+                <viewController id="wIH-yb-u5C" customClass="RoleConformationController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="skn-nS-MeV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4M-sd-QWp">
+                                <rect key="frame" x="178" y="294" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0PS-75-Peo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Role" id="DWb-fo-cVk"/>
+                    <connections>
+                        <outlet property="label" destination="f4M-sd-QWp" id="jeb-mw-5hb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muk-5L-qGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

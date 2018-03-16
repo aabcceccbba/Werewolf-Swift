@@ -8,13 +8,18 @@
 
 import UIKit
 
-class RoleConformationController: UIViewController {
-    
-    //var player : Int = 0
+class RoleConformationController:
 
+UIViewController {
+    
+    var player = String()
+
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        label.text = player
         // Do any additional setup after loading the view.
     }
 
