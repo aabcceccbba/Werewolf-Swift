@@ -13,9 +13,26 @@ class PlayerNumberController: UIViewController {
     @IBOutlet weak var playerNumberTF: UITextField!
     
     @IBAction func enter(_ sender: Any) {
-        if playerNumberTF.text == ""
+        if playerNumberTF.text != ""
         {
+            let num : Int = Int(playerNumberTF.text!)!
+            if (num<8 || num>23) {
+                let alert = UIAlertController(title: "The player number is out of range", message: "The number could be only between 8 to 23 players", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true)
+            }
             //performSegue(withIdentifier: "playerSegue", sender: self)
+        }
+        else{
+            let alert = UIAlertController(title: "Please enter a number", message: "The player number could be only between 8 to 23", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
         }
     }
     

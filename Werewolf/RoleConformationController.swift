@@ -13,6 +13,8 @@ class RoleConformationController:
 UIViewController {
     
     var player = String()
+    
+    var roles = [UITextField]()
 
     @IBOutlet weak var label: UILabel!
     
@@ -20,7 +22,13 @@ UIViewController {
         super.viewDidLoad()
         
         label.text = player
+        var p = Int(player)
         // Do any additional setup after loading the view.
+        for i in 0...p!-1 {
+            //let textField = UITextField((frame: CGRect(x: X, y: Y*i, width: 1, height: 1)))
+            //textField.delegate = self
+            //roles.append(textField)
+        }
     }
 
     override func didReceiveMemoryWarning() {
