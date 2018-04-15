@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sz3-3o-OYY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sz3-3o-OYY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -132,23 +132,43 @@
             <objects>
                 <viewController id="wIH-yb-u5C" customClass="RoleConformationController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="skn-nS-MeV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4M-sd-QWp">
-                                <rect key="frame" x="126" y="325" width="123" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3K-3w-i3i">
+                                <rect key="frame" x="0.0" y="64" width="375" height="1936"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bX-YA-nmj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2000" id="2TF-qG-xwF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="5bX-YA-nmj" secondAttribute="bottom" id="LCI-Q7-0Bo"/>
+                                    <constraint firstItem="5bX-YA-nmj" firstAttribute="top" secondItem="v3K-3w-i3i" secondAttribute="top" id="SfL-t9-EUk"/>
+                                    <constraint firstItem="5bX-YA-nmj" firstAttribute="leading" secondItem="v3K-3w-i3i" secondAttribute="leading" id="gLD-8H-UEb"/>
+                                    <constraint firstAttribute="trailing" secondItem="5bX-YA-nmj" secondAttribute="trailing" id="oXe-6N-aly"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v3K-3w-i3i" firstAttribute="top" secondItem="0PS-75-Peo" secondAttribute="top" id="FYD-er-qdp"/>
+                            <constraint firstItem="v3K-3w-i3i" firstAttribute="trailing" secondItem="0PS-75-Peo" secondAttribute="trailing" id="aYR-Cn-g2L"/>
+                            <constraint firstItem="v3K-3w-i3i" firstAttribute="leading" secondItem="0PS-75-Peo" secondAttribute="leading" id="jgo-0J-cT2"/>
+                            <constraint firstItem="v3K-3w-i3i" firstAttribute="bottom" secondItem="0PS-75-Peo" secondAttribute="bottom" id="lRd-e3-b4j"/>
+                            <constraint firstItem="5bX-YA-nmj" firstAttribute="width" secondItem="skn-nS-MeV" secondAttribute="width" id="lRj-OP-upz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0PS-75-Peo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Role Confirmation" id="DWb-fo-cVk"/>
+                    <size key="freeformSize" width="375" height="2000"/>
                     <connections>
-                        <outlet property="label" destination="f4M-sd-QWp" id="jeb-mw-5hb"/>
+                        <outlet property="contentView" destination="skn-nS-MeV" id="RZx-OJ-HZP"/>
+                        <outlet property="scrollView" destination="v3K-3w-i3i" id="Khy-Kh-Vxr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muk-5L-qGD" userLabel="First Responder" sceneMemberID="firstResponder"/>

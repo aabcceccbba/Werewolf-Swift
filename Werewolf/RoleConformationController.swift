@@ -10,25 +10,34 @@ import UIKit
 
 class RoleConformationController:
 
-UIViewController {
+UIViewController, UITextFieldDelegate {
     
     var player = String()
     
     var roles = [UITextField]()
 
-    @IBOutlet weak var label: UILabel!
+    //@IBOutlet weak var label: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet var contentView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = player
-        var p = Int(player)
+        //label.text = player
+        let p = Int(player)
         // Do any additional setup after loading the view.
         for i in 0...p!-1 {
-            //let textField = UITextField((frame: CGRect(x: X, y: Y*i, width: 1, height: 1)))
-            //textField.delegate = self
-            //roles.append(textField)
+
+            let textField = UITextField(frame: CGRect(x: 20, y: 50*i, width: 350, height: 40))
+            textField.placeholder = "Enter text here " + String(i)
+            textField.borderStyle = UITextBorderStyle.roundedRect
+            textField.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+            textField.delegate = self
+            self.view.addSubview(textField)
+            roles.append(textField)
         }
+        //self.scrollView.contentSize = self.contentView.bounds.size * 2
     }
 
     override func didReceiveMemoryWarning() {
