@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerNumberController: UIViewController {
+class PlayerNumberController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var playerNumberTF: UITextField!
     
@@ -43,8 +43,9 @@ class PlayerNumberController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        self.playerNumberTF.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +53,10 @@ class PlayerNumberController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // hide the keyboard when touch the screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation

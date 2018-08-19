@@ -24,7 +24,7 @@ UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //label.text = player
+        /*//label.text = player
         let p = Int(player)
         // Do any additional setup after loading the view.
         for i in 0...p!-1 {
@@ -38,6 +38,8 @@ UIViewController, UITextFieldDelegate {
             roles.append(textField)
         }
         //self.scrollView.contentSize = self.contentView.bounds.size * 2
+ 
+ */
     }
 
     override func didReceiveMemoryWarning() {
