@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D5E07732137FD16001A189C /* RoleConformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E07722137FD16001A189C /* RoleConformationController.swift */; };
 		0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EDA87205A04B8005CA371 /* PlayerNumberController.swift */; };
-		0D5EDA8A205A055A005CA371 /* RoleConformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EDA89205A055A005CA371 /* RoleConformationController.swift */; };
+		0D5EDA8A205A055A005CA371 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EDA89205A055A005CA371 /* Temp.swift */; };
 		0D8B151720453D48005575A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B151620453D48005575A9 /* AppDelegate.swift */; };
 		0D8B151920453D48005575A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B151820453D48005575A9 /* ViewController.swift */; };
 		0D8B151C20453D48005575A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8B151A20453D48005575A9 /* Main.storyboard */; };
@@ -36,8 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D5E07722137FD16001A189C /* RoleConformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleConformationController.swift; sourceTree = "<group>"; };
 		0D5EDA87205A04B8005CA371 /* PlayerNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNumberController.swift; sourceTree = "<group>"; };
-		0D5EDA89205A055A005CA371 /* RoleConformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleConformationController.swift; sourceTree = "<group>"; };
+		0D5EDA89205A055A005CA371 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 		0D8B151320453D48005575A9 /* Werewolf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Werewolf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D8B151620453D48005575A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D8B151820453D48005575A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,11 +106,12 @@
 				0D8B151620453D48005575A9 /* AppDelegate.swift */,
 				0D8B151820453D48005575A9 /* ViewController.swift */,
 				0D5EDA87205A04B8005CA371 /* PlayerNumberController.swift */,
-				0D5EDA89205A055A005CA371 /* RoleConformationController.swift */,
+				0D5EDA89205A055A005CA371 /* Temp.swift */,
 				0D8B151A20453D48005575A9 /* Main.storyboard */,
 				0D8B151D20453D48005575A9 /* Assets.xcassets */,
 				0D8B151F20453D48005575A9 /* LaunchScreen.storyboard */,
 				0D8B152220453D48005575A9 /* Info.plist */,
+				0D5E07722137FD16001A189C /* RoleConformationController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -265,10 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D5EDA8A205A055A005CA371 /* RoleConformationController.swift in Sources */,
+				0D5EDA8A205A055A005CA371 /* Temp.swift in Sources */,
 				0D8B151920453D48005575A9 /* ViewController.swift in Sources */,
 				0D8B151720453D48005575A9 /* AppDelegate.swift in Sources */,
 				0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */,
+				0D5E07732137FD16001A189C /* RoleConformationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sz3-3o-OYY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sz3-3o-OYY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -111,7 +111,7 @@
                                 <state key="normal" title="OK"/>
                                 <connections>
                                     <action selector="enter:" destination="Fnh-ZZ-w1v" eventType="touchUpInside" id="PMC-V3-fnV"/>
-                                    <segue destination="wIH-yb-u5C" kind="push" identifier="playerSegue" id="Onz-Et-7zF"/>
+                                    <segue destination="VYd-bA-tCm" kind="show" id="9rO-Fz-iAA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -120,75 +120,58 @@
                     </view>
                     <connections>
                         <outlet property="playerNumberTF" destination="r7c-Sq-U0L" id="7vS-yH-ZdW"/>
-                        <segue destination="wIH-yb-u5C" kind="show" identifier="naviSegue" id="U12-Hh-xdb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJa-7H-Der" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="881" y="133"/>
         </scene>
-        <!--Role Confirmation-->
-        <scene sceneID="ZeS-7y-Sf6">
+        <!--Role Conformation Controller-->
+        <scene sceneID="6dI-dM-0JX">
             <objects>
-                <viewController id="wIH-yb-u5C" customClass="RoleConformationController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="skn-nS-MeV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
+                <viewController id="VYd-bA-tCm" customClass="RoleConformationController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zri-iu-0EG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3K-3w-i3i">
-                                <rect key="frame" x="0.0" y="64" width="375" height="1936"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bX-YA-nmj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydd-TF-FdV">
-                                                <rect key="frame" x="169" y="25" width="37" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Head"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNC-qE-iO1">
-                                                <rect key="frame" x="172" y="1865" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Tail"/>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2000" id="2TF-qG-xwF"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="5bX-YA-nmj" secondAttribute="bottom" id="LCI-Q7-0Bo"/>
-                                    <constraint firstItem="5bX-YA-nmj" firstAttribute="top" secondItem="v3K-3w-i3i" secondAttribute="top" id="SfL-t9-EUk"/>
-                                    <constraint firstItem="5bX-YA-nmj" firstAttribute="leading" secondItem="v3K-3w-i3i" secondAttribute="leading" id="gLD-8H-UEb"/>
-                                    <constraint firstAttribute="trailing" secondItem="5bX-YA-nmj" secondAttribute="trailing" id="oXe-6N-aly"/>
-                                </constraints>
-                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Now The Game Starts!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDc-eX-nhh">
+                                <rect key="frame" x="101" y="227" width="173" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbZ-zN-he1">
+                                <rect key="frame" x="164" y="388" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="START"/>
+                                <connections>
+                                    <segue destination="xO8-pn-7LA" kind="show" id="dvd-Ov-bjm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="v3K-3w-i3i" firstAttribute="top" secondItem="0PS-75-Peo" secondAttribute="top" id="FYD-er-qdp"/>
-                            <constraint firstItem="v3K-3w-i3i" firstAttribute="trailing" secondItem="0PS-75-Peo" secondAttribute="trailing" id="aYR-Cn-g2L"/>
-                            <constraint firstItem="v3K-3w-i3i" firstAttribute="leading" secondItem="0PS-75-Peo" secondAttribute="leading" id="jgo-0J-cT2"/>
-                            <constraint firstItem="v3K-3w-i3i" firstAttribute="bottom" secondItem="0PS-75-Peo" secondAttribute="bottom" id="lRd-e3-b4j"/>
-                            <constraint firstItem="5bX-YA-nmj" firstAttribute="width" secondItem="skn-nS-MeV" secondAttribute="width" id="lRj-OP-upz"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="0PS-75-Peo"/>
+                        <viewLayoutGuide key="safeArea" id="T4J-XX-9jQ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Role Confirmation" id="DWb-fo-cVk"/>
-                    <size key="freeformSize" width="375" height="2000"/>
-                    <connections>
-                        <outlet property="contentView" destination="skn-nS-MeV" id="RZx-OJ-HZP"/>
-                        <outlet property="scrollView" destination="v3K-3w-i3i" id="Khy-Kh-Vxr"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="muk-5L-qGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GRv-RU-aph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1616.8" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1649" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yID-9F-6xp">
+            <objects>
+                <viewController id="xO8-pn-7LA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZYv-Nq-bRb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="evB-bW-J8Q"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aRc-yc-gti" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2428" y="133"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="U12-Hh-xdb"/>
-    </inferredMetricsTieBreakers>
 </document>

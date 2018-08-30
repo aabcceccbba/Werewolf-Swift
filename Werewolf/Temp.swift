@@ -2,20 +2,43 @@
 //  RoleConformationController.swift
 //  Werewolf
 //
-//  Created by Kay Lu on 8/30/18.
+//  Created by Kay Lu on 3/14/18.
 //  Copyright © 2018 a. All rights reserved.
 //
 
 import UIKit
 
-class RoleConformationController: UIViewController {
+class Temp:
+
+UIViewController, UITextFieldDelegate {
     
     var player = String()
+    
+    var roles = [UITextField]()
 
+
+    
+//    @IBOutlet var contentView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        label.text = player
+//        let p = Int(player)
+        
         // Do any additional setup after loading the view.
+        /*for i in 0...p!-1 {
+
+            let textField = UITextField(frame: CGRect(x: 20, y: 50*i, width: 350, height: 40))
+            textField.placeholder = "Enter text here " + String(i)
+            textField.borderStyle = UITextBorderStyle.roundedRect
+            textField.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+            textField.delegate = self
+            self.view.addSubview(textField)
+            roles.append(textField)
+        }
+ 
+ */
     }
 
     override func didReceiveMemoryWarning() {
