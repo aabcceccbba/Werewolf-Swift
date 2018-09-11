@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D4206772146B8430059F8DE /* ThiefController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4206762146B8430059F8DE /* ThiefController.swift */; };
 		0D5E07732137FD16001A189C /* RoleConformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E07722137FD16001A189C /* RoleConformationController.swift */; };
 		0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EDA87205A04B8005CA371 /* PlayerNumberController.swift */; };
 		0D5EDA8A205A055A005CA371 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EDA89205A055A005CA371 /* Temp.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D4206762146B8430059F8DE /* ThiefController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThiefController.swift; sourceTree = "<group>"; };
 		0D5E07722137FD16001A189C /* RoleConformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleConformationController.swift; sourceTree = "<group>"; };
 		0D5EDA87205A04B8005CA371 /* PlayerNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNumberController.swift; sourceTree = "<group>"; };
 		0D5EDA89205A055A005CA371 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				0D8B151F20453D48005575A9 /* LaunchScreen.storyboard */,
 				0D8B152220453D48005575A9 /* Info.plist */,
 				0D5E07722137FD16001A189C /* RoleConformationController.swift */,
+				0D4206762146B8430059F8DE /* ThiefController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -197,7 +200,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = a;
 				TargetAttributes = {
 					0D8B151220453D48005575A9 = {
@@ -270,6 +273,7 @@
 			files = (
 				0D5EDA8A205A055A005CA371 /* Temp.swift in Sources */,
 				0D8B151920453D48005575A9 /* ViewController.swift in Sources */,
+				0D4206772146B8430059F8DE /* ThiefController.swift in Sources */,
 				0D8B151720453D48005575A9 /* AppDelegate.swift in Sources */,
 				0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */,
 				0D5E07732137FD16001A189C /* RoleConformationController.swift in Sources */,
@@ -341,6 +345,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -348,6 +353,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -398,6 +404,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -405,6 +412,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
