@@ -18,6 +18,7 @@
 		0D8B152120453D48005575A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8B151F20453D48005575A9 /* LaunchScreen.storyboard */; };
 		0D8B152C20453D49005575A9 /* WerewolfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B152B20453D49005575A9 /* WerewolfTests.swift */; };
 		0D8B153720453D49005575A9 /* WerewolfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B153620453D49005575A9 /* WerewolfUITests.swift */; };
+		0DB56A1021508C1500F9398E /* CupidoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56A0F21508C1500F9398E /* CupidoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		0D8B153220453D49005575A9 /* WerewolfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WerewolfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D8B153620453D49005575A9 /* WerewolfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerewolfUITests.swift; sourceTree = "<group>"; };
 		0D8B153820453D49005575A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DB56A0F21508C1500F9398E /* CupidoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupidoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				0D8B152220453D48005575A9 /* Info.plist */,
 				0D5E07722137FD16001A189C /* RoleConformationController.swift */,
 				0D4206762146B8430059F8DE /* ThiefController.swift */,
+				0DB56A0F21508C1500F9398E /* CupidoController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				0D5EDA8A205A055A005CA371 /* Temp.swift in Sources */,
 				0D8B151920453D48005575A9 /* ViewController.swift in Sources */,
 				0D4206772146B8430059F8DE /* ThiefController.swift in Sources */,
+				0DB56A1021508C1500F9398E /* CupidoController.swift in Sources */,
 				0D8B151720453D48005575A9 /* AppDelegate.swift in Sources */,
 				0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */,
 				0D5E07732137FD16001A189C /* RoleConformationController.swift in Sources */,
