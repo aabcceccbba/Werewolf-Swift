@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0D4206772146B8430059F8DE /* ThiefController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4206762146B8430059F8DE /* ThiefController.swift */; };
 		0D4C3CE3215FC69F00E9E749 /* LoversController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C3CE2215FC69F00E9E749 /* LoversController.swift */; };
+		0D4E5A222169650000A88F43 /* FortuneTellerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E5A212169650000A88F43 /* FortuneTellerController.swift */; };
+		0D4E5A242169698200A88F43 /* WerewolvesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E5A232169698200A88F43 /* WerewolvesController.swift */; };
+		0D4E5A2621696E4D00A88F43 /* WitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E5A2521696E4D00A88F43 /* WitchController.swift */; };
 		0D5E07732137FD16001A189C /* RoleConformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E07722137FD16001A189C /* RoleConformationController.swift */; };
 		0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EDA87205A04B8005CA371 /* PlayerNumberController.swift */; };
 		0D5EDA8A205A055A005CA371 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EDA89205A055A005CA371 /* Temp.swift */; };
@@ -42,6 +45,9 @@
 /* Begin PBXFileReference section */
 		0D4206762146B8430059F8DE /* ThiefController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThiefController.swift; sourceTree = "<group>"; };
 		0D4C3CE2215FC69F00E9E749 /* LoversController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoversController.swift; sourceTree = "<group>"; };
+		0D4E5A212169650000A88F43 /* FortuneTellerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneTellerController.swift; sourceTree = "<group>"; };
+		0D4E5A232169698200A88F43 /* WerewolvesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerewolvesController.swift; sourceTree = "<group>"; };
+		0D4E5A2521696E4D00A88F43 /* WitchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitchController.swift; sourceTree = "<group>"; };
 		0D5E07722137FD16001A189C /* RoleConformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleConformationController.swift; sourceTree = "<group>"; };
 		0D5EDA87205A04B8005CA371 /* PlayerNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNumberController.swift; sourceTree = "<group>"; };
 		0D5EDA89205A055A005CA371 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
@@ -121,6 +127,9 @@
 				0D4206762146B8430059F8DE /* ThiefController.swift */,
 				0DB56A0F21508C1500F9398E /* CupidoController.swift */,
 				0D4C3CE2215FC69F00E9E749 /* LoversController.swift */,
+				0D4E5A212169650000A88F43 /* FortuneTellerController.swift */,
+				0D4E5A232169698200A88F43 /* WerewolvesController.swift */,
+				0D4E5A2521696E4D00A88F43 /* WitchController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -283,8 +292,11 @@
 				0D4206772146B8430059F8DE /* ThiefController.swift in Sources */,
 				0DB56A1021508C1500F9398E /* CupidoController.swift in Sources */,
 				0D8B151720453D48005575A9 /* AppDelegate.swift in Sources */,
+				0D4E5A222169650000A88F43 /* FortuneTellerController.swift in Sources */,
 				0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */,
+				0D4E5A242169698200A88F43 /* WerewolvesController.swift in Sources */,
 				0D5E07732137FD16001A189C /* RoleConformationController.swift in Sources */,
+				0D4E5A2621696E4D00A88F43 /* WitchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
