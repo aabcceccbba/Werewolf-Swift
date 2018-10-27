@@ -22,6 +22,8 @@
 		0D8B152120453D48005575A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8B151F20453D48005575A9 /* LaunchScreen.storyboard */; };
 		0D8B152C20453D49005575A9 /* WerewolfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B152B20453D49005575A9 /* WerewolfTests.swift */; };
 		0D8B153720453D49005575A9 /* WerewolfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8B153620453D49005575A9 /* WerewolfUITests.swift */; };
+		0D9C5263218485C700AB01CA /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C5262218485C700AB01CA /* DayController.swift */; };
+		0D9C526521848D7600AB01CA /* SheriffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C526421848D7600AB01CA /* SheriffController.swift */; };
 		0DB56A1021508C1500F9398E /* CupidoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56A0F21508C1500F9398E /* CupidoController.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		0D8B153220453D49005575A9 /* WerewolfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WerewolfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D8B153620453D49005575A9 /* WerewolfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerewolfUITests.swift; sourceTree = "<group>"; };
 		0D8B153820453D49005575A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D9C5262218485C700AB01CA /* DayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
+		0D9C526421848D7600AB01CA /* SheriffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheriffController.swift; sourceTree = "<group>"; };
 		0DB56A0F21508C1500F9398E /* CupidoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupidoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +134,8 @@
 				0D4E5A212169650000A88F43 /* FortuneTellerController.swift */,
 				0D4E5A232169698200A88F43 /* WerewolvesController.swift */,
 				0D4E5A2521696E4D00A88F43 /* WitchController.swift */,
+				0D9C5262218485C700AB01CA /* DayController.swift */,
+				0D9C526421848D7600AB01CA /* SheriffController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9C5263218485C700AB01CA /* DayController.swift in Sources */,
 				0D4C3CE3215FC69F00E9E749 /* LoversController.swift in Sources */,
 				0D5EDA8A205A055A005CA371 /* Temp.swift in Sources */,
 				0D8B151920453D48005575A9 /* ViewController.swift in Sources */,
@@ -294,6 +301,7 @@
 				0D8B151720453D48005575A9 /* AppDelegate.swift in Sources */,
 				0D4E5A222169650000A88F43 /* FortuneTellerController.swift in Sources */,
 				0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */,
+				0D9C526521848D7600AB01CA /* SheriffController.swift in Sources */,
 				0D4E5A242169698200A88F43 /* WerewolvesController.swift in Sources */,
 				0D5E07732137FD16001A189C /* RoleConformationController.swift in Sources */,
 				0D4E5A2621696E4D00A88F43 /* WitchController.swift in Sources */,
