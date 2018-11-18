@@ -25,6 +25,7 @@
 		0D9C5263218485C700AB01CA /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C5262218485C700AB01CA /* DayController.swift */; };
 		0D9C526521848D7600AB01CA /* SheriffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C526421848D7600AB01CA /* SheriffController.swift */; };
 		0DB56A1021508C1500F9398E /* CupidoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56A0F21508C1500F9398E /* CupidoController.swift */; };
+		0DBA49DF21A14B3D005C7237 /* VoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA49DE21A14B3D005C7237 /* VoteController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		0D9C5262218485C700AB01CA /* DayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
 		0D9C526421848D7600AB01CA /* SheriffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheriffController.swift; sourceTree = "<group>"; };
 		0DB56A0F21508C1500F9398E /* CupidoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupidoController.swift; sourceTree = "<group>"; };
+		0DBA49DE21A14B3D005C7237 /* VoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				0D4E5A2521696E4D00A88F43 /* WitchController.swift */,
 				0D9C5262218485C700AB01CA /* DayController.swift */,
 				0D9C526421848D7600AB01CA /* SheriffController.swift */,
+				0DBA49DE21A14B3D005C7237 /* VoteController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */,
 				0D9C526521848D7600AB01CA /* SheriffController.swift in Sources */,
 				0D4E5A242169698200A88F43 /* WerewolvesController.swift in Sources */,
+				0DBA49DF21A14B3D005C7237 /* VoteController.swift in Sources */,
 				0D5E07732137FD16001A189C /* RoleConformationController.swift in Sources */,
 				0D4E5A2621696E4D00A88F43 /* WitchController.swift in Sources */,
 			);
