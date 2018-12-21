@@ -602,6 +602,9 @@
                         <viewLayoutGuide key="safeArea" id="rZw-nh-qSJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sheriff Election" id="URv-h9-8Vz"/>
+                    <connections>
+                        <outlet property="start" destination="BHS-Ke-5MZ" id="4GB-KC-vSP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yxb-Kh-ets" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

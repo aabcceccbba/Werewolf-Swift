@@ -9,6 +9,7 @@
 import UIKit
 
 class PlayerNumberController: UIViewController, UITextFieldDelegate {
+    static var num = Int()
 
     var wpv: [[Int]] = [
         [2, 3, 3],
@@ -22,6 +23,7 @@ class PlayerNumberController: UIViewController, UITextFieldDelegate {
         [5, 5, 6],
         [5, 6, 6],
         [6, 6, 6]]
+    
     var current_wpv:[Int] = []
     
     @IBOutlet weak var playerNumberTF: UITextField!
@@ -29,8 +31,8 @@ class PlayerNumberController: UIViewController, UITextFieldDelegate {
     @IBAction func enter(_ sender: Any) {
         if playerNumberTF.text != ""
         {
-            let num : Int = Int(playerNumberTF.text!)!
-            if (num<8 || num>18) {
+            PlayerNumberController.num = Int(playerNumberTF.text!)!
+            if (PlayerNumberController.num<8 || PlayerNumberController.num>18) {
                 let alert = UIAlertController(title: "The player number is out of range", message: "The number could be only between 8 to 18 players", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
