@@ -11,7 +11,22 @@ import UIKit
 class ThiefController: UIViewController {
 
     @IBOutlet weak var night_falls: UILabel!
+    @IBOutlet weak var thiefTF: UITextField!
+    
+    var playerNumber = PlayerNumberController.num
+    var thiefID = Int()
+    
+    
     override func viewDidLoad() {
+        
+//        let total = PlayerNumberController.num
+//        thiefID = Int(thiefTF.text!)!
+//        if(thiefID < 1 || thiefID > total){
+//            let alert = UIAlertController(title: "Wrong Thief ID", message: "The thief ID could be only between 1 to " + String(total) + "(total number of players) players", preferredStyle: .alert)
+//
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -22,7 +37,11 @@ class ThiefController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // hide the keyboard when touch the screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 
