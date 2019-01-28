@@ -8,13 +8,48 @@
 
 import UIKit
 
-class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var night_falls: UILabel!
     @IBOutlet weak var thiefTF: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     
-    let roles = ["Werewolf", "Townfolk", "Fortune Teller", "Hunter", "Cupdo", "Witch", "Little Girl"]
+    
+    @IBAction func thiefNext(_ sender: Any) {
+        print(PlayerNumberController.num)
+        if thiefTF.text != ""
+        {
+//            PlayerNumberController.num = Int(playerNumberTF.text!)!
+            let thiefID = Int(thiefTF.text!)!
+             if (thiefID < 1 || thiefID > PlayerNumberController.num) {
+                let alert = UIAlertController(title: "The player ID is out of range", message: "The player number could be only between 1 to " + String(PlayerNumberController.num) + ".", preferredStyle: .alert)
+                    
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    
+                    self.present(alert, animated: true)
+            }
+            //performSegue(withIdentifier: "playerSegue", sender: self)
+             else{
+                // record current "thief" information;
+            }
+        }
+        else{
+            let alert = UIAlertController(title: "Please enter Player Number", message: "The player number can't be empty", preferredStyle: .alert)
+                
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                
+            self.present(alert, animated: true)
+            }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let nextController = segue.destination as! CupidoController
+//        nextController.player = playerNumberTF.text!
+    }
+    
+    let roles = ["Werewolf", "Townfolk", "Fortune Teller", "Hunter", "Cupido", "Witch", "Little Girl"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         // number of rows in the picker view
@@ -53,6 +88,8 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.thiefTF.delegate = self
+
     }
 
     override func didReceiveMemoryWarning() {
