@@ -19,7 +19,7 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
 
     }
     
-    let roles = ["Werewolf", "Townfolk", "Fortune Teller", "Hunter", "Cupido", "Witch", "Little Girl"]
+    let roles = ["Townfolk", "Werewolf", "Fortune Teller", "Hunter", "Cupido", "Witch", "Little Girl"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         // number of rows in the picker view
