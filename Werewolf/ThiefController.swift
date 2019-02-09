@@ -66,26 +66,18 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
     
-        if thiefTF.text == ""{
-            let alert = UIAlertController(title: "Please enter Player Number", message: "The player number can't be empty", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            
-            self.present(alert, animated: true)
-            return false
-        }
+        if thiefTF.text != "" {
+            let thiefID = Int(thiefTF.text!)!
+            if thiefID < 1 || thiefID > PlayerNumberController.num {
+                
+                let alert = UIAlertController(title: "The player ID is out of range", message: "The player number could be only between 1 to " + String(PlayerNumberController.num) + ".", preferredStyle: .alert)
         
-        let thiefID = Int(thiefTF.text!)!
-        if thiefID < 1 || thiefID > PlayerNumberController.num {
-            
-            let alert = UIAlertController(title: "The player ID is out of range", message: "The player number could be only between 1 to " + String(PlayerNumberController.num) + ".", preferredStyle: .alert)
-    
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            self.present(alert, animated: true)
-            
-            return false
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                
+                return false
+            }
         }
         
         return true
