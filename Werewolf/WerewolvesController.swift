@@ -23,6 +23,9 @@ class WerewolvesController: UIViewController {
     var wolf4 = -1
     var wolf5 = -1
     var wolf6 = -1
+    var total = 0
+    
+    var set : Set<Int> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,7 @@ class WerewolvesController: UIViewController {
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
+        // empty input
         if wolf1TF.text == "" && wolf2TF.text == "" && wolf3TF.text == "" && wolf4TF.text == "" && wolf5TF.text == "" && wolf6TF.text == "" {
             let alert = UIAlertController(title: "Please enter Werewolf numbers", message: "You need at least one Werewolf", preferredStyle: .alert)
             
@@ -43,23 +47,60 @@ class WerewolvesController: UIViewController {
             return false
         }
         
+        total = 0
         if wolf1TF.text != "" {
             wolf1 = Int(wolf1TF.text!)!
+            total += 1
+            set.insert(wolf1)
         }
         if wolf2TF.text != "" {
             wolf2 = Int(wolf2TF.text!)!
+            total += 1
+            set.insert(wolf2)
         }
         if wolf3TF.text != "" {
             wolf3 = Int(wolf3TF.text!)!
+            total += 1
+            set.insert(wolf3)
         }
         if wolf4TF.text != "" {
             wolf4 = Int(wolf4TF.text!)!
+            total += 1
+            set.insert(wolf4)
         }
         if wolf5TF.text != "" {
             wolf5 = Int(wolf5TF.text!)!
+            total += 1
+            set.insert(wolf5)
         }
         if wolf6TF.text != "" {
             wolf6 = Int(wolf6TF.text!)!
+            total += 1
+            set.insert(wolf6)
+        }
+        print(set.count)
+        print(total)
+        
+        // overlap alert
+        if set.count < total {
+            let alert = UIAlertController(title: "Please enter different Werewolf numbers", message: "Werewolf numbers cannot be overlap", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            return false
+        }
+        
+        // wrong range
+        if wolf1 > PlayerNumberController.num || wolf2 > PlayerNumberController.num || wolf3 > PlayerNumberController.num || wolf4 > PlayerNumberController.num || wolf5 > PlayerNumberController.num || wolf6 > PlayerNumberController.num || wolf1 * wolf2 * wolf3 * wolf4 * wolf5 * wolf6 == 0 {
+            
+            let alert = UIAlertController(title: "Please enter the right Werewolf numbers", message: "Werewolf ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+            return false
         }
         
         return true
