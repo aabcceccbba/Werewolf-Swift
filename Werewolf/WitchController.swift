@@ -10,6 +10,8 @@ import UIKit
 
 class WitchController: UIViewController {
 
+    @IBOutlet weak var witchTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
