@@ -26,6 +26,8 @@
 		0D9C526521848D7600AB01CA /* SheriffController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C526421848D7600AB01CA /* SheriffController.swift */; };
 		0DB56A1021508C1500F9398E /* CupidoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB56A0F21508C1500F9398E /* CupidoController.swift */; };
 		0DBA49DF21A14B3D005C7237 /* VoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBA49DE21A14B3D005C7237 /* VoteController.swift */; };
+		0DE852922224A44700B92461 /* LittleGirlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE852912224A44700B92461 /* LittleGirlController.swift */; };
+		0DE852942224A94E00B92461 /* HunterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE852932224A94E00B92461 /* HunterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		0D9C526421848D7600AB01CA /* SheriffController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheriffController.swift; sourceTree = "<group>"; };
 		0DB56A0F21508C1500F9398E /* CupidoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupidoController.swift; sourceTree = "<group>"; };
 		0DBA49DE21A14B3D005C7237 /* VoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteController.swift; sourceTree = "<group>"; };
+		0DE852912224A44700B92461 /* LittleGirlController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleGirlController.swift; sourceTree = "<group>"; };
+		0DE852932224A94E00B92461 /* HunterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 				0D9C5262218485C700AB01CA /* DayController.swift */,
 				0D9C526421848D7600AB01CA /* SheriffController.swift */,
 				0DBA49DE21A14B3D005C7237 /* VoteController.swift */,
+				0DE852912224A44700B92461 /* LittleGirlController.swift */,
+				0DE852932224A94E00B92461 /* HunterController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -300,11 +306,13 @@
 				0D5EDA8A205A055A005CA371 /* Temp.swift in Sources */,
 				0D8B151920453D48005575A9 /* ViewController.swift in Sources */,
 				0D4206772146B8430059F8DE /* ThiefController.swift in Sources */,
+				0DE852922224A44700B92461 /* LittleGirlController.swift in Sources */,
 				0DB56A1021508C1500F9398E /* CupidoController.swift in Sources */,
 				0D8B151720453D48005575A9 /* AppDelegate.swift in Sources */,
 				0D4E5A222169650000A88F43 /* FortuneTellerController.swift in Sources */,
 				0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */,
 				0D9C526521848D7600AB01CA /* SheriffController.swift in Sources */,
+				0DE852942224A94E00B92461 /* HunterController.swift in Sources */,
 				0D4E5A242169698200A88F43 /* WerewolvesController.swift in Sources */,
 				0DBA49DF21A14B3D005C7237 /* VoteController.swift in Sources */,
 				0D5E07732137FD16001A189C /* RoleConformationController.swift in Sources */,

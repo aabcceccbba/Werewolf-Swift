@@ -18,7 +18,38 @@ class WitchController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    // check if the input number is valid
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        // empty
+        if witchTF.text == "" {
+            let alert = UIAlertController(title: "Please enter a Witch ID", message: "You need at least one Witch", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+            return false
+        }
+        
+        let witch = Int(witchTF.text!)!
+        // wrong range
+        if witch > PlayerNumberController.num || witch < 1 {
+            let alert = UIAlertController(title: "Please enter the right Witch ID", message: "Witch ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+            return false
+        }
+        return true
+    }
+    
+    // hide the keyboard when touch the screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 
