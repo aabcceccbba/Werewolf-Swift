@@ -12,6 +12,8 @@
 		0D4E5A222169650000A88F43 /* FortuneTellerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E5A212169650000A88F43 /* FortuneTellerController.swift */; };
 		0D4E5A242169698200A88F43 /* WerewolvesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E5A232169698200A88F43 /* WerewolvesController.swift */; };
 		0D4E5A2621696E4D00A88F43 /* WitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E5A2521696E4D00A88F43 /* WitchController.swift */; };
+		0D559600222B10F5007904A4 /* testView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5595FF222B10F5007904A4 /* testView.xib */; };
+		0D559604222B12E9007904A4 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D559603222B12E9007904A4 /* TestView.swift */; };
 		0D5E07732137FD16001A189C /* RoleConformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E07722137FD16001A189C /* RoleConformationController.swift */; };
 		0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EDA87205A04B8005CA371 /* PlayerNumberController.swift */; };
 		0D5EDA8A205A055A005CA371 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EDA89205A055A005CA371 /* Temp.swift */; };
@@ -53,6 +55,8 @@
 		0D4E5A212169650000A88F43 /* FortuneTellerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneTellerController.swift; sourceTree = "<group>"; };
 		0D4E5A232169698200A88F43 /* WerewolvesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerewolvesController.swift; sourceTree = "<group>"; };
 		0D4E5A2521696E4D00A88F43 /* WitchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitchController.swift; sourceTree = "<group>"; };
+		0D5595FF222B10F5007904A4 /* testView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testView.xib; sourceTree = "<group>"; };
+		0D559603222B12E9007904A4 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		0D5E07722137FD16001A189C /* RoleConformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleConformationController.swift; sourceTree = "<group>"; };
 		0D5EDA87205A04B8005CA371 /* PlayerNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNumberController.swift; sourceTree = "<group>"; };
 		0D5EDA89205A055A005CA371 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				0DBA49DE21A14B3D005C7237 /* VoteController.swift */,
 				0DE852912224A44700B92461 /* LittleGirlController.swift */,
 				0DE852932224A94E00B92461 /* HunterController.swift */,
+				0D5595FF222B10F5007904A4 /* testView.xib */,
+				0D559603222B12E9007904A4 /* TestView.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D559600222B10F5007904A4 /* testView.xib in Resources */,
 				0D8B152120453D48005575A9 /* LaunchScreen.storyboard in Resources */,
 				0D8B151E20453D48005575A9 /* Assets.xcassets in Resources */,
 				0D8B151C20453D48005575A9 /* Main.storyboard in Resources */,
@@ -309,6 +316,7 @@
 				0DE852922224A44700B92461 /* LittleGirlController.swift in Sources */,
 				0DB56A1021508C1500F9398E /* CupidoController.swift in Sources */,
 				0D8B151720453D48005575A9 /* AppDelegate.swift in Sources */,
+				0D559604222B12E9007904A4 /* TestView.swift in Sources */,
 				0D4E5A222169650000A88F43 /* FortuneTellerController.swift in Sources */,
 				0D5EDA88205A04B8005CA371 /* PlayerNumberController.swift in Sources */,
 				0D9C526521848D7600AB01CA /* SheriffController.swift in Sources */,

@@ -35,7 +35,7 @@ class FortuneTellerController: UIViewController {
         // wrong range
         if fortuneTeller > PlayerNumberController.num || fortuneTeller < 1 {
             
-            let alert = UIAlertController(title: "Please enter the right Fortune Teller number", message: "Fortune Teller ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
+            let alert = UIAlertController(title: "Please enter the right Fortune Teller ID", message: "Fortune Teller ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
