@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         testView.label.text = "successful!"
+        testView.isHidden = true;
     }
 
     override func didReceiveMemoryWarning() {

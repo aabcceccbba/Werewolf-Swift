@@ -13,8 +13,25 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet weak var night_falls: UILabel!
     @IBOutlet weak var thiefTF: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var testView: TestView!
+    
+    var selected = String()
+    var thiefID = Int()
+    var playerNumber = PlayerNumberController.num
+    
+    @IBAction func check(_ sender: Any) {
+        if thiefTF.text != "" {
+            thiefID = Int(thiefTF.text!)!
+            if thiefID > 0 && thiefID <= PlayerNumberController.num {
+                testView.label.text = "\n" + selected + " " + String(thiefID)
+            }
+        }
+        
+        testView.isHidden = false;
+    }
     
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
     }
@@ -28,6 +45,7 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         // content of each row
+        selected = roles[row]
         return roles[row]
     }
     
@@ -41,15 +59,13 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         // optional
     }
     
-    var playerNumber = PlayerNumberController.num
-    var thiefID = Int()
-    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        testView.isHidden = true;
         self.thiefTF.delegate = self
 
     }
@@ -67,7 +83,7 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
     
         if thiefTF.text != "" {
-            let thiefID = Int(thiefTF.text!)!
+            thiefID = Int(thiefTF.text!)!
             if thiefID < 1 || thiefID > PlayerNumberController.num {
                 
                 let alert = UIAlertController(title: "The player ID is out of range", message: "The player number could be only between 1 to " + String(PlayerNumberController.num) + ".", preferredStyle: .alert)
@@ -78,6 +94,7 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                 
                 return false
             }
+            
         }
         
         return true
