@@ -20,6 +20,11 @@ class TestView: UIView {
     }
     */
     
+    @IBAction func hide(_ sender: Any) {
+//        view.isHidden = true;
+        view.removeFromSuperview();
+    }
+    
     override init(frame: CGRect) {
         // for using custom view in code
         super.init(frame: frame)

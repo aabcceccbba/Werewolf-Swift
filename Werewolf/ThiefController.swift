@@ -23,7 +23,7 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         if thiefTF.text != "" {
             thiefID = Int(thiefTF.text!)!
             if thiefID > 0 && thiefID <= PlayerNumberController.num {
-                testView.label.text = "\n" + selected + " " + String(thiefID)
+//                testView.label.text = (testView.label.text ?? "") + "\n" + selected + " " + String(thiefID)
             }
         }
         
