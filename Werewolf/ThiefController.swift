@@ -13,7 +13,6 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet weak var night_falls: UILabel!
     @IBOutlet weak var thiefTF: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var testView: TestView!
     
     var selected = String()
     var thiefID = Int()
@@ -27,7 +26,7 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             }
         }
         
-        testView.isHidden = false;
+//        testView.isHidden = false;
     }
     
     
@@ -65,7 +64,7 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        testView.isHidden = true;
+//        testView.isHidden = true;
         self.thiefTF.delegate = self
 
     }
