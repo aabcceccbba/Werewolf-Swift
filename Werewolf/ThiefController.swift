@@ -13,24 +13,43 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet weak var night_falls: UILabel!
     @IBOutlet weak var thiefTF: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet var rolesView: UIView!
     
     var selected = String()
     var thiefID = Int()
     var playerNumber = PlayerNumberController.num
     
-    @IBAction func check(_ sender: Any) {
-        if thiefTF.text != "" {
-            thiefID = Int(thiefTF.text!)!
-            if thiefID > 0 && thiefID <= PlayerNumberController.num {
-//                testView.label.text = (testView.label.text ?? "") + "\n" + selected + " " + String(thiefID)
-            }
-        }
+    func animateIn(){
+        self.view.addSubview(rolesView)
+        rolesView.center = self.view.center
         
-//        testView.isHidden = false;
+        rolesView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        rolesView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+            self.rolesView.alpha = 1
+            self.rolesView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateOut(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.rolesView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.rolesView.alpha = 0
+        }) { (success) in
+            self.rolesView.removeFromSuperview()
+        }
+    }
+    
+    @IBAction func showRoles(_ sender: Any) {
+        animateIn()
     }
     
     
-
+    @IBAction func closeRoleView(_ sender: Any) {
+        animateOut()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
     }
@@ -65,7 +84,8 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
 
         // Do any additional setup after loading the view.
 //        testView.isHidden = true;
-        self.thiefTF.delegate = self
+//        self.thiefTF.delegate = self
+        rolesView.layer.cornerRadius = 5
 
     }
 

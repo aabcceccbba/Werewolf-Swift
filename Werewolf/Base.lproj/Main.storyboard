@@ -229,14 +229,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNX-y0-g5n">
-                                <rect key="frame" x="203" y="574" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="NEXT"/>
-                                <connections>
-                                    <segue destination="re0-Mj-tHi" kind="push" id="INL-dV-0v3"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hur-84-LlS">
                                 <rect key="frame" x="130" y="335" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -260,12 +252,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBu-3L-3KE">
-                                <rect key="frame" x="133" y="574" width="48" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNX-y0-g5n">
+                                <rect key="frame" x="168" y="566" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ROLES"/>
+                                <state key="normal" title="NEXT"/>
                                 <connections>
-                                    <action selector="check:" destination="RfU-hO-nhP" eventType="touchUpInside" id="elL-qv-9Ks"/>
+                                    <segue destination="re0-Mj-tHi" kind="push" id="INL-dV-0v3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -273,31 +265,37 @@
                         <viewLayoutGuide key="safeArea" id="eBD-oa-Byn"/>
                     </view>
                     <navigationItem key="navigationItem" title="Thief" id="RPv-5S-iHH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="ML0-TX-OOB"/>
+                        <barButtonItem key="rightBarButtonItem" title="Roles" id="ML0-TX-OOB">
+                            <connections>
+                                <action selector="showRoles:" destination="RfU-hO-nhP" id="5ia-uV-vFa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="night_falls" destination="4nd-Qs-dVk" id="Hc2-Oc-N0f"/>
                         <outlet property="pickerView" destination="JLd-nL-Lel" id="8cC-OK-Sw5"/>
+                        <outlet property="rolesView" destination="Fmi-fD-87N" id="DQv-se-gDu"/>
                         <outlet property="thiefTF" destination="hur-84-LlS" id="IgK-tr-xlG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sf0-dQ-sSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="Fmi-fD-87N">
-                    <rect key="frame" x="0.0" y="0.0" width="319" height="420"/>
+                    <rect key="frame" x="0.0" y="0.0" width="319" height="522"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ROLES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0j-vS-HVS">
-                            <rect key="frame" x="133" y="44" width="53" height="21"/>
+                            <rect key="frame" x="133" y="74" width="53" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsq-DS-PUE">
-                            <rect key="frame" x="138" y="353" width="42" height="30"/>
+                            <rect key="frame" x="138" y="455" width="42" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <state key="normal" title="DONE"/>
                             <connections>
+                                <action selector="closeRoleView:" destination="RfU-hO-nhP" eventType="touchUpInside" id="Mog-he-hDk"/>
                                 <action selector="hideSubview:" destination="B5Z-2v-3ga" eventType="touchUpInside" id="Jvs-1M-E7w"/>
                             </connections>
                         </button>
