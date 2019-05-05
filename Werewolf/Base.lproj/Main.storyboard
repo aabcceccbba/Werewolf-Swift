@@ -279,6 +279,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sf0-dQ-sSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="B5Z-2v-3ga" userLabel="Exit" sceneMemberID="exit"/>
                 <view contentMode="scaleToFill" id="Fmi-fD-87N">
                     <rect key="frame" x="0.0" y="0.0" width="319" height="522"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -303,9 +304,24 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <viewLayoutGuide key="safeArea" id="iU4-Wb-3Eq"/>
                 </view>
-                <exit id="B5Z-2v-3ga" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2381.5999999999999" y="131.78410794602701"/>
+        </scene>
+        <!--Current Roles-->
+        <scene sceneID="iG9-mD-9H7">
+            <objects>
+                <viewController id="pg3-Yc-1Ee" customClass="RolesController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ybm-ZF-3RJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="eik-Xr-A3x"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Current Roles" id="m84-j7-RTm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZj-Dp-hgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3074" y="-566"/>
         </scene>
         <!--Cupido-->
         <scene sceneID="weN-Sk-0bo">
@@ -369,12 +385,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ngC-pg-feM"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Cupido" id="xJl-Xl-gGm"/>
+                    <navigationItem key="navigationItem" title="Cupido" id="xJl-Xl-gGm">
+                        <barButtonItem key="rightBarButtonItem" title="Roles" id="Md5-4Q-Vkr">
+                            <connections>
+                                <segue destination="pg3-Yc-1Ee" kind="push" id="pyd-ON-qRp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cupidoTF" destination="IAd-rL-3KL" id="rYo-Bf-bhG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lec-Vn-1jE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="c3L-Eg-D9Y">
+                    <rect key="frame" x="0.0" y="0.0" width="319" height="522"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <viewLayoutGuide key="safeArea" id="TVu-a4-95D"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="3075" y="130"/>
         </scene>
@@ -440,7 +468,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BCf-Th-isk"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Lovers" id="uFS-xV-mw0"/>
+                    <navigationItem key="navigationItem" title="Lovers" id="uFS-xV-mw0">
+                        <barButtonItem key="rightBarButtonItem" title="Roles" id="sVC-b9-VcK">
+                            <connections>
+                                <segue destination="pg3-Yc-1Ee" kind="push" id="xDH-jt-JGg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="lover1TF" destination="rfE-fb-Nm3" id="lSB-8C-zdF"/>
                         <outlet property="lover2TF" destination="2Ai-UZ-ew7" id="ALt-d1-QHB"/>
@@ -998,4 +1032,7 @@
             <point key="canvasLocation" x="5430" y="129"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xDH-jt-JGg"/>
+    </inferredMetricsTieBreakers>
 </document>

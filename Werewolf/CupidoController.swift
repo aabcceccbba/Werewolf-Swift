@@ -14,6 +14,10 @@ class CupidoController: UIViewController {
 
     @IBOutlet weak var cupidoTF: UITextField!
     
+//    @IBAction func showRoles(_ sender: Any) {
+//        self.performSegue(withIdentifier: "RolesController", sender:self)
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
