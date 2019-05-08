@@ -267,7 +267,7 @@
                     <navigationItem key="navigationItem" title="Thief" id="RPv-5S-iHH">
                         <barButtonItem key="rightBarButtonItem" title="Roles" id="ML0-TX-OOB">
                             <connections>
-                                <action selector="showRoles:" destination="RfU-hO-nhP" id="5ia-uV-vFa"/>
+                                <segue destination="pg3-Yc-1Ee" kind="push" id="Lci-kF-1cA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -314,14 +314,26 @@
                     <view key="view" contentMode="scaleToFill" id="ybm-ZF-3RJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxk-3h-776">
+                                <rect key="frame" x="35" y="154" width="308" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="eik-Xr-A3x"/>
                     </view>
                     <navigationItem key="navigationItem" title="Current Roles" id="m84-j7-RTm"/>
+                    <connections>
+                        <outlet property="content" destination="qxk-3h-776" id="c45-dJ-5EC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZj-Dp-hgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3074" y="-566"/>
+            <point key="canvasLocation" x="3072.8000000000002" y="-566.26686656671666"/>
         </scene>
         <!--Cupido-->
         <scene sceneID="weN-Sk-0bo">
@@ -1033,6 +1045,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xDH-jt-JGg"/>
+        <segue reference="Lci-kF-1cA"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -41,9 +41,9 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         }
     }
     
-    @IBAction func showRoles(_ sender: Any) {
-        animateIn()
-    }
+//    @IBAction func showRoles(_ sender: Any) {
+//        animateIn()
+//    }
     
     
     @IBAction func closeRoleView(_ sender: Any) {
@@ -114,7 +114,16 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                 return false
             }
             
+            // update the role information
+            if RolesController.map[selected] == nil {
+                RolesController.map[selected] = [thiefID]
+            }
+            else {
+                RolesController.map[selected]!.insert(thiefID)
+            }
+            RolesController.set.insert(thiefID)
         }
+        
         
         return true
     }
