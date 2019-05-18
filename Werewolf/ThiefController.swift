@@ -55,6 +55,7 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     let roles = ["Townfolk", "Werewolf", "Fortune Teller", "Hunter", "Cupido", "Witch", "Little Girl"]
+    // in the future, "Lover" may be added
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         // number of rows in the picker view
@@ -115,12 +116,27 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             }
             
             // update the role information
-            if RolesController.map[selected] == nil {
-                RolesController.map[selected] = [thiefID]
+            if selected == "Townfolk" || selected == "Werewolf"{
+                if RolesController.group[selected] == nil {
+                    RolesController.group[selected] = [thiefID]
+                }
+                else {
+                    RolesController.group[selected]!.insert(thiefID)
+                }
             }
-            else {
-                RolesController.map[selected]!.insert(thiefID)
+            // for special roles
+            else{
+                if RolesController.special[selected] == nil {
+                    RolesController.special[selected] = thiefID
+                }
             }
+            
+//            if RolesController.group[selected] == nil {
+//                RolesController.group[selected] = [thiefID]
+//            }
+//            else {
+//                RolesController.map[selected]!.insert(thiefID)
+//            }
             RolesController.set.insert(thiefID)
         }
         

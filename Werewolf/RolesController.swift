@@ -12,13 +12,19 @@ class RolesController: UIViewController {
     
     @IBOutlet weak var content: UILabel!
     
+    // map of special roles(like Hunter/Future Teller, etc)
+    static var special = [String : Int]()
     // map of roles -> list of id
-    static var map = [String : Set<Int>]()
+    static var group = [String : Set<Int>]()
     // set of all existing id
     static var set = Set<Int>()
 
     override func viewDidLoad() {
-        for (key,value) in RolesController.map {
+        for (key,value) in RolesController.special {
+            content.text! += "\(key): \(value)\n"
+            print("\(key) = \(value)")
+        }
+        for (key,value) in RolesController.group {
             content.text! += "\(key): \(value)\n"
             print("\(key) = \(value)")
         }

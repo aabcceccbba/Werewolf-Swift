@@ -19,6 +19,9 @@ class CupidoController: UIViewController {
 //    }
     
     override func viewDidLoad() {
+        if RolesController.special["Cupido"] != nil {
+            cupidoTF.text = String(RolesController.special["Cupido"]!)
+        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

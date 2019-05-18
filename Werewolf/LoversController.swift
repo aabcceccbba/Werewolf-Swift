@@ -22,6 +22,7 @@ class LoversController: UIViewController {
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
+//        print(sender)
         if CupidoController.cupido != -1 {
             if lover1TF.text == "" || lover2TF.text == "" {
                 let alert = UIAlertController(title: "Please enter both Lovers Number", message: "The lovers number has been assigned by Cupido", preferredStyle: .alert)
