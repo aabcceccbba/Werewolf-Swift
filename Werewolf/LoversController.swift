@@ -14,6 +14,12 @@ class LoversController: UIViewController {
     @IBOutlet weak var lover2TF: UITextField!
     
     override func viewDidLoad() {
+        if RolesController.lover1 != -1 {
+            lover1TF.text = String(RolesController.lover1)
+        }
+        if RolesController.lover2 != -1 {
+            lover2TF.text = String(RolesController.lover2)
+        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -22,7 +28,10 @@ class LoversController: UIViewController {
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-//        print(sender)
+        if identifier != "loverNext" {
+            return true
+        }
+        
         if CupidoController.cupido != -1 {
             if lover1TF.text == "" || lover2TF.text == "" {
                 let alert = UIAlertController(title: "Please enter both Lovers Number", message: "The lovers number has been assigned by Cupido", preferredStyle: .alert)
@@ -47,6 +56,15 @@ class LoversController: UIViewController {
                     
                     return false
                 }
+                
+                if lover1ID == -1 || RolesController.lover1 != lover1ID {
+                    RolesController.lover1 = lover1ID
+                }
+                
+                if lover2ID == -1 || RolesController.lover2 != lover2ID {
+                    RolesController.lover2 = lover2ID
+                }
+                
             }
         }
         

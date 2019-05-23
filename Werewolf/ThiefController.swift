@@ -100,36 +100,36 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         self.view.endEditing(true)
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//
+//        if thiefTF.text != "" {
+//            thiefID = Int(thiefTF.text!)!
+//            if thiefID < 1 || thiefID > PlayerNumberController.num {
+//
+//                let alert = UIAlertController(title: "The player ID is out of range", message: "The player number could be only between 1 to " + String(PlayerNumberController.num) + ".", preferredStyle: .alert)
+//
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//                self.present(alert, animated: true)
+//
+//                return false
+//            }
     
-        if thiefTF.text != "" {
-            thiefID = Int(thiefTF.text!)!
-            if thiefID < 1 || thiefID > PlayerNumberController.num {
-                
-                let alert = UIAlertController(title: "The player ID is out of range", message: "The player number could be only between 1 to " + String(PlayerNumberController.num) + ".", preferredStyle: .alert)
-        
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
-                
-                return false
-            }
-            
             // update the role information
-            if selected == "Townfolk" || selected == "Werewolf"{
-                if RolesController.group[selected] == nil {
-                    RolesController.group[selected] = [thiefID]
-                }
-                else {
-                    RolesController.group[selected]!.insert(thiefID)
-                }
-            }
-            // for special roles
-            else{
-                if RolesController.special[selected] == nil {
-                    RolesController.special[selected] = thiefID
-                }
-            }
+//            if selected == "Townfolk" || selected == "Werewolf"{
+//                if RolesController.group[selected] == nil {
+//                    RolesController.group[selected] = [thiefID]
+//                }
+//                else {
+//                    RolesController.group[selected]!.insert(thiefID)
+//                }
+//            }
+//            // for special roles
+//            else{
+//                if RolesController.special[selected] == nil {
+//                    RolesController.special[selected] = thiefID
+//                }
+//            }
             
 //            if RolesController.group[selected] == nil {
 //                RolesController.group[selected] = [thiefID]
@@ -137,12 +137,12 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
 //            else {
 //                RolesController.map[selected]!.insert(thiefID)
 //            }
-            RolesController.set.insert(thiefID)
-        }
-        
-        
-        return true
-    }
+//            RolesController.set.insert(thiefID)
+//        }
+//
+//
+//        return true
+//    }
     
     /*
     // MARK: - Navigation

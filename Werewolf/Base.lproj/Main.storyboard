@@ -369,7 +369,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
-                                    <segue destination="Due-vs-ZkV" kind="push" id="SUG-YO-7ie"/>
+                                    <action selector="nextButton:" destination="me9-gC-Z54" eventType="touchUpInside" id="izH-XF-gzn"/>
+                                    <segue destination="Due-vs-ZkV" kind="push" identifier="" id="SUG-YO-7ie"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2. (Lovers should NOT open their eyes) Moderator walks around the table and discreetly taps the shoulders of the 2 lovers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="336-HF-dsR">
@@ -409,6 +410,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lec-Vn-1jE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="me9-gC-Z54" userLabel="Exit" sceneMemberID="exit"/>
                 <view contentMode="scaleToFill" id="c3L-Eg-D9Y">
                     <rect key="frame" x="0.0" y="0.0" width="319" height="522"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -438,7 +440,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
-                                    <segue destination="rRc-Xf-fbd" kind="push" id="jkH-c8-hS9"/>
+                                    <segue destination="rRc-Xf-fbd" kind="push" identifier="loverNext" id="jkH-c8-hS9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;The lovers wake up, recognize one another and fall back into blissful sleep&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztj-Wa-9jC">
@@ -1045,6 +1047,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Lci-kF-1cA"/>
+        <segue reference="pyd-ON-qRp"/>
     </inferredMetricsTieBreakers>
 </document>

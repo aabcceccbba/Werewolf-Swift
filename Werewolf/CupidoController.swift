@@ -48,6 +48,11 @@ class CupidoController: UIViewController {
                 
                 return false
             }
+            
+            // if Cupido ID is nil
+            if RolesController.special["Cupido"] == nil || RolesController.special["Cupido"] != cupidoID {
+                RolesController.special["Cupido"] = cupidoID
+            }
         }
         
         return true
