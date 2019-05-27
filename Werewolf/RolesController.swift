@@ -20,16 +20,22 @@ class RolesController: UIViewController {
     static var lover2 = -1;
     // set of all existing id
     static var set = Set<Int>()
+    
+    // string of all roles
+    var roles = ""
 
     override func viewDidLoad() {
         for (key,value) in RolesController.special {
-            content.text! += "\(key): \(value)\n"
-            print("\(key) = \(value)")
+            //            content.text! += "\(key): \(value) \n"
+            roles += "\(key): \(value) \n"
+//            print("\(key) = \(value)")
         }
         for (key,value) in RolesController.group {
-            content.text! += "\(key): \(value)\n"
+//            content.text! += "\(key): \(value)\n"
             print("\(key) = \(value)")
         }
+        print(roles)
+        content.text = roles;
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

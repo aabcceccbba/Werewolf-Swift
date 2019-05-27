@@ -35,6 +35,10 @@ class CupidoController: UIViewController {
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
+        if identifier != "cupidoNext" {
+            return true
+        }
+        
         if cupidoTF.text != "" {
             let cupidoID = Int(cupidoTF.text!)!
             CupidoController.cupido = Int(cupidoTF.text!)!
@@ -49,7 +53,7 @@ class CupidoController: UIViewController {
                 return false
             }
             
-            // if Cupido ID is nil
+            // if Cupido ID is nil or changed
             if RolesController.special["Cupido"] == nil || RolesController.special["Cupido"] != cupidoID {
                 RolesController.special["Cupido"] = cupidoID
             }

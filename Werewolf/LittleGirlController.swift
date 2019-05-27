@@ -13,6 +13,9 @@ class LittleGirlController: UIViewController {
     @IBOutlet weak var littleGirlTF: UITextField!
     
     override func viewDidLoad() {
+        if RolesController.special["Little Girl"] != nil {
+            littleGirlTF.text = String(RolesController.special["Little Girl"]!)
+        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -22,6 +25,8 @@ class LittleGirlController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if littleGirlTF.text != "" {
             let littleGirl = Int(littleGirlTF.text!)!
+            
+            // ID out of range
             if littleGirl > PlayerNumberController.num || littleGirl < 1 {
                 let alert = UIAlertController(title: "Please enter the right Little Girl ID", message: "Little Girl ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
                 
@@ -30,6 +35,11 @@ class LittleGirlController: UIViewController {
                 
                 self.present(alert, animated: true)
                 return false
+            }
+            
+            // if Little Girl ID is nil
+            if RolesController.special["Little Girl"] == nil || RolesController.special["LittleGirl"] != littleGirl {
+                RolesController.special["Little Girl"] = littleGirl
             }
         }
         return true
