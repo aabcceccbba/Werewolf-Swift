@@ -38,6 +38,7 @@ class WerewolvesController: UIViewController {
         
         // empty input
         if wolf1TF.text == "" && wolf2TF.text == "" && wolf3TF.text == "" && wolf4TF.text == "" && wolf5TF.text == "" && wolf6TF.text == "" {
+            RolesController.group["Werewolf"] = nil
             let alert = UIAlertController(title: "Please enter Werewolf numbers", message: "You need at least one Werewolf", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -101,6 +102,12 @@ class WerewolvesController: UIViewController {
             
             self.present(alert, animated: true)
             return false
+        }
+        
+        // there is no problem of the input
+        // update Wolf ID
+        if RolesController.group["Werewolf"] == nil || RolesController.group["Werewolf"] != set {
+            RolesController.group["Werewolf"] = set
         }
         
         return true

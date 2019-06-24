@@ -42,6 +42,15 @@ class LittleGirlController: UIViewController {
                 RolesController.special["Little Girl"] = littleGirl
             }
         }
+        
+        else {
+            RolesController.special["Little Girl"] = nil
+        }
+        
+//        if identifier == "toRoles" {
+//            return true
+//        }
+        
         return true
     }
     

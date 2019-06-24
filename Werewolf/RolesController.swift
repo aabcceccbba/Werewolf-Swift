@@ -32,7 +32,8 @@ class RolesController: UIViewController {
         }
         for (key,value) in RolesController.group {
 //            content.text! += "\(key): \(value)\n"
-            print("\(key) = \(value)")
+            roles += "\(key): \(value) \n"
+//            print("\(key) = \(value)")
         }
         print(roles)
         content.text = roles;

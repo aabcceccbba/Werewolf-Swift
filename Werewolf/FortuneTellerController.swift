@@ -22,6 +22,7 @@ class FortuneTellerController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         // empty input
         if fortuneTellerTF.text == "" {
+            RolesController.special["Fortune Teller"] = nil
             let alert = UIAlertController(title: "Please enter a Fortune Teller number", message: "You need at least one Fortune Teller", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -43,6 +44,12 @@ class FortuneTellerController: UIViewController {
             self.present(alert, animated: true)
             return false
         }
+        
+        // if Fortune Teller ID is nil or changed
+        if RolesController.special["Fortune Teller"] == nil || RolesController.special["Fortune Teller"] != fortuneTeller {
+            RolesController.special["Fortune Teller"] = fortuneTeller
+        }
+        
         return true
     }
     

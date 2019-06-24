@@ -25,7 +25,7 @@ class LoversController: UIViewController {
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        if identifier != "loverNext" {
+        if identifier == "toRoles" {
             return true
         }
         
