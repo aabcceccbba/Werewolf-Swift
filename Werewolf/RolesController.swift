@@ -18,8 +18,8 @@ class RolesController: UIViewController {
     static var group = [String : Set<Int>]()
     static var lover1 = -1;
     static var lover2 = -1;
-    // set of all existing id
-    static var set = Set<Int>()
+    // map for all existing id
+    static var map = [Int : String]()
     
     // string of all roles
     var roles = ""

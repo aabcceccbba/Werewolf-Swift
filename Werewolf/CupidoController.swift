@@ -49,15 +49,30 @@ class CupidoController: UIViewController {
                 return false
             }
             
+            // if the ID is conflicted to other roles
+            if RolesController.map[cupidoID] != nil && RolesController.map[cupidoID] != "Cupido"  {
+                let alert = UIAlertController(title: "The Cupido ID is conflicted with other roles", message: "This ID number has already been assigned to " + String(RolesController.map[cupidoID]!) + ".", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                return false
+            }
+            
             // if Cupido ID is nil or changed
             if RolesController.special["Cupido"] == nil || RolesController.special["Cupido"] != cupidoID {
+                RolesController.map.removeValue(forKey: cupidoID)
                 RolesController.special["Cupido"] = cupidoID
+                RolesController.map[cupidoID] = "Cupido"
             }
         }
         // else the text field is empty
         else {
-            RolesController.special["Cupido"] = nil
-            CupidoController.cupido = -1
+            if RolesController.special["Cupido"] != nil {
+                RolesController.map.removeValue(forKey: RolesController.special["Cupido"]!)
+                RolesController.special["Cupido"] = nil
+                CupidoController.cupido = -1
+            }
         }
         
 //        if identifier == "toRoles" {
