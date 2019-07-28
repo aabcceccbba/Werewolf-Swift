@@ -36,6 +36,10 @@ class WerewolvesController: UIViewController {
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
+        if identifier == "toRoles" {
+            return true
+        }
+        
         // empty input
         if wolf1TF.text == "" && wolf2TF.text == "" && wolf3TF.text == "" && wolf4TF.text == "" && wolf5TF.text == "" && wolf6TF.text == "" {
             RolesController.group["Werewolf"] = nil

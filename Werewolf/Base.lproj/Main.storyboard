@@ -1031,7 +1031,7 @@
                     <navigationItem key="navigationItem" title="Werewolves" id="yUA-aW-WXl">
                         <barButtonItem key="rightBarButtonItem" title="Roles" id="22L-9N-uhQ">
                             <connections>
-                                <segue destination="pg3-Yc-1Ee" kind="push" id="fu4-fJ-ZOt"/>
+                                <segue destination="pg3-Yc-1Ee" kind="push" identifier="toRoles" id="fu4-fJ-ZOt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1050,6 +1050,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pPJ-UV-8KA"/>
+        <segue reference="fu4-fJ-ZOt"/>
     </inferredMetricsTieBreakers>
 </document>

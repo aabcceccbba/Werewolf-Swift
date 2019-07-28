@@ -28,7 +28,7 @@ class LittleGirlController: UIViewController {
             
             // ID out of range
             if littleGirl > PlayerNumberController.num || littleGirl < 1 {
-                let alert = UIAlertController(title: "Please enter the right Little Girl ID", message: "Little Girl ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
+                let alert = UIAlertController(title: "The Little Girl ID is out of range", message: "The Little Girl ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -37,14 +37,33 @@ class LittleGirlController: UIViewController {
                 return false
             }
             
-            // if Little Girl ID is nil
-            if RolesController.special["Little Girl"] == nil || RolesController.special["LittleGirl"] != littleGirl {
+            // if the ID is conflicted to other roles
+            if RolesController.map[littleGirl] != nil && RolesController.map[littleGirl] != "Little Girl" {
+                let alert = UIAlertController(title: "The Little Girl ID is conflicted with another role", message: "This ID number has already been assigned to " + String(RolesController.map[littleGirl]!) + ".", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                return false
+            }
+            
+            // if Little Girl ID is nil or changed
+            if RolesController.special["Little Girl"] == nil {
                 RolesController.special["Little Girl"] = littleGirl
+                RolesController.map[littleGirl] = "Little Girl"
+            }
+            else if RolesController.special["LittleGirl"] != littleGirl {
+                RolesController.map.removeValue(forKey: RolesController.special["Little Girl"]!)
+                RolesController.special["Little Girl"] = littleGirl
+                RolesController.map[littleGirl] = "Little Girl"
             }
         }
         
         else {
-            RolesController.special["Little Girl"] = nil
+            if RolesController.special["Little Girl"] != nil {
+                RolesController.map.removeValue(forKey: RolesController.special["Little Girl"]!)
+                RolesController.special["Little Girl"] = nil
+            }
         }
         
 //        if identifier == "toRoles" {
