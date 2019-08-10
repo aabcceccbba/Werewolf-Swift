@@ -15,7 +15,8 @@ class RolesController: UIViewController {
     // map of special roles(like Hunter/Future Teller, etc)
     static var special = [String : Int]()
     // map of roles -> list of id
-    static var group = [String : Set<Int>]()
+//    static var group = [String : Set<Int>]()
+    static var wolves = Set<Int>()
     static var lover1 = -1;
     static var lover2 = -1;
     // map for all existing id
@@ -30,10 +31,14 @@ class RolesController: UIViewController {
             roles += "\(key): \(value) \n"
 //            print("\(key) = \(value)")
         }
-        for (key,value) in RolesController.group {
+        if RolesController.wolves.capacity > 0 {
+            roles += "Wolves: "
+            for wid in RolesController.wolves {
 //            content.text! += "\(key): \(value)\n"
-            roles += "\(key): \(value) \n"
+                roles += "\(wid) "
 //            print("\(key) = \(value)")
+            }
+            roles += "\n"
         }
         print(roles)
         content.text = roles;
