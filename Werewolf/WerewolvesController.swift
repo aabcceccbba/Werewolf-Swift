@@ -56,9 +56,10 @@ class WerewolvesController: UIViewController {
         }
         
         RolesController.wolves = Set<Int>()
+        wolf = [-1, -1, -1, -1, -1, -1]
         total = 0
         // conflict alert
-        let conflictAlert = UIAlertController(title: "The Wolves IDs are conflicted", message: "Wolves IDs need to be unique", preferredStyle: .alert)
+        let conflictAlert = UIAlertController(title: "The Wolves IDs are duplicate", message: "Wolves IDs need to be unique", preferredStyle: .alert)
         
         conflictAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         conflictAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -91,35 +92,6 @@ class WerewolvesController: UIViewController {
         }
         if wolf6TF.text != "" {
             wolf[5] = Int(wolf6TF.text!)!
-//            total += 1
-//            set.insert(wolf6)
-//            if RolesController.wolves.contains(wolf6) {
-//                self.present(conflictAlert, animated: true)
-//                return false
-//            }
-//            RolesController.wolves.insert(wolf6)
-        }
-//        print(set.count)
-//        print(total)
-        
-        // overlap alert
-//        if set.count < total {
-//            let alert = UIAlertController(title: "Please enter different Werewolf numbers", message: "Werewolf numbers cannot be overlap", preferredStyle: .alert)
-//
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//            self.present(alert, animated: true)
-//            return false
-//        }
-//        var item = Int()
-        for item in wolf {
-            if item != -1 {
-                if RolesController.wolves.contains(item) {
-                    self.present(conflictAlert, animated: true)
-                    return false
-                }
-                RolesController.wolves.insert(item)
-            }
         }
         
         // wrong range
@@ -131,8 +103,33 @@ class WerewolvesController: UIViewController {
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             
             self.present(alert, animated: true)
+            
             return false
         }
+
+        // duplicate check
+        for item in wolf {
+            if item != -1 {
+                if RolesController.wolves.contains(item) {
+                    self.present(conflictAlert, animated: true)
+                    return false
+                }
+                
+                // if conflict with other roles
+                if RolesController.map[item] != nil {
+                    let conflictAlert = UIAlertController(title: "The Wolf IDs are conflicted with another role", message: "The ID " + String(item) + " has already been assigned to " + String(RolesController.map[item]!) + ".", preferredStyle: .alert)
+                    
+                    conflictAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    conflictAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    self.present(conflictAlert, animated: true)
+                    
+                    return false
+                }
+                RolesController.wolves.insert(item)
+                RolesController.map[item] = "Wolf"
+            }
+        }
+        
         
         // there is no problem of the input
         // update Wolf ID
