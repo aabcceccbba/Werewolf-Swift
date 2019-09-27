@@ -24,11 +24,15 @@ class WerewolvesController: UIViewController {
     var wolf5 = -1
     var wolf6 = -1
     var total = 0
-    var wolf = [-1, -1, -1, -1, -1, -1]
+//    var wolf = [-1, -1, -1, -1, -1, -1]
     
     var set : Set<Int> = []
     
     override func viewDidLoad() {
+        // need to add something like this
+//        if RolesController.special["Little Girl"] != nil {
+//            littleGirlTF.text = String(RolesController.special["Little Girl"]!)
+//        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -40,11 +44,15 @@ class WerewolvesController: UIViewController {
 //        if identifier == "toRoles" {
 //            return true
 //        }
+        // reset wolves IDs
+        RolesController.wolves = Set<Int>()
+//        wolf = [-1, -1, -1, -1, -1, -1]
+        var wolf = Set<Int>()
+        total = 0
         
         // empty input
         if wolf1TF.text == "" && wolf2TF.text == "" && wolf3TF.text == "" && wolf4TF.text == "" && wolf5TF.text == "" && wolf6TF.text == "" {
-//            RolesController.group["Werewolf"] = nil
-            RolesController.wolves = Set<Int>()
+//            RolesController.wolves = Set<Int>()
             
             let alert = UIAlertController(title: "Please enter Werewolf numbers", message: "You need at least one Werewolf", preferredStyle: .alert)
             
@@ -55,9 +63,7 @@ class WerewolvesController: UIViewController {
             return false
         }
         
-        RolesController.wolves = Set<Int>()
-        wolf = [-1, -1, -1, -1, -1, -1]
-        total = 0
+
         // conflict alert
         let conflictAlert = UIAlertController(title: "The Wolves IDs are duplicate", message: "Wolves IDs need to be unique", preferredStyle: .alert)
         
@@ -65,37 +71,50 @@ class WerewolvesController: UIViewController {
         conflictAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         if wolf1TF.text != "" {
-            wolf[0] = Int(wolf1TF.text!)!
-//            total += 1
+            wolf1 = Int(wolf1TF.text!)!
+            wolf.insert(wolf1)
+            total += 1
 //            set.insert(wolf1)
             
         }
         if wolf2TF.text != "" {
-            wolf[1] = Int(wolf2TF.text!)!
-//            total += 1
+            wolf2 = Int(wolf2TF.text!)!
+            wolf.insert(wolf2)
+            total += 1
 //            set.insert(wolf2)
         }
         if wolf3TF.text != "" {
-            wolf[2] = Int(wolf3TF.text!)!
-//            total += 1
+            wolf3 = Int(wolf3TF.text!)!
+            wolf.insert(wolf3)
+            total += 1
 //            set.insert(wolf3)
         }
         if wolf4TF.text != "" {
-            wolf[3] = Int(wolf4TF.text!)!
-//            total += 1
+            wolf4 = Int(wolf4TF.text!)!
+            wolf.insert(wolf4)
+            total += 1
 //            set.insert(wolf4)
         }
         if wolf5TF.text != "" {
-            wolf[4] = Int(wolf5TF.text!)!
-//            total += 1
+            wolf5 = Int(wolf5TF.text!)!
+            wolf.insert(wolf5)
+            total += 1
 //            set.insert(wolf5)
         }
         if wolf6TF.text != "" {
-            wolf[5] = Int(wolf6TF.text!)!
+            wolf6 = Int(wolf6TF.text!)!
+            wolf.insert(wolf6)
+            total += 1
+        }
+        
+        // id duplicate within wolves
+        if total > wolf.capacity {
+            self.present(conflictAlert, animated: true)
+            return false
         }
         
         // wrong range
-        if wolf[0] > PlayerNumberController.num || wolf[1] > PlayerNumberController.num || wolf[2] > PlayerNumberController.num || wolf[3] > PlayerNumberController.num || wolf[4] > PlayerNumberController.num || wolf[5] > PlayerNumberController.num || wolf[0] * wolf[1] * wolf[2] * wolf[3] * wolf[4] * wolf[5] == 0 {
+        if wolf1 > PlayerNumberController.num || wolf2 > PlayerNumberController.num || wolf3 > PlayerNumberController.num || wolf4 > PlayerNumberController.num || wolf5 > PlayerNumberController.num || wolf6 > PlayerNumberController.num || wolf1 * wolf2 * wolf3 * wolf4 * wolf5 * wolf6 == 0 {
             
             let alert = UIAlertController(title: "Please enter the right Werewolf numbers", message: "Werewolf ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
             
@@ -110,21 +129,21 @@ class WerewolvesController: UIViewController {
         // duplicate check
         for item in wolf {
             if item != -1 {
-                if RolesController.wolves.contains(item) {
-                    self.present(conflictAlert, animated: true)
-                    return false
-                }
-                
                 // if conflict with other roles
-                if RolesController.map[item] != nil {
+                if RolesController.map[item] != nil && RolesController.map[item] != "Wolf" {
                     let conflictAlert = UIAlertController(title: "The Wolf IDs are conflicted with another role", message: "The ID " + String(item) + " has already been assigned to " + String(RolesController.map[item]!) + ".", preferredStyle: .alert)
                     
                     conflictAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     conflictAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                     self.present(conflictAlert, animated: true)
-                    
                     return false
                 }
+            }
+        }
+        
+        // passed all checks
+        for item in wolf {
+            if item != -1 {
                 RolesController.wolves.insert(item)
                 RolesController.map[item] = "Wolf"
             }
