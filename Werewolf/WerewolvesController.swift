@@ -17,6 +17,8 @@ class WerewolvesController: UIViewController {
     @IBOutlet weak var wolf5TF: UITextField!
     @IBOutlet weak var wolf6TF: UITextField!
     
+    var wolfTF : [UITextField] = []
+    
     var wolf1 = -1
     var wolf2 = -1
     var wolf3 = -1
@@ -41,9 +43,6 @@ class WerewolvesController: UIViewController {
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-//        if identifier == "toRoles" {
-//            return true
-//        }
         // reset wolves IDs
         RolesController.wolves = Set<Int>()
 //        wolf = [-1, -1, -1, -1, -1, -1]
@@ -52,7 +51,11 @@ class WerewolvesController: UIViewController {
         
         // empty input
         if wolf1TF.text == "" && wolf2TF.text == "" && wolf3TF.text == "" && wolf4TF.text == "" && wolf5TF.text == "" && wolf6TF.text == "" {
-//            RolesController.wolves = Set<Int>()
+            
+            // if go to Roles -> return true
+            if identifier == "toRoles" {
+                return true
+            }
             
             let alert = UIAlertController(title: "Please enter Werewolf numbers", message: "You need at least one Werewolf", preferredStyle: .alert)
             
