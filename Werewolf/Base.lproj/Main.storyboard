@@ -538,7 +538,7 @@
                     <navigationItem key="navigationItem" title="Fortune Teller" id="koK-wz-ozn">
                         <barButtonItem key="rightBarButtonItem" title="Roles" id="ZzD-eW-CbI">
                             <connections>
-                                <segue destination="pg3-Yc-1Ee" kind="push" id="pPJ-UV-8KA"/>
+                                <segue destination="pg3-Yc-1Ee" kind="push" identifier="toRoles" id="pPJ-UV-8KA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1038,6 +1038,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xDH-jt-JGg"/>
+        <segue reference="pPJ-UV-8KA"/>
     </inferredMetricsTieBreakers>
 </document>

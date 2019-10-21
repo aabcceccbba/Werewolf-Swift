@@ -17,8 +17,7 @@ class WerewolvesController: UIViewController {
     @IBOutlet weak var wolf5TF: UITextField!
     @IBOutlet weak var wolf6TF: UITextField!
     
-    var wolfTF : [UITextField] = []
-    
+//    var wolfTf = [UITextField]()
     var wolf1 = -1
     var wolf2 = -1
     var wolf3 = -1
@@ -31,10 +30,14 @@ class WerewolvesController: UIViewController {
     var set : Set<Int> = []
     
     override func viewDidLoad() {
-        // need to add something like this
-//        if RolesController.special["Little Girl"] != nil {
-//            littleGirlTF.text = String(RolesController.special["Little Girl"]!)
-//        }
+        let wolfTF = [wolf1TF, wolf2TF, wolf3TF, wolf4TF, wolf5TF, wolf6TF]
+
+        // show current Wolf IDs
+        var index = 0
+        for wid in RolesController.wolves {
+            wolfTF[index]!.text = String(wid)
+            index += 1
+        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
