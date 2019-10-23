@@ -14,7 +14,7 @@ class CupidoController: UIViewController {
 
     @IBOutlet weak var cupidoTF: UITextField!
     
-//    @IBAction func showRoles(_ sender: Any) {
+    //    @IBAction func showRoles(_ sender: Any) {
 //        self.performSegue(withIdentifier: "RolesController", sender:self)
 //    }
     
@@ -23,8 +23,24 @@ class CupidoController: UIViewController {
             cupidoTF.text = String(RolesController.special["Cupido"]!)
         }
         super.viewDidLoad()
+//        if check(){
+//            self.navigationItem.prompt = "true"
+//        }
+//        else{
+//            self.navigationItem.hidesBackButton = true
+//
+//        }
+
 
         // Do any additional setup after loading the view.
+        
+//        if(check()){
+//            print("true")
+//        }
+//        else {
+//            print("false")
+//        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,9 +48,7 @@ class CupidoController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // check if the input number is valid
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
+    func check() -> Bool {
         if cupidoTF.text != "" {
             let cupidoID = Int(cupidoTF.text!)!
             CupidoController.cupido = Int(cupidoTF.text!)!
@@ -84,6 +98,83 @@ class CupidoController: UIViewController {
 //        }
         
         return true
+    }
+    
+    // check if the input number is valid
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+//        return check()
+        
+        if cupidoTF.text != "" {
+            let cupidoID = Int(cupidoTF.text!)!
+            if cupidoID < 1 || cupidoID > PlayerNumberController.num {
+                
+                let alert = UIAlertController(title: "The Cupido ID is out of range", message: "The Cupido number could be only between 1 to " + String(PlayerNumberController.num) + ".", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                
+                return false
+            }
+            
+            // if the ID is conflicted to other roles
+            if RolesController.map[cupidoID] != nil && RolesController.map[cupidoID] != "Cupido"  {
+                let alert = UIAlertController(title: "The Cupido ID is conflicted with another role", message: "This ID number has already been assigned to " + String(RolesController.map[cupidoID]!) + ".", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                return false
+            }
+            
+            // if Cupido ID is nil or changed
+            if RolesController.special["Cupido"] == nil{
+                RolesController.special["Cupido"] = cupidoID
+                RolesController.map[cupidoID] = "Cupido"
+            }
+            else if RolesController.special["Cupido"] != cupidoID {
+                RolesController.map.removeValue(forKey:  RolesController.special["Cupido"]!)
+                RolesController.special["Cupido"] = cupidoID
+                RolesController.map[cupidoID] = "Cupido"
+            }
+            CupidoController.cupido = Int(cupidoTF.text!)!
+
+        }
+        // else the text field is empty
+        else {
+            if RolesController.special["Cupido"] != nil {
+                RolesController.map.removeValue(forKey: RolesController.special["Cupido"]!)
+                RolesController.special["Cupido"] = nil
+                CupidoController.cupido = -1
+            }
+        }
+        
+//        if identifier == "toRoles" {
+//            return true
+//        }
+        
+        return true
+    }
+
+    // used to implement back bar button
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParentViewController {
+            if check(){
+                print("true")
+                if RolesController.special["Cupido"] != nil{ print(RolesController.special["Cupido"]!)
+                }
+            }
+            else{
+                self.viewWillAppear(true)
+                print("false")
+                if RolesController.special["Cupido"] != nil{ print(RolesController.special["Cupido"]!)
+                }
+            }
+        }
+
     }
     
     // hide the keyboard when touch the screen

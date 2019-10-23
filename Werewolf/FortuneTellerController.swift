@@ -12,6 +12,8 @@ class FortuneTellerController: UIViewController {
 
     @IBOutlet weak var fortuneTellerTF: UITextField!
     
+    
+    
     override func viewDidLoad() {
         
         if RolesController.special["Fortune Teller"] != nil {
