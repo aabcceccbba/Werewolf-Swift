@@ -21,8 +21,7 @@ class LittleGirlController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    // check if the input number is valid
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    func check() -> Bool {
         if littleGirlTF.text != "" {
             let littleGirl = Int(littleGirlTF.text!)!
             
@@ -66,11 +65,24 @@ class LittleGirlController: UIViewController {
             }
         }
         
-//        if identifier == "toRoles" {
-//            return true
-//        }
-        
         return true
+    }
+    
+    // check if the input number is valid
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        return check()
+    }
+    
+    // used to implement back bar button
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParentViewController {
+            if check(){
+            }
+        }
+
     }
     
     // hide the keyboard when touch the screen

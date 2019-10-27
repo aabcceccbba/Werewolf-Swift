@@ -22,12 +22,8 @@ class LoversController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    // check if the input number is valid
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
-        if identifier == "toRoles" {
-            return true
-        }
+    
+    func check() -> Bool {
         
         // later will add the condition whether lovers are dead
         if CupidoController.cupido != -1 {
@@ -79,6 +75,27 @@ class LoversController: UIViewController {
         }
         
         return true
+    }
+    
+    // check if the input number is valid
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if identifier == "toRoles" {
+            return true
+        }
+        
+        return check()
+    }
+    
+    // used to implement back bar button
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParentViewController {
+            if check(){
+            }
+        }
+
     }
     
     // hide the keyboard when touch the screen
