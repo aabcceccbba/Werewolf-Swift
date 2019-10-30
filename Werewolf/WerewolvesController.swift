@@ -45,7 +45,7 @@ class WerewolvesController: UIViewController {
     
     func check(withIdentifier identifier: String) -> Bool {
         // reset wolves IDs
-        RolesController.wolves = Set<Int>()
+//        RolesController.wolves = Set<Int>()
 //        wolf = [-1, -1, -1, -1, -1, -1]
         var wolf = Set<Int>()
         total = 0
@@ -53,6 +53,12 @@ class WerewolvesController: UIViewController {
         // empty input
         if wolf1TF.text == "" && wolf2TF.text == "" && wolf3TF.text == "" && wolf4TF.text == "" && wolf5TF.text == "" && wolf6TF.text == "" {
             
+            // empty map and wolves
+            for wid in RolesController.wolves {
+                RolesController.map.removeValue(forKey: wid)
+            }
+            RolesController.wolves = Set<Int>()
+
             // if go to Roles -> return true
             if identifier == "toRoles" {
                 return true
@@ -79,6 +85,7 @@ class WerewolvesController: UIViewController {
             wolf.insert(wolf1)
             total += 1
 //            set.insert(wolf1)
+//            print("text 1 is " + wolf1TF.text!)
             
         }
         if wolf2TF.text != "" {
@@ -86,29 +93,32 @@ class WerewolvesController: UIViewController {
             wolf.insert(wolf2)
             total += 1
 //            set.insert(wolf2)
+//            print("text 2 is " + wolf2TF.text!)
         }
         if wolf3TF.text != "" {
             wolf3 = Int(wolf3TF.text!)!
             wolf.insert(wolf3)
             total += 1
-//            set.insert(wolf3)
+//            print("text 3 is " + wolf3TF.text!)
         }
         if wolf4TF.text != "" {
             wolf4 = Int(wolf4TF.text!)!
             wolf.insert(wolf4)
             total += 1
-//            set.insert(wolf4)
+//            print("text 4 is " + wolf4TF.text!)
+            
         }
         if wolf5TF.text != "" {
             wolf5 = Int(wolf5TF.text!)!
             wolf.insert(wolf5)
             total += 1
-//            set.insert(wolf5)
+//            print("text 5 is " + wolf5TF.text!)
         }
         if wolf6TF.text != "" {
             wolf6 = Int(wolf6TF.text!)!
             wolf.insert(wolf6)
             total += 1
+//            print("text 6 is " + wolf6TF.text!)
         }
         
         // id duplicate within wolves
@@ -130,13 +140,9 @@ class WerewolvesController: UIViewController {
             return false
         }
 
-        // duplicate check
+        // conflict check
         for item in wolf {
             if item != -1 {
-                // if conflict within wolves
-                if set.contains(item) {
-                    
-                }
                 // if conflict with other roles
                 if RolesController.map[item] != nil && RolesController.map[item] != "Wolf" {
                     let conflictAlert = UIAlertController(title: "The Wolf IDs are conflicted with another role", message: "The ID " + String(item) + " has already been assigned to " + String(RolesController.map[item]!) + ".", preferredStyle: .alert)
@@ -150,6 +156,11 @@ class WerewolvesController: UIViewController {
         }
         
         // passed all checks
+        for wid in RolesController.wolves {
+            RolesController.map.removeValue(forKey: wid);
+        }
+        RolesController.wolves = Set<Int>()
+        
         for item in wolf {
             if item != -1 {
                 RolesController.wolves.insert(item)
@@ -165,118 +176,6 @@ class WerewolvesController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         return check(withIdentifier: identifier)
-        
-//        // reset wolves IDs
-//        RolesController.wolves = Set<Int>()
-////        wolf = [-1, -1, -1, -1, -1, -1]
-//        var wolf = Set<Int>()
-//        total = 0
-//
-//        // empty input
-//        if wolf1TF.text == "" && wolf2TF.text == "" && wolf3TF.text == "" && wolf4TF.text == "" && wolf5TF.text == "" && wolf6TF.text == "" {
-//
-//            // if go to Roles -> return true
-//            if identifier == "toRoles" {
-//                return true
-//            }
-//
-//            let alert = UIAlertController(title: "Please enter Werewolf numbers", message: "You need at least one Werewolf", preferredStyle: .alert)
-//
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//
-//            self.present(alert, animated: true)
-//            return false
-//        }
-//
-//
-//        // conflict alert
-//        let conflictAlert = UIAlertController(title: "The Wolves IDs are duplicate", message: "Wolves IDs need to be unique", preferredStyle: .alert)
-//
-//        conflictAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//        conflictAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//
-//        if wolf1TF.text != "" {
-//            wolf1 = Int(wolf1TF.text!)!
-//            wolf.insert(wolf1)
-//            total += 1
-////            set.insert(wolf1)
-//
-//        }
-//        if wolf2TF.text != "" {
-//            wolf2 = Int(wolf2TF.text!)!
-//            wolf.insert(wolf2)
-//            total += 1
-////            set.insert(wolf2)
-//        }
-//        if wolf3TF.text != "" {
-//            wolf3 = Int(wolf3TF.text!)!
-//            wolf.insert(wolf3)
-//            total += 1
-////            set.insert(wolf3)
-//        }
-//        if wolf4TF.text != "" {
-//            wolf4 = Int(wolf4TF.text!)!
-//            wolf.insert(wolf4)
-//            total += 1
-////            set.insert(wolf4)
-//        }
-//        if wolf5TF.text != "" {
-//            wolf5 = Int(wolf5TF.text!)!
-//            wolf.insert(wolf5)
-//            total += 1
-////            set.insert(wolf5)
-//        }
-//        if wolf6TF.text != "" {
-//            wolf6 = Int(wolf6TF.text!)!
-//            wolf.insert(wolf6)
-//            total += 1
-//        }
-//
-//        // id duplicate within wolves
-//        if total > wolf.capacity {
-//            self.present(conflictAlert, animated: true)
-//            return false
-//        }
-//
-//        // wrong range
-//        if wolf1 > PlayerNumberController.num || wolf2 > PlayerNumberController.num || wolf3 > PlayerNumberController.num || wolf4 > PlayerNumberController.num || wolf5 > PlayerNumberController.num || wolf6 > PlayerNumberController.num || wolf1 * wolf2 * wolf3 * wolf4 * wolf5 * wolf6 == 0 {
-//
-//            let alert = UIAlertController(title: "Please enter the right Werewolf numbers", message: "Werewolf ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
-//
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//
-//            self.present(alert, animated: true)
-//
-//            return false
-//        }
-//
-//        // duplicate check
-//        for item in wolf {
-//            if item != -1 {
-//                // if conflict with other roles
-//                if RolesController.map[item] != nil && RolesController.map[item] != "Wolf" {
-//                    let conflictAlert = UIAlertController(title: "The Wolf IDs are conflicted with another role", message: "The ID " + String(item) + " has already been assigned to " + String(RolesController.map[item]!) + ".", preferredStyle: .alert)
-//
-//                    conflictAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                    conflictAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//                    self.present(conflictAlert, animated: true)
-//                    return false
-//                }
-//            }
-//        }
-//
-//        // passed all checks
-//        for item in wolf {
-//            if item != -1 {
-//                RolesController.wolves.insert(item)
-//                RolesController.map[item] = "Wolf"
-//            }
-//        }
-//
-//
-//        return true
     }
     
     // used to implement back bar button
