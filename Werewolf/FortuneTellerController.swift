@@ -85,60 +85,6 @@ class FortuneTellerController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         return check(withIdentifier: identifier)
-        // empty input
-//        if fortuneTellerTF.text == "" {
-//
-//            // if go to Roles -> return true
-//            if identifier == "toRoles" {
-//                return true
-//            }
-//
-//            RolesController.special["Fortune Teller"] = nil
-//            let alert = UIAlertController(title: "Please enter a Fortune Teller number", message: "You need at least one Fortune Teller", preferredStyle: .alert)
-//
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//
-//            self.present(alert, animated: true)
-//            return false
-//        }
-//
-//        let fortuneTeller = Int(fortuneTellerTF.text!)!
-//
-//        // out of range
-//        if fortuneTeller > PlayerNumberController.num || fortuneTeller < 1 {
-//
-//            let alert = UIAlertController(title: "Please enter the right Fortune Teller ID", message: "Fortune Teller ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
-//
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//
-//            self.present(alert, animated: true)
-//            return false
-//        }
-//
-//        // if the ID is conflicted to other roles
-//        if RolesController.map[fortuneTeller] != nil && RolesController.map[fortuneTeller] != "Fortune Teller" {
-//            let alert = UIAlertController(title: "The Fortune Teller ID is conflicted with another role", message: "This ID number has already been assigned to " + String(RolesController.map[fortuneTeller]!) + ".", preferredStyle: .alert)
-//
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//            self.present(alert, animated: true)
-//            return false
-//        }
-//
-//        // if Fortune Teller ID is nil or changed
-//        if RolesController.special["Fortune Teller"] == nil {
-//            RolesController.special["Fortune Teller"] = fortuneTeller
-//            RolesController.map[fortuneTeller] = "Fortune Teller"
-//        }
-//        else if RolesController.special["Fortune Teller"] != fortuneTeller {
-//            RolesController.map.removeValue(forKey: RolesController.special["Fortune Teller"]!)
-//            RolesController.special["Fortune Teller"] = fortuneTeller
-//            RolesController.map[fortuneTeller] = "Fortune Teller"
-//        }
-//
-//        return true
     }
     
     // used to implement back bar button

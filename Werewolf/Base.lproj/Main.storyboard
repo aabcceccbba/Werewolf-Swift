@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sz3-3o-OYY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sz3-3o-OYY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -319,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZj-Dp-hgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5386.9565217391309" y="-590.625"/>
+            <point key="canvasLocation" x="7357" y="-567"/>
         </scene>
         <!--Cupido-->
         <scene sceneID="weN-Sk-0bo">
@@ -605,7 +605,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Yg4-aA-MvM"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Hunter" id="4NS-zM-3kk"/>
+                    <navigationItem key="navigationItem" title="Hunter" id="4NS-zM-3kk">
+                        <barButtonItem key="rightBarButtonItem" title="Roles" id="vb0-vz-cXT">
+                            <connections>
+                                <segue destination="pg3-Yc-1Ee" kind="push" id="c3J-7U-4IS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="hunterTF" destination="Ywn-sE-q0C" id="sr6-IA-tlu"/>
                     </connections>
@@ -1038,6 +1044,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xDH-jt-JGg"/>
+        <segue reference="c3J-7U-4IS"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -85,7 +85,7 @@ class WerewolvesController: UIViewController {
             wolf.insert(wolf1)
             total += 1
 //            set.insert(wolf1)
-//            print("text 1 is " + wolf1TF.text!)
+            print("text 1 is " + wolf1TF.text!)
             
         }
         if wolf2TF.text != "" {
@@ -93,36 +93,41 @@ class WerewolvesController: UIViewController {
             wolf.insert(wolf2)
             total += 1
 //            set.insert(wolf2)
-//            print("text 2 is " + wolf2TF.text!)
+            print("text 2 is " + wolf2TF.text!)
         }
         if wolf3TF.text != "" {
             wolf3 = Int(wolf3TF.text!)!
             wolf.insert(wolf3)
             total += 1
-//            print("text 3 is " + wolf3TF.text!)
+            print("text 3 is " + wolf3TF.text!)
         }
         if wolf4TF.text != "" {
             wolf4 = Int(wolf4TF.text!)!
             wolf.insert(wolf4)
             total += 1
-//            print("text 4 is " + wolf4TF.text!)
+            print("text 4 is " + wolf4TF.text!)
             
         }
         if wolf5TF.text != "" {
             wolf5 = Int(wolf5TF.text!)!
             wolf.insert(wolf5)
             total += 1
-//            print("text 5 is " + wolf5TF.text!)
+            print("text 5 is " + wolf5TF.text!)
         }
         if wolf6TF.text != "" {
             wolf6 = Int(wolf6TF.text!)!
             wolf.insert(wolf6)
             total += 1
-//            print("text 6 is " + wolf6TF.text!)
+            print("text 6 is " + wolf6TF.text!)
         }
         
+        print(total)
+        print(wolf.count)
+        for item in wolf {
+            print(String(item) + " ")
+        }
         // id duplicate within wolves
-        if total > wolf.capacity {
+        if total > wolf.count {
             self.present(duplicateAlert, animated: true)
             return false
         }
