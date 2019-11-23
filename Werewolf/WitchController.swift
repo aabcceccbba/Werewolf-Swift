@@ -13,36 +13,75 @@ class WitchController: UIViewController {
     @IBOutlet weak var witchTF: UITextField!
     
     override func viewDidLoad() {
+        if RolesController.special["Witch"] != nil {
+            witchTF.text = String(RolesController.special["Witch"]!)
+        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    // check if the input number is valid
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        // empty
-        if witchTF.text == "" {
-            let alert = UIAlertController(title: "Please enter a Witch ID", message: "You need at least one Witch", preferredStyle: .alert)
+    func check() -> Bool {
+        if witchTF.text != "" {
+        
+            let witch = Int(witchTF.text!)!
+            // out of range
+            if witch > PlayerNumberController.num || witch < 1 {
+                let alert = UIAlertController(title: "Please enter the right Witch ID", message: "Witch ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true)
+                return false
+            }
             
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            // if the ID is conflicted to other roles
+            if RolesController.map[witch] != nil && RolesController.map[witch] != "Witch" {
+                let alert = UIAlertController(title: "The Witch ID is conflicted with another role", message: "This ID number has already been assigned to " + String(RolesController.map[witch]!) + ".", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                return false
+            }
             
-            self.present(alert, animated: true)
-            return false
+            // if Witch ID is nil or changed
+            if RolesController.special["Witch"] == nil {
+                RolesController.special["Witch"] = witch
+                RolesController.map[witch] = "Witch"
+            }
+            else if RolesController.special["Witch"] != witch {
+                RolesController.map.removeValue(forKey: RolesController.special["Witch"]!)
+                RolesController.special["Witch"] = witch
+                RolesController.map[witch] = "Witch"
+            }
         }
         
-        let witch = Int(witchTF.text!)!
-        // wrong range
-        if witch > PlayerNumberController.num || witch < 1 {
-            let alert = UIAlertController(title: "Please enter the right Witch ID", message: "Witch ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            
-            self.present(alert, animated: true)
-            return false
+        // empty
+        else {
+            if RolesController.special["Witch"] != nil {
+                RolesController.map.removeValue(forKey:RolesController.special["Witch"]!)
+                    RolesController.special["Witch"] = nil
+            }
         }
         return true
+    }
+    
+    // check if the input number is valid
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return check()
+    }
+    
+    // used to implement back bar button
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParentViewController {
+            if check(){
+            }
+        }
+
     }
     
     // hide the keyboard when touch the screen
