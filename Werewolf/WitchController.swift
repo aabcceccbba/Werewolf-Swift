@@ -9,16 +9,56 @@
 import UIKit
 
 class WitchController: UIViewController {
+    
+    var healing = 1;
+    var poison = 1;
 
     @IBOutlet weak var witchTF: UITextField!
+    @IBOutlet weak var potionLabel: UILabel!
     
     override func viewDidLoad() {
         if RolesController.special["Witch"] != nil {
             witchTF.text = String(RolesController.special["Witch"]!)
         }
+        
+//        potionLabel.text = "Healing Potion: " + String(healing) + "\nPoison Potion: " + String(poison)
+        updatePotion()
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func healing(_ sender: Any) {
+        if(healing == 1){
+            let alert = UIAlertController(title: "Are you sure to use Healing Potion?", message: "", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                self.healing = 0
+                self.updatePotion()
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+    }
+    
+    @IBAction func poison(_ sender: Any) {
+        if(poison == 1){
+            let alert = UIAlertController(title: "Are you sure to use Poison Potion?", message: "", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                self.poison = 0
+                self.updatePotion()
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func updatePotion() {
+        potionLabel.text = "Healing Potion: " + String(healing) + "\nPoison Potion: " + String(poison)
     }
     
     func check() -> Bool {

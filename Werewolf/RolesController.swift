@@ -24,6 +24,7 @@ class RolesController: UIViewController {
     
     // string of all roles
     var roles = ""
+    static var sheriff = Int();
 
     override func viewDidLoad() {
         for (key,value) in RolesController.special {

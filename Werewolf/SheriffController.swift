@@ -11,6 +11,7 @@ import UIKit
 class SheriffController: UIViewController {
     
     @IBOutlet weak var start: UILabel!
+    @IBOutlet weak var sheriffTF: UITextField!
     // set random place to start the sheriff vote;
     // get the total number of the player first
     var a = PlayerNumberController.num
