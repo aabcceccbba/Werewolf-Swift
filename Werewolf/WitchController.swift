@@ -21,7 +21,6 @@ class WitchController: UIViewController {
             witchTF.text = String(RolesController.special["Witch"]!)
         }
         
-//        potionLabel.text = "Healing Potion: " + String(healing) + "\nPoison Potion: " + String(poison)
         updatePotion()
         
         super.viewDidLoad()
@@ -113,7 +112,7 @@ class WitchController: UIViewController {
         return check()
     }
     
-    // used to implement back bar button
+    // used to implement back bar button update
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
