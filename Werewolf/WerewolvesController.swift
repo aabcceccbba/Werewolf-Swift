@@ -43,27 +43,6 @@ class WerewolvesController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func kill(_ sender: Any) {
-        //1. Create the alert controller.
-        let alert = UIAlertController(title: "Some Title", message: "Enter a text", preferredStyle: .alert)
-
-        //2. Add the text field. You can configure it however you need.
-        alert.addTextField { (textField) in
-            textField.text = "Some default text"
-        }
-
-        // 3. Grab the value from the text field, and print it when the user clicks OK.
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            let alert1 = UIAlertController(title: "Second alert", message: "Enter a text", preferredStyle: .alert)
-            alert1.addAction(UIAlertAction(title: "OK", style: .default, handler: nil
-            ))
-            self.present(alert1, animated: true, completion: nil)
-        }))
-
-        // 4. Present the alert.
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     
     func check(withIdentifier identifier: String) -> Bool {
         // reset wolves IDs
@@ -93,8 +72,7 @@ class WerewolvesController: UIViewController {
             
             self.present(alert, animated: true)
             return false
-        }
-        
+        }        
 
         // duplicate alert
         let duplicateAlert = UIAlertController(title: "The Wolves IDs are duplicate", message: "Wolves IDs need to be unique", preferredStyle: .alert)
