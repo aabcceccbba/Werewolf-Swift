@@ -16,6 +16,7 @@ class WerewolvesController: UIViewController {
     @IBOutlet weak var wolf4TF: UITextField!
     @IBOutlet weak var wolf5TF: UITextField!
     @IBOutlet weak var wolf6TF: UITextField!
+    @IBOutlet weak var victimTF: UITextField!
     
 //    var wolfTf = [UITextField]()
     var wolf1 = -1
@@ -25,6 +26,7 @@ class WerewolvesController: UIViewController {
     var wolf5 = -1
     var wolf6 = -1
     var total = 0
+    var victim = -1
 //    var wolf = [-1, -1, -1, -1, -1, -1]
     
     var set : Set<Int> = []
@@ -120,6 +122,9 @@ class WerewolvesController: UIViewController {
             total += 1
             print("text 6 is " + wolf6TF.text!)
         }
+        if victimTF.text != "" {
+            victim = Int(victimTF.text!)!
+        }
         
         print(total)
         print(wolf.count)
@@ -144,7 +149,31 @@ class WerewolvesController: UIViewController {
             
             return false
         }
-
+        
+        
+        // out of range for victim
+        if victim != -1 && (victim > PlayerNumberController.num || victim == 0) {
+            
+            let alert = UIAlertController(title: "Please enter the right Victim numbers", message: "Victim ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+            return false
+        }
+        
+        // dead victim
+        if victim != -1 && !RolesController.alive.contains(victim) {
+            let alert = UIAlertController(title: "Please enter the right Victim numbers", message: "Player ID" + String(victim) + " has been already dead", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+            return false
+        }
+        
         // conflict check
         for item in wolf {
             if item != -1 {
@@ -173,6 +202,7 @@ class WerewolvesController: UIViewController {
             }
         }
         
+        RolesController.potentialVictim = victim
         
         return true
     }

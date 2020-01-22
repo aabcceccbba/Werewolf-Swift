@@ -35,6 +35,7 @@ class WitchController: UIViewController {
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                 self.healing = 0
                 self.updatePotion()
+                RolesController.potentialVictim = -1
             }))
             alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
             
@@ -104,6 +105,7 @@ class WitchController: UIViewController {
                     RolesController.special["Witch"] = nil
             }
         }
+        
         return true
     }
     

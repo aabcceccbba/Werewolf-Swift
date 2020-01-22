@@ -17,14 +17,16 @@ class RolesController: UIViewController {
     // map of roles -> list of id
 //    static var group = [String : Set<Int>]()
     static var wolves = Set<Int>()
-    static var lover1 = -1;
-    static var lover2 = -1;
+    static var lover1 = -1
+    static var lover2 = -1
     // map for all existing id
     static var map = [Int : String]()
     
     // string of all roles
     var roles = ""
-    static var sheriff = Int();
+    static var sheriff = -1;
+    static var alive = Set<Int>()
+    static var potentialVictim = -1
 
     override func viewDidLoad() {
         for (key,value) in RolesController.special {

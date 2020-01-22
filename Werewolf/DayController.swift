@@ -10,7 +10,21 @@ import UIKit
 
 class DayController: UIViewController {
 
+    @IBOutlet weak var deathNote: UILabel!
+    
     override func viewDidLoad() {
+        if RolesController.potentialVictim != -1 {
+            deathNote.text = "Player #" + String(RolesController.potentialVictim) + " died tonight"
+            
+            // if the player is hunter
+            
+            // if the player is one of the lovers
+            RolesController.alive.remove(RolesController.potentialVictim)
+        }
+        else {
+            deathNote.text = "No one died tonight"
+        }
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
