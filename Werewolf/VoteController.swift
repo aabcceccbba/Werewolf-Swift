@@ -11,6 +11,8 @@ import UIKit
 class VoteController: UIViewController {
 
     override func viewDidLoad() {
+        navigationController?.navigationBar.isUserInteractionEnabled = false
+        navigationController?.navigationBar.tintColor = UIColor.lightGray
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

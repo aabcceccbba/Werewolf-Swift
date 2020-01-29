@@ -29,7 +29,7 @@ class WitchController: UIViewController {
     }
     
     @IBAction func healing(_ sender: Any) {
-        if(healing == 1){
+        if(RolesController.potentialVictim != -1 && healing == 1){
             let alert = UIAlertController(title: "Are you sure to use Healing Potion?", message: "", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in

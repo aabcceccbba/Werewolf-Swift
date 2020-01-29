@@ -14,6 +14,7 @@ class DayController: UIViewController {
     @IBOutlet weak var HunterDeathNote: UILabel!
     @IBOutlet weak var LoverDeathNote: UILabel!
     @IBOutlet weak var retaliateTF: UITextField!
+    var lover = -1
     
     override func viewDidLoad() {
         retaliateTF.isHidden = true
@@ -28,8 +29,8 @@ class DayController: UIViewController {
             }
             
             // if the player is lover
-            if  RolesController.potentialVictim == RolesController.lover1 || RolesController.potentialVictim == RolesController.lover2 {
-                let lover = (RolesController.potentialVictim == RolesController.lover2) ? RolesController.lover1 : RolesController.lover2
+            if  RolesController.lover1 != -1 && (RolesController.potentialVictim == RolesController.lover1 || RolesController.potentialVictim == RolesController.lover2) {
+                lover = (RolesController.potentialVictim == RolesController.lover2) ? RolesController.lover1 : RolesController.lover2
                 LoverDeathNote.text = "The victim is one the lovers. Player #" + String(lover) + " also dies."
 //                RolesController.alive.remove(lover)
             }
@@ -62,12 +63,31 @@ class DayController: UIViewController {
                     self.present(alert, animated: true)
                     return false
                 }
-                
-                // already dead
-//                if
+                                
+                // if already dead
+                if !RolesController.alive.contains(retaliateVictim) {
+                    let alert = UIAlertController(title: "Please enter the right retaliated Victim ID", message: "This player is already dead.", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+                    return false
+                }
             }
         }
+        
+        // update alive
+        RolesController.alive.remove(RolesController.potentialVictim)
+        if lover != -1 {
+            RolesController.alive.remove(lover)
+        }
+
         return true
+    }
+    
+    // hide the keyboard when touch the screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
     }
     
 
