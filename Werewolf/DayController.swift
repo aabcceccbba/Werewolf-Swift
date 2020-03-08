@@ -76,11 +76,22 @@ class DayController: UIViewController {
             }
         }
         
+        let finalAlert = UIAlertController(title: "Please confrim all the inputs are correct", message: "You are not able to modify after going Next.", preferredStyle: .alert)
+        
+        finalAlert.addAction(UIAlertAction(title: "OK", style: .default, handler:
+            { action in
+                // update data before go to the next controller
+                RolesController.alive.remove(RolesController.potentialVictim)
+                if self.lover != -1 {
+                    RolesController.alive.remove(self.lover)
+                }
+                self.performSegue(withIdentifier: "vote", sender: nil)
+        }))
+        finalAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(finalAlert, animated: true)
+        
         // update alive
-        RolesController.alive.remove(RolesController.potentialVictim)
-        if lover != -1 {
-            RolesController.alive.remove(lover)
-        }
+        
 
         return true
     }
