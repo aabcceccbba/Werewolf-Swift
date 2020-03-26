@@ -26,7 +26,11 @@ class RolesController: UIViewController {
     var roles = ""
     static var sheriff = -1;
     static var alive = Set<Int>()
-    static var potentialVictim = -1
+//    static var potentialVictim = -1
+    static var potentialVictim = Set<Int>()
+    
+    static var healing = 1;
+    static var poison = 1;
 
     override func viewDidLoad() {
         for (key,value) in RolesController.special {

@@ -9,9 +9,6 @@
 import UIKit
 
 class WitchController: UIViewController {
-    
-    var healing = 1;
-    var poison = 1;
 
     @IBOutlet weak var witchTF: UITextField!
     @IBOutlet weak var potionLabel: UILabel!
@@ -29,13 +26,13 @@ class WitchController: UIViewController {
     }
     
     @IBAction func healing(_ sender: Any) {
-        if(RolesController.potentialVictim != -1 && healing == 1){
+        if(RolesController.potentialVictim.count > 0 && RolesController.healing == 1){
             let alert = UIAlertController(title: "Are you sure to use Healing Potion?", message: "", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-                self.healing = 0
+                RolesController.healing = 0
                 self.updatePotion()
-                RolesController.potentialVictim = -1
+                RolesController.potentialVictim = []
             }))
             alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
             
@@ -43,22 +40,22 @@ class WitchController: UIViewController {
         }
     }
     
-    @IBAction func poison(_ sender: Any) {
-        if(poison == 1){
-            let alert = UIAlertController(title: "Are you sure to use Poison Potion?", message: "", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-                self.poison = 0
-                self.updatePotion()
-            }))
-            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-            
-            self.present(alert, animated: true)
-        }
-    }
+//    @IBAction func poison(_ sender: Any) {
+//        if(poison == 1){
+//            let alert = UIAlertController(title: "Are you sure to use Poison Potion?", message: "", preferredStyle: .alert)
+//
+//            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+//                self.poison = 0
+//                self.updatePotion()
+//            }))
+//            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+//
+//            self.present(alert, animated: true)
+//        }
+//    }
     
     func updatePotion() {
-        potionLabel.text = "Healing Potion: " + String(healing) + "\nPoison Potion: " + String(poison)
+        potionLabel.text = "Healing Potion: " + String(RolesController.healing) + "\nPoison Potion: " + String(RolesController.poison)
     }
     
     func check() -> Bool {

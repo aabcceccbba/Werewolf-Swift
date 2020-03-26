@@ -689,7 +689,7 @@ Potion</string>
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="poison:" destination="DVE-3H-sBt" eventType="touchUpInside" id="07r-fS-Mwo"/>
+                                    <segue destination="kXy-Iv-mel" kind="push" id="udS-pK-zJU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F5b-FR-Nys">
@@ -740,6 +740,45 @@ Potion</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49S-1n-KVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7915.9420289855079" y="132.58928571428572"/>
+        </scene>
+        <!--Poison Controller-->
+        <scene sceneID="L18-SQ-Avm">
+            <objects>
+                <viewController id="kXy-Iv-mel" customClass="PoisonController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6MB-Tq-gBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter the player # you want to poison" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zq5-9D-7Gn">
+                                <rect key="frame" x="63" y="254" width="287" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-hG-4Tx">
+                                <rect key="frame" x="180" y="520" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Confirm"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZVR-mU-YT5">
+                                <rect key="frame" x="158" y="400" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="IHz-4E-Rwv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="erV-6O-Dmd"/>
+                    <connections>
+                        <outlet property="poisonPlayer" destination="ZVR-mU-YT5" id="8uG-3T-0L4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m90-hS-30g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7915.9420289855079" y="807.58928571428567"/>
         </scene>
         <!--Day Time-->
         <scene sceneID="y5m-2N-ZHx">

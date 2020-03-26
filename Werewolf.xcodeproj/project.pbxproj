@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D086B8223F0CF6E00C361A1 /* TransferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D086B8123F0CF6E00C361A1 /* TransferController.swift */; };
+		0D16B536242C6AEE00D1CBB4 /* PoisonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D16B535242C6AEE00D1CBB4 /* PoisonController.swift */; };
 		0D4206772146B8430059F8DE /* ThiefController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4206762146B8430059F8DE /* ThiefController.swift */; };
 		0D4C3CE3215FC69F00E9E749 /* LoversController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4C3CE2215FC69F00E9E749 /* LoversController.swift */; };
 		0D4E5A222169650000A88F43 /* FortuneTellerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E5A212169650000A88F43 /* FortuneTellerController.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		0D086B8123F0CF6E00C361A1 /* TransferController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferController.swift; sourceTree = "<group>"; };
+		0D16B535242C6AEE00D1CBB4 /* PoisonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoisonController.swift; sourceTree = "<group>"; };
 		0D4206762146B8430059F8DE /* ThiefController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThiefController.swift; sourceTree = "<group>"; };
 		0D4C3CE2215FC69F00E9E749 /* LoversController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoversController.swift; sourceTree = "<group>"; };
 		0D4E5A212169650000A88F43 /* FortuneTellerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneTellerController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				0D5595FF222B10F5007904A4 /* testView.xib */,
 				0DED1E63227F754B00107BB6 /* RolesController.swift */,
 				0D086B8123F0CF6E00C361A1 /* TransferController.swift */,
+				0D16B535242C6AEE00D1CBB4 /* PoisonController.swift */,
 			);
 			path = Werewolf;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				0D8B151920453D48005575A9 /* ViewController.swift in Sources */,
 				0D4206772146B8430059F8DE /* ThiefController.swift in Sources */,
 				0DE852922224A44700B92461 /* LittleGirlController.swift in Sources */,
+				0D16B536242C6AEE00D1CBB4 /* PoisonController.swift in Sources */,
 				0DB56A1021508C1500F9398E /* CupidoController.swift in Sources */,
 				0D8B151720453D48005575A9 /* AppDelegate.swift in Sources */,
 				0D4E5A222169650000A88F43 /* FortuneTellerController.swift in Sources */,

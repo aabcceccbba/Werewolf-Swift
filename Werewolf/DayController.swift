@@ -18,19 +18,23 @@ class DayController: UIViewController {
     
     override func viewDidLoad() {
         retaliateTF.isHidden = true
-        if RolesController.potentialVictim != -1 {
-            deathNote.text = "Player #" + String(RolesController.potentialVictim) + " died tonight"
+        if RolesController.potentialVictim.count > 0 {
+            var victims = ""
+            for i in RolesController.potentialVictim {
+                victims = victims + String(i) + " "
+            }
+            deathNote.text = "Player #" + victims + " died tonight"
             
             
             // if the player is hunter
-            if RolesController.special["Hunter"] == RolesController.potentialVictim {
-                HunterDeathNote.text = "The victim is Hunter. S/he can choose to retaliate to:"
+            if RolesController.potentialVictim.contains(RolesController.special["Hunter"]!) {
+                HunterDeathNote.text = "The Hunter is dying. S/he can choose to retaliate to:"
                 retaliateTF.isHidden = false
             }
             
             // if the player is lover
-            if  RolesController.lover1 != -1 && (RolesController.potentialVictim == RolesController.lover1 || RolesController.potentialVictim == RolesController.lover2) {
-                lover = (RolesController.potentialVictim == RolesController.lover2) ? RolesController.lover1 : RolesController.lover2
+            if  RolesController.lover1 != -1 && (RolesController.potentialVictim.contains( RolesController.lover1) || RolesController.potentialVictim.contains( RolesController.lover2)) {
+                lover = RolesController.potentialVictim.contains( RolesController.lover2) ? RolesController.lover1 : RolesController.lover2
                 LoverDeathNote.text = "The victim is one the lovers. Player #" + String(lover) + " also dies."
 //                RolesController.alive.remove(lover)
             }
@@ -81,7 +85,8 @@ class DayController: UIViewController {
         finalAlert.addAction(UIAlertAction(title: "OK", style: .default, handler:
             { action in
                 // update data before go to the next controller
-                RolesController.alive.remove(RolesController.potentialVictim)
+                for victim in RolesController.potentialVictim { RolesController.alive.remove(victim)
+                }
                 if self.lover != -1 {
                     RolesController.alive.remove(self.lover)
                 }
