@@ -28,6 +28,7 @@ class RolesController: UIViewController {
     static var alive = Set<Int>()
 //    static var potentialVictim = -1
     static var potentialVictim = Set<Int>()
+    static var potentialPoison = -1
     
     static var healing = 1;
     static var poison = 1;

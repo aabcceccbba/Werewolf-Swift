@@ -18,6 +18,30 @@ class PoisonController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func check() -> Bool {
+        if poisonPlayer.text != "" {
+            let poison = Int(poisonPlayer.text!)!
+            // out of range
+            if poison > PlayerNumberController.num || poison < 1 {
+                // out of range
+                let alert = UIAlertController(title: "Please enter the right Witch ID", message: "Witch ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    
+                    self.present(alert, animated: true)
+                    return false
+            }
+                
+            // if the poisoned ID is -1 or changed
+            RolesController.potentialPoison = poison
+        }
+        else {
+            // need to update the potentialPoison
+        }
+        return true
+    }
+    
     // hide the keyboard when touch the screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
