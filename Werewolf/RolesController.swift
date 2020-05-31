@@ -26,10 +26,10 @@ class RolesController: UIViewController {
     var roles = ""
     static var sheriff = -1;
     static var alive = Set<Int>()
-//    static var potentialVictim = -1
-    static var potentialVictim = Set<Int>()
+    // potentialVictim is killed by Wolves
+    static var potentialVictim = -1
+    // potentialPoison is poisoned by Witch
     static var potentialPoison = -1
-    
     static var healing = 1;
     static var poison = 1;
 

@@ -42,6 +42,11 @@ class PoisonController: UIViewController {
         return true
     }
     
+    // check if the input number is valid
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return check()
+    }
+    
     // hide the keyboard when touch the screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

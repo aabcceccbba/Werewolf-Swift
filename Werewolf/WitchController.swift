@@ -27,13 +27,13 @@ class WitchController: UIViewController {
     
     @IBAction func healing(_ sender: Any) {
         print("potential victim: ")
-        if(RolesController.potentialVictim.count > 0 && RolesController.healing == 1){
+        if(RolesController.potentialVictim != -1 && RolesController.healing == 1){
             let alert = UIAlertController(title: "Are you sure to use Healing Potion?", message: "", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                 RolesController.healing = 0
                 self.updatePotion()
-                RolesController.potentialVictim = []
+                RolesController.potentialVictim = -1
             }))
             alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
             

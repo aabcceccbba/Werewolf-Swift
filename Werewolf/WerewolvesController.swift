@@ -202,7 +202,7 @@ class WerewolvesController: UIViewController {
             }
         }
         
-        if victim != -1 { RolesController.potentialVictim.insert(victim)
+        if victim != -1 { RolesController.potentialVictim = victim
         }
         
         return true

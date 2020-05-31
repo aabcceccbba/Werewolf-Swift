@@ -15,27 +15,48 @@ class DayController: UIViewController {
     @IBOutlet weak var LoverDeathNote: UILabel!
     @IBOutlet weak var retaliateTF: UITextField!
     var lover = -1
+    var died = Set<Int>()
     
     override func viewDidLoad() {
         retaliateTF.isHidden = true
-        if RolesController.potentialVictim.count > 0 {
+
+        if(RolesController.potentialVictim != -1){
+            died.insert(RolesController.potentialVictim)
+        }
+        
+        if(RolesController.potentialPoison != -1){
+            died.insert(RolesController.potentialPoison)
+        }
+        
+        if died.count > 0 {
             var victims = ""
-            for i in RolesController.potentialVictim {
+            for i in died {
                 victims = victims + String(i) + " "
             }
+            
             deathNote.text = "Player #" + victims + " died tonight"
             
             
             // if the player is hunter
-            if RolesController.potentialVictim.contains(RolesController.special["Hunter"]!) {
+            if RolesController.special["Hunter"] != nil && died.contains(RolesController.special["Hunter"]!) {
                 HunterDeathNote.text = "The Hunter is dying. S/he can choose to retaliate to:"
                 retaliateTF.isHidden = false
             }
             
             // if the player is lover
-            if  RolesController.lover1 != -1 && (RolesController.potentialVictim.contains( RolesController.lover1) || RolesController.potentialVictim.contains( RolesController.lover2)) {
-                lover = RolesController.potentialVictim.contains( RolesController.lover2) ? RolesController.lover1 : RolesController.lover2
-                LoverDeathNote.text = "The victim is one the lovers. Player #" + String(lover) + " also dies."
+            if died.contains(RolesController.lover1) || died.contains(RolesController.lover2) {
+                
+                if died.contains(RolesController.lover1) && !died.contains(RolesController.lover2) {
+                    lover = RolesController.lover2
+                }
+                
+                if died.contains(RolesController.lover2) && !died.contains(RolesController.lover1){
+                    lover = RolesController.lover1
+                }
+                
+                if(lover != -1) {
+                    LoverDeathNote.text = "The victim is one the lovers. Player #" + String(lover) + " also dies."
+                }
 //                RolesController.alive.remove(lover)
             }
 //        RolesController.alive.remove(RolesController.potentialVictim)
@@ -85,7 +106,7 @@ class DayController: UIViewController {
         finalAlert.addAction(UIAlertAction(title: "OK", style: .default, handler:
             { action in
                 // update data before go to the next controller
-                for victim in RolesController.potentialVictim { RolesController.alive.remove(victim)
+                for victim in self.died { RolesController.alive.remove(victim)
                 }
                 if self.lover != -1 {
                     RolesController.alive.remove(self.lover)
