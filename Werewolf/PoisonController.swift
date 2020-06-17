@@ -13,6 +13,10 @@ class PoisonController: UIViewController {
     @IBOutlet weak var poisonPlayer: UITextField!
     
     override func viewDidLoad() {
+        
+        if RolesController.potentialPoison != -1 {
+            poisonPlayer.text = String(RolesController.potentialPoison)
+        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -24,20 +28,37 @@ class PoisonController: UIViewController {
             // out of range
             if poison > PlayerNumberController.num || poison < 1 {
                 // out of range
-                let alert = UIAlertController(title: "Please enter the right Witch ID", message: "Witch ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
+                let alert = UIAlertController(title: "Please enter the correct poison target ID", message: "The Player ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
                     
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                     
                     self.present(alert, animated: true)
                     return false
             }
+            
+            // if the input is dead
+            if !RolesController.alive.contains(poison) {
+                let alert = UIAlertController(title: "Please enter the correct poison target ID", message: "This Player is already dead", preferredStyle: .alert)
                 
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+                return false
+            }
             // if the poisoned ID is -1 or changed
             RolesController.potentialPoison = poison
+            if RolesController.poison == 1 {
+                RolesController.poison = 0
+            }
         }
+        // empty
         else {
             // need to update the potentialPoison
+            RolesController.potentialPoison = -1
+            if RolesController.poison == 0 {
+                RolesController.poison = 1
+            }
+            
         }
         return true
     }

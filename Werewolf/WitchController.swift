@@ -27,7 +27,7 @@ class WitchController: UIViewController {
     
     @IBAction func healing(_ sender: Any) {
         print("potential victim: ")
-        if(RolesController.potentialVictim != -1 && RolesController.healing == 1){
+        if(RolesController.potentialVictim != -1 && RolesController.healing == 1 && witchTF.text != ""){
             let alert = UIAlertController(title: "Are you sure to use Healing Potion?", message: "", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
@@ -59,7 +59,7 @@ class WitchController: UIViewController {
         potionLabel.text = "Healing Potion: " + String(RolesController.healing) + "\nPoison Potion: " + String(RolesController.poison)
     }
     
-    func check() -> Bool {
+    func check(withIdentifier identifier: String) -> Bool {
         if witchTF.text != "" {
         
             let witch = Int(witchTF.text!)!
@@ -98,12 +98,23 @@ class WitchController: UIViewController {
         
         // empty
         else {
+            // when clicking Use Poison Potion
+            if identifier == "usePoisonPotion" && RolesController.special["Witch"] == nil {
+                let alert = UIAlertController(title: "The Witch number can't be empty", message: "To use Poison Potion, you must have a Witch", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+                return false
+            }
+            
             // can't be empty if used potions
             if RolesController.healing * RolesController.poison == 0 {
-                let alert = UIAlertController(title: "Please input the Witch number", message: "You have used potion(s), which indicates a Witch is required", preferredStyle: .alert)
+                let alert = UIAlertController(title: "The Witch number can't be empty", message: "You have used potion(s), which indicates a Witch is required. The previous Witch ID is automatically restored", preferredStyle: .alert)
                 
-                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    self.witchTF.text = String(RolesController.special["Witch"]!)
+                }))
                 
                 self.present(alert, animated: true)
                 return false
@@ -121,7 +132,7 @@ class WitchController: UIViewController {
     
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return check()
+        return check(withIdentifier: identifier)
     }
     
     // used to implement back bar button update
@@ -129,7 +140,7 @@ class WitchController: UIViewController {
         super.viewWillDisappear(animated)
 
         if self.isMovingFromParentViewController {
-            if check(){
+            if check(withIdentifier: ""){
             }
         }
 
