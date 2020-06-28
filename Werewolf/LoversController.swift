@@ -71,6 +71,9 @@ class LoversController: UIViewController {
                     RolesController.lover2 = lover2ID
                 }
                 
+                RolesController.third.insert(lover1ID)
+                RolesController.third.insert(lover2ID)
+                
             }
         }
         
