@@ -22,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTU-if-g8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-748" y="133"/>
+            <point key="canvasLocation" x="-839" y="130"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -80,10 +80,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="9av-AF-R10"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="362" y="133"/>
         </scene>
         <!--Player Number-->
         <scene sceneID="PWZ-hV-ijd">
@@ -119,13 +120,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oxM-b6-SpP"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wdp-lg-IvU"/>
                     <connections>
                         <outlet property="playerNumberTF" destination="r7c-Sq-U0L" id="7vS-yH-ZdW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJa-7H-Der" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="133"/>
+            <point key="canvasLocation" x="1029" y="133"/>
         </scene>
         <!--Game Start-->
         <scene sceneID="6dI-dM-0JX">
@@ -175,10 +177,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="T4J-XX-9jQ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wYw-UO-yAc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRv-RU-aph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648.8" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1699" y="133"/>
         </scene>
         <!--Thief-->
         <scene sceneID="2A1-L1-mcf">
@@ -319,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZj-Dp-hgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9341" y="-589"/>
+            <point key="canvasLocation" x="5461" y="865"/>
         </scene>
         <!--Cupido-->
         <scene sceneID="weN-Sk-0bo">
@@ -548,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQs-N6-RIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6209" y="131"/>
+            <point key="canvasLocation" x="5794" y="133"/>
         </scene>
         <!--Hunter-->
         <scene sceneID="QkD-qC-VJ2">
@@ -618,7 +621,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfg-S1-MUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7077.6000000000004" y="131.78410794602701"/>
+            <point key="canvasLocation" x="6471" y="133"/>
         </scene>
         <!--Witch-->
         <scene sceneID="xWP-GO-j7z">
@@ -739,7 +742,7 @@ Potion</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49S-1n-KVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7915.9420289855079" y="132.58928571428572"/>
+            <point key="canvasLocation" x="7149" y="133"/>
         </scene>
         <!--Poison Controller-->
         <scene sceneID="L18-SQ-Avm">
@@ -774,14 +777,20 @@ Potion</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="IHz-4E-Rwv"/>
                     </view>
-                    <navigationItem key="navigationItem" id="erV-6O-Dmd"/>
+                    <navigationItem key="navigationItem" id="erV-6O-Dmd">
+                        <barButtonItem key="rightBarButtonItem" title="Roles" id="wti-TF-XA5">
+                            <connections>
+                                <segue destination="pg3-Yc-1Ee" kind="push" id="hBk-dz-Udj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="poisonPlayer" destination="ZVR-mU-YT5" id="8uG-3T-0L4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m90-hS-30g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7915.9420289855079" y="807.58928571428567"/>
+            <point key="canvasLocation" x="7148" y="865"/>
         </scene>
         <!--Day Time-->
         <scene sceneID="y5m-2N-ZHx">
@@ -847,7 +856,7 @@ Potion</string>
                     <navigationItem key="navigationItem" title="Day Time" id="ww2-k7-dDa">
                         <barButtonItem key="rightBarButtonItem" title="Roles" id="crZ-my-H3H">
                             <connections>
-                                <segue destination="pg3-Yc-1Ee" kind="push" id="C0j-li-XhY"/>
+                                <segue destination="pg3-Yc-1Ee" kind="push" identifier="toRoles" id="C0j-li-XhY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -860,7 +869,7 @@ Potion</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xL-z9-EaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9350.7246376811599" y="132.58928571428572"/>
+            <point key="canvasLocation" x="8493" y="133"/>
         </scene>
         <!--Vote-->
         <scene sceneID="NNQ-PU-S7e">
@@ -945,7 +954,13 @@ Potion</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OHf-Ga-Dvn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Vote" id="Awf-gO-n47"/>
+                    <navigationItem key="navigationItem" title="Vote" id="Awf-gO-n47">
+                        <barButtonItem key="rightBarButtonItem" title="Roles" id="jT7-xe-u77">
+                            <connections>
+                                <segue destination="pg3-Yc-1Ee" kind="push" identifier="toRoles" id="fnd-Km-WIJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="eliminateTF" destination="qrR-RY-is3" id="Cti-GH-5jT"/>
                         <outlet property="loverEliminateLabel" destination="L3o-Jn-2le" id="2Ss-LL-0io"/>
@@ -953,7 +968,7 @@ Potion</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8v-Wy-hsm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10092.753623188406" y="130.58035714285714"/>
+            <point key="canvasLocation" x="9164" y="133"/>
         </scene>
         <!--Next Night-->
         <scene sceneID="5mE-9F-Z77">
@@ -976,18 +991,32 @@ Potion</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next Night"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxn-Ye-pnJ">
+                                <rect key="frame" x="169" y="617" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Main Menu"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="GQF-ts-W1F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="bVC-8R-sMU"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Next Night" id="EMC-hD-eiT"/>
+                    <navigationItem key="navigationItem" title="Next Night" id="EMC-hD-eiT">
+                        <barButtonItem key="rightBarButtonItem" title="Roles" id="fZg-4f-lvA">
+                            <connections>
+                                <segue destination="pg3-Yc-1Ee" kind="push" id="UNo-QX-M88"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="resultLabel" destination="3aO-PO-X9e" id="0Ul-YA-0hJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTz-Ut-dIu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10798.550724637682" y="132.58928571428572"/>
+            <point key="canvasLocation" x="9841" y="133"/>
         </scene>
         <!--Little Girl-->
         <scene sceneID="sAH-15-wtF">
@@ -1057,7 +1086,7 @@ Potion</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMK-9R-8bR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4621.6000000000004" y="127.28635682158921"/>
+            <point key="canvasLocation" x="4448" y="133"/>
         </scene>
         <!--Sheriff Election-->
         <scene sceneID="Pmv-y1-lmr">
@@ -1141,7 +1170,7 @@ Potion</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yxb-Kh-ets" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8630.434782608696" y="132.58928571428572"/>
+            <point key="canvasLocation" x="7819" y="133"/>
         </scene>
         <!--Werewolves-->
         <scene sceneID="HDH-jf-mKr">
@@ -1277,11 +1306,28 @@ Potion</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63z-Iv-rLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5428.985507246377" y="128.57142857142856"/>
+            <point key="canvasLocation" x="5125" y="133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WLK-pp-d02">
+            <objects>
+                <viewController id="yJy-6L-QpC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dLZ-qg-UWh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="r0k-hp-FjQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cix-aW-pVN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1648" y="1124"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="x7d-dA-zVJ"/>
         <segue reference="dZR-Ld-Zhq"/>
-        <segue reference="O5P-Zo-qfE"/>
+        <segue reference="oyE-uO-P8G"/>
+        <segue reference="GQF-ts-W1F"/>
     </inferredMetricsTieBreakers>
 </document>

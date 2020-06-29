@@ -73,6 +73,10 @@ class DayController: UIViewController {
     
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "toRoles" {
+            return true
+        }
+        
         // if the TF is not hidden
         if retaliateTF.isHidden == false {
             // Hunter has retaliated

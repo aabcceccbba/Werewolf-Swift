@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
 //    @IBOutlet weak var testView: TestView!
     override func viewDidLoad() {
+        // need to refresh the game
+        refresh()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 //        testView.label.text = "successful!"
@@ -22,7 +24,12 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func refresh() {
+        // refresh all the previous settings
+        PlayerNumberController.num = Int()
+        print(PlayerNumberController.num)
+    }
 
 }
 

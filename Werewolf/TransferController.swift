@@ -13,6 +13,8 @@ class TransferController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     
     override func viewDidLoad() {
+        print("alive:")
+        print(RolesController.alive)
         // else continue the game
         resultLabel.text = "Game is continuing. Night falls~ The town is asleep, and everyone closes their eyes."
 

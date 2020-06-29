@@ -23,9 +23,11 @@ class VoteController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-//        if ret == true {
-//            return true
-//        }
+
+        if identifier == "toRoles" {
+            return true
+        }
+        
         // empty input
         if eliminateTF.text == "" {
             let alert = UIAlertController(title: "Please enter the right retaliated Victim ID", message: "Retaliated Victim ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
