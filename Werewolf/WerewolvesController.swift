@@ -45,6 +45,21 @@ class WerewolvesController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // when the Little Girl is detected by werewolves
+    @IBAction func littleGirlDetected(_ sender: Any) {
+        // alert
+        // yes -> kill little girl
+        let alert = UIAlertController(title: "Is the Little Girl detected by the Werewolves?", message: "", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            RolesController.littleGirlDetection = 1
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
+            RolesController.littleGirlDetection = 0
+        }))
+        
+        self.present(alert, animated: true)
+    }
     
     func check(withIdentifier identifier: String) -> Bool {
         // reset wolves IDs

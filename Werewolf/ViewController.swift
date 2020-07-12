@@ -28,6 +28,20 @@ class ViewController: UIViewController {
     func refresh() {
         // refresh all the previous settings
         PlayerNumberController.num = Int()
+        CupidoController.cupido = -1
+        RolesController.lover1 = -1
+        RolesController.lover2 = -1
+        RolesController.third = Set<Int>()
+        RolesController.littleGirlDetection = 0
+        RolesController.wolves = Set<Int>()
+        RolesController.potentialVictim = -1
+        RolesController.healing = 1
+        RolesController.poison = 1
+        RolesController.potentialPoison = -1
+        RolesController.sheriff = -1
+        RolesController.map = [Int : String]()
+        RolesController.special = [String : Int]()
+        RolesController.alive = Set<Int>()
         print(PlayerNumberController.num)
     }
 

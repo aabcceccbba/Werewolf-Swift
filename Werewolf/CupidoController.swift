@@ -77,7 +77,7 @@ class CupidoController: UIViewController {
                 RolesController.special["Cupido"] = nil
                 CupidoController.cupido = -1
             }
-            RolesController.third = []
+            RolesController.third = Set<Int>()
         }
         
         return true

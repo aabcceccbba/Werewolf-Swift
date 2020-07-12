@@ -28,6 +28,7 @@ class RolesController: UIViewController {
     static var alive = Set<Int>()
     // third party: Cupido + lovers
     static var third = Set<Int>()
+    static var littleGirlDetection = 0
     
     // potentialVictim is killed by Wolves
     static var potentialVictim = -1
