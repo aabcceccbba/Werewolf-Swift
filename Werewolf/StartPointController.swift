@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoleConformationController: UIViewController {
+class StartPointController: UIViewController {
     
     var player = String()
 

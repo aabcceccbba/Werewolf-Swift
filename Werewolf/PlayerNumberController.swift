@@ -61,8 +61,8 @@ class PlayerNumberController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextController = segue.destination as! RoleConformationController
-        nextController.player = playerNumberTF.text!
+//        let nextController = segue.destination as! RoleConformationController
+//        nextController.player = playerNumberTF.text!
         
     }
     

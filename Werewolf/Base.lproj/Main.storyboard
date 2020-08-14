@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VvD-Vu-xiP">
-                                <rect key="frame" x="160" y="542" width="93" height="120"/>
+                                <rect key="frame" x="160" y="493" width="93" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyr-mv-8Y2">
                                         <rect key="frame" x="21.5" y="0.0" width="50" height="30"/>
@@ -132,7 +132,7 @@
         <!--Game Start-->
         <scene sceneID="6dI-dM-0JX">
             <objects>
-                <viewController title="Game Start" id="VYd-bA-tCm" customClass="RoleConformationController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Game Start" id="VYd-bA-tCm" customClass="StartPointController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zri-iu-0EG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,9 +145,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbZ-zN-he1">
-                                <rect key="frame" x="192" y="587" width="30" height="30"/>
+                                <rect key="frame" x="187" y="587" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="GO"/>
+                                <state key="normal" title="NEXT"/>
                                 <connections>
                                     <segue destination="RfU-hO-nhP" kind="push" id="H1i-Tx-16u"/>
                                 </connections>
@@ -178,6 +178,7 @@
                         <viewLayoutGuide key="safeArea" id="T4J-XX-9jQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="wYw-UO-yAc"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRv-RU-aph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -990,13 +991,16 @@ Potion</string>
                                 <rect key="frame" x="170" y="655" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next Night"/>
+                                <connections>
+                                    <segue destination="VYd-bA-tCm" kind="push" id="HhA-EO-5fy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxn-Ye-pnJ">
-                                <rect key="frame" x="169" y="617" width="76" height="30"/>
+                                <rect key="frame" x="169" y="617" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Main Menu"/>
+                                <state key="normal" title="New Game"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="GQF-ts-W1F"/>
+                                    <segue destination="BYZ-38-t0r" kind="push" identifier="restart" id="GQF-ts-W1F"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1010,7 +1014,9 @@ Potion</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="nextNightButton" destination="g7i-hm-Ncf" id="bD0-Hv-P3u"/>
                         <outlet property="resultLabel" destination="3aO-PO-X9e" id="0Ul-YA-0hJ"/>
                     </connections>
                 </viewController>
@@ -1318,26 +1324,12 @@ Potion</string>
             </objects>
             <point key="canvasLocation" x="5124.6376811594209" y="132.58928571428572"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="WLK-pp-d02">
-            <objects>
-                <viewController id="yJy-6L-QpC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dLZ-qg-UWh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="r0k-hp-FjQ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cix-aW-pVN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1648" y="1124"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N99-L3-c9Z"/>
+        <segue reference="H1i-Tx-16u"/>
         <segue reference="dZR-Ld-Zhq"/>
-        <segue reference="fu4-fJ-ZOt"/>
+        <segue reference="Lci-kF-1cA"/>
+        <segue reference="HhA-EO-5fy"/>
         <segue reference="GQF-ts-W1F"/>
     </inferredMetricsTieBreakers>
 </document>

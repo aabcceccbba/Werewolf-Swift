@@ -11,8 +11,10 @@ import UIKit
 class TransferController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var nextNightButton: UIButton!
     
     override func viewDidLoad() {
+//        nextNightButton.isHidden =
         print("alive:")
         print(RolesController.alive)
         // else continue the game
@@ -23,20 +25,41 @@ class TransferController: UIViewController {
             // third party set contains alive -> third party win
             if(RolesController.alive.isSubset(of: RolesController.third)){
                 resultLabel.text = "Game ends! The Third Party wins the game! :3"
+                nextNightButton.isHidden = true
             }
         }
         // wolves set contains alive -> wolves win
         if(RolesController.alive.isSubset(of: RolesController.wolves)){
             resultLabel.text = "Game ends! The Wolves win the game! :D"
+            nextNightButton.isHidden = true
         }
         // none of the wolves is alive -> townfolks win
         if(RolesController.alive.isDisjoint(with: RolesController.wolves)){
             resultLabel.text = "Game ends! The Townfolks win the game! :D"
+            nextNightButton.isHidden = true
         }
         
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "restart" {
+            // alert before restart the game
+            let finalAlert = UIAlertController(title: "Are you sure to restart the game?", message: "You won't be able to access the previous game.", preferredStyle: .alert)
+            
+            finalAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                self.performSegue(withIdentifier: "restart", sender: nil)
+
+            }))
+            
+            finalAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+            self.present(finalAlert, animated: true)
+        }
+        
+        return true
     }
     
     /*
