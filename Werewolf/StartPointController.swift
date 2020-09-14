@@ -11,8 +11,18 @@ import UIKit
 class StartPointController: UIViewController {
     
     var player = String()
-
+    @IBOutlet weak var gameStartLabel: UILabel!
+    @IBOutlet weak var shuffleCardLabel: UILabel!
+    @IBOutlet weak var extraCardLabel: UILabel!
+    
     override func viewDidLoad() {
+        // hide the first night labels
+        if RolesController.nextNight == true {
+            gameStartLabel.isHidden = true
+            shuffleCardLabel.isHidden = true
+            extraCardLabel.isHidden = true
+        }
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

@@ -13,6 +13,9 @@ class CupidoController: UIViewController {
     static var cupido = -1
 
     @IBOutlet weak var cupidoTF: UITextField!
+    @IBOutlet weak var cupidoIntroLabel1: UILabel!
+    @IBOutlet weak var cupidoIntroLabel2: UILabel!
+    @IBOutlet weak var cupidoLabel: UILabel!
     
     //    @IBAction func showRoles(_ sender: Any) {
 //        self.performSegue(withIdentifier: "RolesController", sender:self)
@@ -22,6 +25,14 @@ class CupidoController: UIViewController {
         if RolesController.special["Cupido"] != nil {
             cupidoTF.text = String(RolesController.special["Cupido"]!)
         }
+        
+        if RolesController.nextNight == true {
+            cupidoTF.isHidden = true
+            cupidoLabel.isHidden = true
+            cupidoIntroLabel1.isHidden = true
+            cupidoIntroLabel2.isHidden = true
+        }
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

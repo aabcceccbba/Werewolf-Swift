@@ -41,6 +41,7 @@ class PlayerNumberController: UIViewController, UITextFieldDelegate {
                 self.present(alert, animated: true)
             }
             
+            RolesController.alive = Set<Int>()
             for index in 1...PlayerNumberController.num {
                 RolesController.alive.insert(index)
             }

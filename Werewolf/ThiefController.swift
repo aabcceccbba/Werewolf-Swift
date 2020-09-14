@@ -14,6 +14,9 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet weak var thiefTF: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet var rolesView: UIView!
+    @IBOutlet weak var thiefIntroLabel1: UILabel!
+    @IBOutlet weak var thiefIntroLabel2: UILabel!
+    @IBOutlet weak var thiefIntroLabel3: UILabel!
     
     var selected = String()
     var thiefID = Int()
@@ -80,6 +83,12 @@ class ThiefController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     
     override func viewDidLoad() {
+        
+        if RolesController.nextNight == true {
+            thiefIntroLabel1.isHidden = true;
+            thiefIntroLabel2.isHidden = true;
+            thiefIntroLabel3.isHidden = true;
+        }
         
         super.viewDidLoad()
 

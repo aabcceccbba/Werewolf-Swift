@@ -36,6 +36,9 @@ class RolesController: UIViewController {
     static var potentialPoison = -1
     static var healing = 1;
     static var poison = 1;
+    
+    // used to identify if it's the first night
+    static var nextNight = false
 
     override func viewDidLoad() {
         for (key,value) in RolesController.special {

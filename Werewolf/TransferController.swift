@@ -15,7 +15,7 @@ class TransferController: UIViewController {
     
     override func viewDidLoad() {
 //        nextNightButton.isHidden =
-        print("alive:")
+        print("TransferController alive:")
         print(RolesController.alive)
         // else continue the game
         resultLabel.text = "Game is continuing. Night falls~ The town is asleep, and everyone closes their eyes."
@@ -57,6 +57,10 @@ class TransferController: UIViewController {
             finalAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
             
             self.present(finalAlert, animated: true)
+        }
+        
+        if identifier == "nextNight" {
+            RolesController.nextNight = true
         }
         
         return true
