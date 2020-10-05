@@ -18,7 +18,10 @@ class WerewolvesController: UIViewController {
     @IBOutlet weak var wolf6TF: UITextField!
     @IBOutlet weak var victimTF: UITextField!
     
-//    var wolfTf = [UITextField]()
+    @IBOutlet weak var wolfLabel1: UILabel!
+    @IBOutlet weak var wolfLabel2: UILabel!
+    @IBOutlet weak var wolfLabel3: UILabel!
+    
     var wolf1 = -1
     var wolf2 = -1
     var wolf3 = -1
@@ -27,11 +30,22 @@ class WerewolvesController: UIViewController {
     var wolf6 = -1
     var total = 0
     var victim = -1
-//    var wolf = [-1, -1, -1, -1, -1, -1]
     
     var set : Set<Int> = []
     
     override func viewDidLoad() {
+        if RolesController.nextNight == true {
+            wolfLabel1.isHidden = true
+            wolfLabel2.isHidden = true
+            wolfLabel3.isHidden = true
+            wolf1TF.isHidden = true
+            wolf2TF.isHidden = true
+            wolf3TF.isHidden = true
+            wolf4TF.isHidden = true
+            wolf5TF.isHidden = true
+            wolf6TF.isHidden = true
+        }
+        
         let wolfTF = [wolf1TF, wolf2TF, wolf3TF, wolf4TF, wolf5TF, wolf6TF]
 
         // show current Wolf IDs

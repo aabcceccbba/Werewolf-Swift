@@ -479,9 +479,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="lover1Label" destination="CYK-Km-XaE" id="ehJ-ut-YPu"/>
                         <outlet property="lover1TF" destination="rfE-fb-Nm3" id="lSB-8C-zdF"/>
+                        <outlet property="lover2Label" destination="lIR-b7-2nh" id="OE0-06-k4T"/>
                         <outlet property="lover2TF" destination="2Ai-UZ-ew7" id="ALt-d1-QHB"/>
+                        <outlet property="loversLabel" destination="d2k-6C-YBy" id="I2R-68-gKb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jvs-bH-vQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -522,7 +526,7 @@
                                 <rect key="frame" x="69" y="410" width="277" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EwA-kb-SoV">
@@ -549,7 +553,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="fortuneTellerLabel1" destination="79S-U7-a6Q" id="QzT-0L-6xO"/>
+                        <outlet property="fortuneTellerLabel2" destination="gxg-Do-elI" id="7Qd-Zf-fwY"/>
                         <outlet property="fortuneTellerTF" destination="EwA-kb-SoV" id="x8L-n2-SLB"/>
                     </connections>
                 </viewController>
@@ -1036,7 +1043,7 @@ Potion</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-G5-38l">
-                                <rect key="frame" x="188" y="647" width="39" height="30"/>
+                                <rect key="frame" x="188" y="603" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
@@ -1044,7 +1051,7 @@ Potion</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCF-q2-uss">
-                                <rect key="frame" x="80" y="299" width="254" height="144"/>
+                                <rect key="frame" x="80" y="255" width="254" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Little girl can sneek to see when werewolves are killing, but if the little girl is noticed, she will be killed whomever werewolves are planning to kill.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1052,28 +1059,28 @@ Potion</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;The Little Girl wakes up&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGG-Ur-f7T">
-                                <rect key="frame" x="69" y="219" width="277" height="86"/>
+                                <rect key="frame" x="69" y="175" width="277" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;The Little Girl falls asleep&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vD3-La-fVo">
-                                <rect key="frame" x="69" y="436" width="277" height="86"/>
+                                <rect key="frame" x="69" y="392" width="277" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Little Girl #" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pI-AI-jh7">
-                                <rect key="frame" x="112" y="533" width="119" height="55"/>
+                                <rect key="frame" x="112" y="489" width="119" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ud8-YO-3bT">
-                                <rect key="frame" x="230" y="545" width="58" height="30"/>
+                                <rect key="frame" x="230" y="501" width="58" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -1091,6 +1098,8 @@ Potion</string>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="littleGirlLabel1" destination="uCF-q2-uss" id="pee-Xw-8KU"/>
+                        <outlet property="littleGirlLabel2" destination="9pI-AI-jh7" id="tg6-nb-M5T"/>
                         <outlet property="littleGirlTF" destination="Ud8-YO-3bT" id="LdB-a2-ud8"/>
                     </connections>
                 </viewController>
@@ -1201,7 +1210,7 @@ Potion</string>
                                 <rect key="frame" x="68" y="390" width="277" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;The Werewolves wake up, recognize one another and choose a new victim&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJy-at-VVN">
@@ -1258,7 +1267,7 @@ Potion</string>
                                 <rect key="frame" x="153" y="497" width="107" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGy-iq-Tcq">
@@ -1321,6 +1330,9 @@ Potion</string>
                         <outlet property="wolf4TF" destination="Y93-Uf-EyZ" id="EbN-iP-haW"/>
                         <outlet property="wolf5TF" destination="1zi-rb-guf" id="MSQ-uJ-O5f"/>
                         <outlet property="wolf6TF" destination="8Z1-3w-jOi" id="6aP-Fg-UDM"/>
+                        <outlet property="wolfLabel1" destination="qG0-0V-ORN" id="aZ6-pF-kef"/>
+                        <outlet property="wolfLabel2" destination="6Pd-fH-o7a" id="yCy-Ga-52e"/>
+                        <outlet property="wolfLabel3" destination="Hki-fK-uAd" id="0qD-y1-Kzg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63z-Iv-rLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1329,9 +1341,9 @@ Potion</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SUG-YO-7ie"/>
+        <segue reference="U2I-lq-1LJ"/>
         <segue reference="dZR-Ld-Zhq"/>
-        <segue reference="pyd-ON-qRp"/>
+        <segue reference="pPJ-UV-8KA"/>
         <segue reference="HhA-EO-5fy"/>
         <segue reference="GQF-ts-W1F"/>
     </inferredMetricsTieBreakers>

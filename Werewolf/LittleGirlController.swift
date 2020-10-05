@@ -11,8 +11,16 @@ import UIKit
 class LittleGirlController: UIViewController {
 
     @IBOutlet weak var littleGirlTF: UITextField!
+    @IBOutlet weak var littleGirlLabel1: UILabel!
+    @IBOutlet weak var littleGirlLabel2: UILabel!
     
     override func viewDidLoad() {
+        if RolesController.nextNight == true {
+            littleGirlLabel1.isHidden = true
+            littleGirlLabel2.isHidden = true
+            littleGirlTF.isHidden = true
+        }
+        
         if RolesController.special["Little Girl"] != nil {
             littleGirlTF.text = String(RolesController.special["Little Girl"]!)
         }

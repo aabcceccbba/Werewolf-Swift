@@ -12,8 +12,19 @@ class LoversController: UIViewController {
     
     @IBOutlet weak var lover1TF: UITextField!
     @IBOutlet weak var lover2TF: UITextField!
+    @IBOutlet weak var loversLabel: UILabel!
+    @IBOutlet weak var lover1Label: UILabel!
+    @IBOutlet weak var lover2Label: UILabel!
     
     override func viewDidLoad() {
+        if RolesController.nextNight == true {
+            loversLabel.isHidden = true
+            lover1Label.isHidden = true
+            lover2Label.isHidden = true
+            lover1TF.isHidden = true
+            lover2TF.isHidden = true
+        }
+        
         if RolesController.lover1 != -1 && RolesController.lover2 != -1 {
             lover1TF.text = String(RolesController.lover1)
             lover2TF.text = String(RolesController.lover2)

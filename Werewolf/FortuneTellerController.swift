@@ -11,10 +11,16 @@ import UIKit
 class FortuneTellerController: UIViewController {
 
     @IBOutlet weak var fortuneTellerTF: UITextField!
-    
-    
+    @IBOutlet weak var fortuneTellerLabel1: UILabel!
+    @IBOutlet weak var fortuneTellerLabel2: UILabel!
     
     override func viewDidLoad() {
+        
+        if RolesController.nextNight == true {
+            fortuneTellerLabel1.isHidden = true
+            fortuneTellerLabel2.isHidden = true
+            fortuneTellerTF.isHidden = true
+        }
         
         if RolesController.special["Fortune Teller"] != nil {
             fortuneTellerTF.text = String(RolesController.special["Fortune Teller"]!)
