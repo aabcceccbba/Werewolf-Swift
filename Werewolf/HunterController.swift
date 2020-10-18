@@ -10,9 +10,17 @@ import UIKit
 
 class HunterController: UIViewController {
     
+    @IBOutlet weak var hunterLabel1: UILabel!
+    @IBOutlet weak var hunberLabel2: UILabel!
     @IBOutlet weak var hunterTF: UITextField!
     
     override func viewDidLoad() {
+        if RolesController.nextNight == true {
+            hunterLabel1.isHidden = true
+            hunberLabel2.isHidden = true
+            hunterTF.isHidden = true
+        }
+        
         if RolesController.special["Hunter"] != nil {
             hunterTF.text = String(RolesController.special["Hunter"]!)
         }

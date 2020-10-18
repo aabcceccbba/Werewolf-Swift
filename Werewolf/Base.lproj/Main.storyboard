@@ -599,7 +599,7 @@
                                 <rect key="frame" x="68" y="436" width="277" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hunter #" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hI-AF-SWP">
@@ -626,7 +626,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="hunberLabel2" destination="9hI-AF-SWP" id="4GP-R5-x9h"/>
+                        <outlet property="hunterLabel1" destination="9gn-6P-S2F" id="Xyi-Dx-L7v"/>
                         <outlet property="hunterTF" destination="Ywn-sE-q0C" id="sr6-IA-tlu"/>
                     </connections>
                 </viewController>
@@ -653,7 +656,7 @@
                                 <rect key="frame" x="69" y="406" width="277" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkl-Od-Z4Q">
@@ -661,7 +664,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
-                                    <segue destination="B7g-4p-MYM" kind="push" id="T66-P2-W3B"/>
+                                    <segue destination="B7g-4p-MYM" kind="push" id="q0s-38-MKP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;The Witch wakes up. I will show you the victim of the Werewolves. Would you like to use your potion of healing or poison?&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ED-eC-O5z">
@@ -746,8 +749,10 @@ Potion</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="potionLabel" destination="5sH-hO-aLv" id="zcE-XM-fk4"/>
+                        <outlet property="witchLabel" destination="4Am-yw-Gmf" id="Pnq-og-iId"/>
                         <outlet property="witchTF" destination="X2v-29-iI7" id="ob0-6Q-tqH"/>
                     </connections>
                 </viewController>
@@ -871,6 +876,7 @@ Potion</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="HunterDeathNote" destination="kmG-mk-Pph" id="r3I-ty-G06"/>
                         <outlet property="LoverDeathNote" destination="Ljl-vt-lhN" id="RXO-in-Vgl"/>
@@ -1182,7 +1188,9 @@ Potion</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="nextButton" destination="u91-nE-EvO" id="2k7-nz-M0H"/>
                         <outlet property="sheriffTF" destination="Cif-r8-cVv" id="Yzf-nH-UXQ"/>
                         <outlet property="start" destination="BHS-Ke-5MZ" id="4GB-KC-vSP"/>
                     </connections>
@@ -1341,9 +1349,9 @@ Potion</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U2I-lq-1LJ"/>
+        <segue reference="crF-q6-gAh"/>
         <segue reference="dZR-Ld-Zhq"/>
-        <segue reference="pPJ-UV-8KA"/>
+        <segue reference="O5P-Zo-qfE"/>
         <segue reference="HhA-EO-5fy"/>
         <segue reference="GQF-ts-W1F"/>
     </inferredMetricsTieBreakers>

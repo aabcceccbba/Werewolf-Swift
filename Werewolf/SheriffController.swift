@@ -12,10 +12,12 @@ class SheriffController: UIViewController {
     
     @IBOutlet weak var start: UILabel!
     @IBOutlet weak var sheriffTF: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     // set random place to start the sheriff vote;
     // get the total number of the player first
     var a = PlayerNumberController.num
     override func viewDidLoad() {
+        nextButton.sendActions(for: .touchUpInside)
         if RolesController.sheriff != -1 {
             sheriffTF.text = String(RolesController.sheriff)
         }

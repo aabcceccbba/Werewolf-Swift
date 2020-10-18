@@ -10,10 +10,16 @@ import UIKit
 
 class WitchController: UIViewController {
 
+    @IBOutlet weak var witchLabel: UILabel!
     @IBOutlet weak var witchTF: UITextField!
     @IBOutlet weak var potionLabel: UILabel!
     
     override func viewDidLoad() {
+        if RolesController.nextNight == true {
+            witchLabel.isHidden = true
+            witchTF.isHidden = true
+        }
+        
         if RolesController.special["Witch"] != nil {
             witchTF.text = String(RolesController.special["Witch"]!)
         }
