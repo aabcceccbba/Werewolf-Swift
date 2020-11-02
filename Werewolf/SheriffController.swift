@@ -17,10 +17,16 @@ class SheriffController: UIViewController {
     // get the total number of the player first
     var a = PlayerNumberController.num
     override func viewDidLoad() {
-        nextButton.sendActions(for: .touchUpInside)
-        if RolesController.sheriff != -1 {
-            sheriffTF.text = String(RolesController.sheriff)
+        
+        // only show up the SheriffController on the first night
+        if RolesController.nextNight == true {
+            nextButton.sendActions(for: .touchUpInside)
         }
+        
+//        if RolesController.sheriff != -1 {
+//            sheriffTF.text = String(RolesController.sheriff)
+//        }
+        
         var r = arc4random_uniform(UInt32(Int(a))) + 1
         var clock = arc4random_uniform(2);
         var dir = String();
