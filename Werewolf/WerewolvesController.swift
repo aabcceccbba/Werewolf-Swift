@@ -21,6 +21,7 @@ class WerewolvesController: UIViewController {
     @IBOutlet weak var wolfLabel1: UILabel!
     @IBOutlet weak var wolfLabel2: UILabel!
     @IBOutlet weak var wolfLabel3: UILabel!
+    @IBOutlet weak var victimLabel: UILabel!
     
     var wolf1 = -1
     var wolf2 = -1
@@ -34,6 +35,11 @@ class WerewolvesController: UIViewController {
     var set : Set<Int> = []
     
     override func viewDidLoad() {
+        if RolesController.littleGirlDetected == true {
+            victimLabel.isHidden = true
+            victimTF.isHidden = true
+        }
+        
         if RolesController.nextNight == true {
             wolfLabel1.isHidden = true
             wolfLabel2.isHidden = true
@@ -61,18 +67,32 @@ class WerewolvesController: UIViewController {
     
     // when the Little Girl is detected by werewolves
     @IBAction func littleGirlDetected(_ sender: Any) {
-        // alert
-        // yes -> kill little girl
-        let alert = UIAlertController(title: "Is the Little Girl detected by the Werewolves?", message: "", preferredStyle: .alert)
+        // no little girl in the game
+        if RolesController.special["Little Girl"] == nil {
+            let alert = UIAlertController(title: "There is no Little Girl specified in this game", message: "You can go back to the Little Girl page to specify (only possible if this is the first night)", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
         
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-            RolesController.littleGirlDetection = 1
-        }))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
-            RolesController.littleGirlDetection = 0
-        }))
-        
-        self.present(alert, animated: true)
+        // little girl exists
+        else{
+            let alert = UIAlertController(title: "Is the Little Girl detected by the Werewolves?", message: "", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                RolesController.littleGirlDetected = true
+                self.victimLabel.isHidden = true
+                self.victimTF.isHidden = true
+                RolesController.potentialVictim = -1
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
+                RolesController.littleGirlDetected = false
+            }))
+            
+            self.present(alert, animated: true)
+        }
     }
     
     func check(withIdentifier identifier: String) -> Bool {
@@ -151,6 +171,12 @@ class WerewolvesController: UIViewController {
             total += 1
             print("text 6 is " + wolf6TF.text!)
         }
+        
+        // little girl is detected -> little girl will be the victim
+        if RolesController.littleGirlDetected == true {
+            victimTF.text = ""
+        }
+        
         if victimTF.text != "" {
             victim = Int(victimTF.text!)!
         }
@@ -178,7 +204,6 @@ class WerewolvesController: UIViewController {
             
             return false
         }
-        
         
         // out of range for victim
         if victim != -1 && (victim > PlayerNumberController.num || victim == 0) {

@@ -15,6 +15,8 @@ class LittleGirlController: UIViewController {
     @IBOutlet weak var littleGirlLabel2: UILabel!
     
     override func viewDidLoad() {
+        RolesController.littleGirlDetected = false
+        
         if RolesController.nextNight == true {
             littleGirlLabel1.isHidden = true
             littleGirlLabel2.isHidden = true

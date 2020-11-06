@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         RolesController.lover1 = -1
         RolesController.lover2 = -1
         RolesController.third = Set<Int>()
-        RolesController.littleGirlDetection = 0
+        RolesController.littleGirlDetected = false
         RolesController.wolves = Set<Int>()
         RolesController.potentialVictim = -1
         RolesController.healing = 1
