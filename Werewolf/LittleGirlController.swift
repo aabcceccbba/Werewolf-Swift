@@ -72,6 +72,7 @@ class LittleGirlController: UIViewController {
             if RolesController.special["Little Girl"] != nil {
                 RolesController.map.removeValue(forKey: RolesController.special["Little Girl"]!)
                 RolesController.special["Little Girl"] = nil
+                RolesController.littleGirlDetected = false
             }
         }
         

@@ -13,8 +13,13 @@ class WitchController: UIViewController {
     @IBOutlet weak var witchLabel: UILabel!
     @IBOutlet weak var witchTF: UITextField!
     @IBOutlet weak var potionLabel: UILabel!
+    @IBOutlet weak var potentialVictimLabel: UILabel!
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
+        if RolesController.littleGirlDetected == true {
+            potentialVictimLabel.text = potentialVictimLabel.text! + String(RolesController.special["Little Girl"]!)
+        }
+        
         if RolesController.nextNight == true {
             witchLabel.isHidden = true
             witchTF.isHidden = true

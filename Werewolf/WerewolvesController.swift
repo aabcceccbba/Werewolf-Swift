@@ -78,20 +78,24 @@ class WerewolvesController: UIViewController {
         }
         
         // little girl exists
-        else{
-            let alert = UIAlertController(title: "Is the Little Girl detected by the Werewolves?", message: "", preferredStyle: .alert)
+        else {
+            let littleGirl = RolesController.special["Little Girl"]!
             
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-                RolesController.littleGirlDetected = true
-                self.victimLabel.isHidden = true
-                self.victimTF.isHidden = true
-                RolesController.potentialVictim = -1
-            }))
-            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
-                RolesController.littleGirlDetected = false
-            }))
-            
-            self.present(alert, animated: true)
+            if RolesController.alive.contains(littleGirl) {
+                let alert = UIAlertController(title: "Is the Little Girl detected by the Werewolves?", message: "", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                    RolesController.littleGirlDetected = true
+                    self.victimLabel.isHidden = true
+                    self.victimTF.isHidden = true
+                    RolesController.potentialVictim = -1
+                }))
+                alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
+                    RolesController.littleGirlDetected = false
+                }))
+                
+                self.present(alert, animated: true)
+            }
         }
     }
     
@@ -219,7 +223,7 @@ class WerewolvesController: UIViewController {
         
         // dead victim
         if victim != -1 && !RolesController.alive.contains(victim) {
-            let alert = UIAlertController(title: "Please enter the right Victim numbers", message: "Player ID" + String(victim) + " has been already dead", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Please enter the right Victim numbers", message: "Player ID " + String(victim) + " has been already dead", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
