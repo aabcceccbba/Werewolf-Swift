@@ -78,7 +78,7 @@ class WerewolvesController: UIViewController {
         }
         
         // little girl exists
-        else {
+        else if RolesController.alive.contains(RolesController.special["Little Girl"]!) {
             let littleGirl = RolesController.special["Little Girl"]!
             
             if RolesController.alive.contains(littleGirl) {
@@ -88,10 +88,11 @@ class WerewolvesController: UIViewController {
                     RolesController.littleGirlDetected = true
                     self.victimLabel.isHidden = true
                     self.victimTF.isHidden = true
-                    RolesController.potentialVictim = -1
                 }))
                 alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
                     RolesController.littleGirlDetected = false
+                    self.victimLabel.isHidden = false
+                    self.victimTF.isHidden = false
                 }))
                 
                 self.present(alert, animated: true)
@@ -176,20 +177,26 @@ class WerewolvesController: UIViewController {
             print("text 6 is " + wolf6TF.text!)
         }
         
+        print("hello world")
         // little girl is detected -> little girl will be the victim
         if RolesController.littleGirlDetected == true {
+//            print("little Gril detected")
+//            print("current victim number" + String(victim))
             victimTF.text = ""
+            victim = -1
+            RolesController.potentialVictim = RolesController.special["Little Girl"]!
         }
         
         if victimTF.text != "" {
+//            print("victmTF.text not empty")
             victim = Int(victimTF.text!)!
         }
         
-        print(total)
-        print(wolf.count)
-        for item in wolf {
-            print(String(item) + " ")
-        }
+//        print(total)
+//        print(wolf.count)
+//        for item in wolf {
+//            print(String(item) + " ")
+//        }
         // id duplicate within wolves
         if total > wolf.count {
             self.present(duplicateAlert, animated: true)
@@ -260,7 +267,9 @@ class WerewolvesController: UIViewController {
             }
         }
         
-        if victim != -1 { RolesController.potentialVictim = victim
+        if victim != -1
+        {
+            RolesController.potentialVictim = victim
         }
         
         return true

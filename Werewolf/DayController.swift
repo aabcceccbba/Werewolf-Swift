@@ -28,9 +28,9 @@ class DayController: UIViewController {
             died.insert(RolesController.potentialPoison)
         }
         
-        if(RolesController.littleGirlDetected == true){
-            died.insert(RolesController.special["Little Girl"]!)
-        }
+//        if(RolesController.littleGirlDetected == true){
+//            died.insert(RolesController.special["Little Girl"]!)
+//        }
         
         if died.count > 0 {
             var victims = ""

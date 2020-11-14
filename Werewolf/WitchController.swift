@@ -16,10 +16,11 @@ class WitchController: UIViewController {
     @IBOutlet weak var potentialVictimLabel: UILabel!
     
     override func viewDidLoad(){
-        if RolesController.littleGirlDetected == true {
-            potentialVictimLabel.text = potentialVictimLabel.text! + String(RolesController.special["Little Girl"]!)
-        }
         
+        if RolesController.potentialVictim != -1 {
+            potentialVictimLabel.text = potentialVictimLabel.text! + String(RolesController.potentialVictim)
+        }
+
         if RolesController.nextNight == true {
             witchLabel.isHidden = true
             witchTF.isHidden = true
@@ -71,6 +72,7 @@ class WitchController: UIViewController {
     }
     
     func check(withIdentifier identifier: String) -> Bool {
+        
         if witchTF.text != "" {
         
             let witch = Int(witchTF.text!)!
