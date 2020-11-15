@@ -689,7 +689,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkl-Od-Z4Q">
-                                <rect key="frame" x="175.33333333333334" y="611" width="39" height="30"/>
+                                <rect key="frame" x="175.33333333333334" y="660" width="39" height="30"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
                                     <segue destination="B7g-4p-MYM" kind="push" id="q0s-38-MKP"/>
@@ -703,13 +703,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X2v-29-iI7">
-                                <rect key="frame" x="210.2184916083188" y="463" width="77" height="30.000000000000227"/>
+                                <rect key="frame" x="211.49520835677504" y="463" width="76.999999999999091" height="30.000000000000028"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Witch #" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Am-yw-Gmf">
-                                <rect key="frame" x="99.218491608319709" y="459" width="139.99999999999909" height="35.000000000000171"/>
+                                <rect key="frame" x="100.49520835677595" y="459" width="139.99999999999909" height="35.000000000000171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -801,7 +801,7 @@ Potion</string>
             </objects>
             <point key="canvasLocation" x="7147.6923076923076" y="132.93838862559241"/>
         </scene>
-        <!--Poison Controller-->
+        <!--Poison-->
         <scene sceneID="L18-SQ-Avm">
             <objects>
                 <viewController id="kXy-Iv-mel" customClass="PoisonController" customModule="Werewolf" customModuleProvider="target" sceneMemberID="viewController">
@@ -810,22 +810,21 @@ Potion</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter the player # you want to poison" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zq5-9D-7Gn">
-                                <rect key="frame" x="63" y="254" width="287" height="91"/>
+                                <rect key="frame" x="51.459386200252993" y="254" width="286.99999999999909" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-hG-4Tx">
-                                <rect key="frame" x="180" y="520" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-hG-4Tx">
+                                <rect key="frame" x="165.66666666666666" y="660" width="55" height="30"/>
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <segue destination="DVE-3H-sBt" kind="push" id="S95-9L-nFe"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZVR-mU-YT5">
-                                <rect key="frame" x="158" y="400" width="97" height="34"/>
+                                <rect key="frame" x="146.19686451793314" y="400" width="97.000000000000909" height="33.999999999999773"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -833,14 +832,20 @@ Potion</string>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IHz-4E-Rwv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6cd-hG-4Tx" firstAttribute="leading" secondItem="IHz-4E-Rwv" secondAttribute="leading" constant="165.63" id="Fea-Ei-DPL"/>
+                            <constraint firstItem="IHz-4E-Rwv" firstAttribute="trailing" secondItem="6cd-hG-4Tx" secondAttribute="trailing" constant="169.37" id="bkO-RX-dZK"/>
+                            <constraint firstItem="IHz-4E-Rwv" firstAttribute="bottom" secondItem="6cd-hG-4Tx" secondAttribute="bottom" constant="120" id="dU7-6V-b3F"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="erV-6O-Dmd">
+                    <navigationItem key="navigationItem" title="Poison" id="erV-6O-Dmd">
                         <barButtonItem key="rightBarButtonItem" title="Roles" id="wti-TF-XA5">
                             <connections>
                                 <segue destination="pg3-Yc-1Ee" kind="push" id="hBk-dz-Udj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="poisonPlayer" destination="ZVR-mU-YT5" id="8uG-3T-0L4"/>
                     </connections>
@@ -858,49 +863,48 @@ Potion</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If the victim is Hunter, s/he can choose retaliate to:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmG-mk-Pph">
-                                <rect key="frame" x="68" y="366" width="277" height="86"/>
+                                <rect key="frame" x="56.361094873646834" y="299" width="277" height="85.999999999999972"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vn1-eb-Q9g">
-                                <rect key="frame" x="188" y="720" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vn1-eb-Q9g">
+                                <rect key="frame" x="175" y="660" width="39" height="30"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
                                     <segue destination="Hye-le-lzu" kind="push" identifier="vote" id="eJ3-BO-bOW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;The sun rises. Everybody wakes up and opens their eyes...&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqk-gv-zTs">
-                                <rect key="frame" x="67" y="201" width="280" height="101"/>
+                                <rect key="frame" x="53.807661376672513" y="169" width="280.00000000000091" height="100.99999999999997"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If the victim is one of the 2 lovers, they both die." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljl-vt-lhN">
-                                <rect key="frame" x="68" y="506" width="277" height="86"/>
+                                <rect key="frame" x="55.084378125163312" y="417" width="277" height="85.999999999999886"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;#x died tonight/No one died tonight&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSP-vb-Ffi">
-                                <rect key="frame" x="68" y="266" width="277" height="86"/>
+                                <rect key="frame" x="56.361094873646834" y="234" width="277" height="85.999999999999886"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YER-NG-YBA">
-                                <rect key="frame" x="176" y="460" width="62" height="34"/>
+                                <rect key="frame" x="163.60530174657106" y="378" width="62" height="34.000000000000028"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please confirm all the inputs are correct and then go to the next. You are not able to modify after going to the next page." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fr-vq-kKd">
-                                <rect key="frame" x="55" y="596" width="303" height="84"/>
+                                <rect key="frame" x="42.317210640291705" y="507.00000000000006" width="303" height="84.000000000000171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -909,6 +913,11 @@ Potion</string>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="elq-Sf-MmS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vn1-eb-Q9g" firstAttribute="leading" secondItem="elq-Sf-MmS" secondAttribute="leading" constant="175.09999999999999" id="2zP-O3-OQt"/>
+                            <constraint firstItem="elq-Sf-MmS" firstAttribute="bottom" secondItem="Vn1-eb-Q9g" secondAttribute="bottom" constant="120" id="dhr-Rv-lTP"/>
+                            <constraint firstItem="elq-Sf-MmS" firstAttribute="trailing" secondItem="Vn1-eb-Q9g" secondAttribute="trailing" constant="175.90000000000001" id="fkw-EY-04h"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Day Time" id="ww2-k7-dDa">
                         <barButtonItem key="rightBarButtonItem" title="Roles" id="crZ-my-H3H">
@@ -938,71 +947,70 @@ Potion</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After discussion, &quot;everyone votes&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOO-al-Qga">
-                                <rect key="frame" x="67" y="307" width="277" height="86"/>
+                                <rect key="frame" x="55.721506107845926" y="274" width="277" height="86.000000000000071"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scs-Wi-7gr">
-                                <rect key="frame" x="189" y="761" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scs-Wi-7gr">
+                                <rect key="frame" x="174.33333333333334" y="660" width="39" height="30"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
                                     <segue destination="N4N-tK-6sI" kind="push" identifier="nextNight" id="GcS-O8-NY4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Discussion order:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzb-m3-gNh">
-                                <rect key="frame" x="67" y="142" width="280" height="101"/>
+                                <rect key="frame" x="53.168072610869785" y="119.99999999999989" width="280.00000000000091" height="100.99999999999999"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sheriff is account for 2 votes." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHq-Lz-vGd">
-                                <rect key="frame" x="67" y="344" width="277" height="86"/>
+                                <rect key="frame" x="55.721506107845926" y="315" width="277" height="86.000000000000057"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="is eliminated&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JX9-2m-kgR">
-                                <rect key="frame" x="68" y="511" width="277" height="43"/>
+                                <rect key="frame" x="54.444789359427887" y="458" width="277" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzf-ZV-H34">
-                                <rect key="frame" x="67" y="207" width="277" height="111"/>
+                                <rect key="frame" x="55.721506107845926" y="185.00000000000011" width="277" height="110.99999999999993"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">If Sheriff is selected, s/he can decide whether the discussion starts from his left or right. Else, the system will generate the player number and direction for you:</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Based on the voting result, &quot;#" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvB-bY-F10">
-                                <rect key="frame" x="91" y="424" width="233" height="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Based on the voting result, #" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvB-bY-F10">
+                                <rect key="frame" x="77.425690832198597" y="371" width="232.99999999999909" height="51.999999999999943"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrR-RY-is3">
-                                <rect key="frame" x="159" y="476" width="97" height="34"/>
+                                <rect key="frame" x="146.36839525050527" y="423.00000000000023" width="97.000000000000909" height="33.999999999999886"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please confirm all the inputs are correct and then go to the next. You are not able to modify after going to the next page." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrX-Xx-qoQ">
-                                <rect key="frame" x="55" y="649" width="303" height="84"/>
+                                <rect key="frame" x="41.677621874558099" y="551" width="303" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This victim's lover # also eliminated." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3o-Jn-2le">
-                                <rect key="frame" x="67" y="561" width="277" height="86"/>
+                                <rect key="frame" x="54.444789359427887" y="479.99999999999994" width="277" height="86.000000000000057"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1011,6 +1019,11 @@ Potion</string>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OHf-Ga-Dvn"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OHf-Ga-Dvn" firstAttribute="bottom" secondItem="scs-Wi-7gr" secondAttribute="bottom" constant="120" id="7KP-xz-6Qz"/>
+                            <constraint firstItem="OHf-Ga-Dvn" firstAttribute="trailing" secondItem="scs-Wi-7gr" secondAttribute="trailing" constant="176.53999999999999" id="Ihc-nU-VgB"/>
+                            <constraint firstItem="scs-Wi-7gr" firstAttribute="leading" secondItem="OHf-Ga-Dvn" secondAttribute="leading" constant="174.46000000000001" id="uYF-rr-xVr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Vote" id="Awf-gO-n47">
                         <barButtonItem key="rightBarButtonItem" title="Roles" id="jT7-xe-u77">
@@ -1019,6 +1032,7 @@ Potion</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="eliminateTF" destination="qrR-RY-is3" id="Cti-GH-5jT"/>
                         <outlet property="loverEliminateLabel" destination="L3o-Jn-2le" id="2Ss-LL-0io"/>
@@ -1037,24 +1051,22 @@ Potion</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aO-PO-X9e">
-                                <rect key="frame" x="55" y="249" width="303" height="140"/>
+                                <rect key="frame" x="43.42161685111023" y="249" width="303" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">"Game is continuing; Night falls, the town is asleep. and everyone closes their eyes || Game ends; (Wolves/Townfolks/The Third party) win the game"</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7i-hm-Ncf">
-                                <rect key="frame" x="159" y="580" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7i-hm-Ncf">
+                                <rect key="frame" x="157" y="566" width="73" height="30"/>
                                 <state key="normal" title="Next Night"/>
                                 <connections>
                                     <segue destination="VYd-bA-tCm" kind="push" identifier="nextNight" id="HhA-EO-5fy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxn-Ye-pnJ">
-                                <rect key="frame" x="157" y="623" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxn-Ye-pnJ">
+                                <rect key="frame" x="157" y="611" width="75" height="30"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="push" identifier="restart" id="GQF-ts-W1F"/>
@@ -1063,6 +1075,14 @@ Potion</string>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bVC-8R-sMU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bVC-8R-sMU" firstAttribute="bottom" secondItem="Gxn-Ye-pnJ" secondAttribute="bottom" constant="120" id="7FC-G5-tMN"/>
+                            <constraint firstItem="bVC-8R-sMU" firstAttribute="trailing" secondItem="Gxn-Ye-pnJ" secondAttribute="trailing" constant="157.87" id="BIh-iK-aC9"/>
+                            <constraint firstItem="bVC-8R-sMU" firstAttribute="trailing" secondItem="g7i-hm-Ncf" secondAttribute="trailing" constant="159.87" id="LsN-Ul-14v"/>
+                            <constraint firstItem="Gxn-Ye-pnJ" firstAttribute="top" secondItem="g7i-hm-Ncf" secondAttribute="bottom" constant="15" id="OVF-FE-fCS"/>
+                            <constraint firstItem="Gxn-Ye-pnJ" firstAttribute="leading" secondItem="bVC-8R-sMU" secondAttribute="leading" constant="157.13" id="P7g-eG-Hx0"/>
+                            <constraint firstItem="g7i-hm-Ncf" firstAttribute="leading" secondItem="bVC-8R-sMU" secondAttribute="leading" constant="157.13" id="sHB-YR-MEt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Next Night" id="EMC-hD-eiT">
                         <barButtonItem key="rightBarButtonItem" title="Roles" id="fZg-4f-lvA">
@@ -1167,56 +1187,55 @@ Potion</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Starts from #x clockwise/counter-clockwise&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHS-Ke-5MZ">
-                                <rect key="frame" x="67" y="246" width="277" height="86"/>
+                                <rect key="frame" x="56.447250142394296" y="232.99999999999989" width="277.00000000000091" height="86.000000000000071"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1. After all electors claim themselves, ask &quot;if anyone wants to give up the election&quot;." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kY7-IT-YBu">
-                                <rect key="frame" x="67" y="343" width="277" height="86"/>
+                                <rect key="frame" x="56.447250142394296" y="321.99999999999977" width="277.00000000000091" height="86.000000000000071"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Now it is time for Sheriff election. Players who want to be elected raise their hands.&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnF-IQ-93F">
-                                <rect key="frame" x="67" y="176" width="280" height="101"/>
+                                <rect key="frame" x="53.893816645419975" y="162.99999999999989" width="280" height="101.00000000000007"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2. Only players who are not candidates can vote." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec3-b7-BAU">
-                                <rect key="frame" x="67" y="403" width="277" height="86"/>
+                                <rect key="frame" x="56.447250142394296" y="382" width="277.00000000000091" height="85.999999999999972"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3. If there is a tie, another round of arguement starts, and all other players vote." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKP-QD-yT1">
-                                <rect key="frame" x="67" y="467" width="277" height="86"/>
+                                <rect key="frame" x="56.447250142394296" y="446" width="277.00000000000091" height="85.999999999999858"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u91-nE-EvO">
-                                <rect key="frame" x="188" y="666" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u91-nE-EvO">
+                                <rect key="frame" x="175.33333333333334" y="660" width="39" height="30"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
                                     <segue destination="Yhj-Uc-QGN" kind="push" id="crF-q6-gAh"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cif-r8-cVv">
-                                <rect key="frame" x="216" y="587" width="62" height="30"/>
+                                <rect key="frame" x="221.23920333339447" y="553" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sheriff #" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xt2-uZ-KA9">
-                                <rect key="frame" x="101" y="583" width="140" height="35"/>
+                                <rect key="frame" x="106.23920333339447" y="549" width="140.00000000000091" height="35.000000000000398"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1225,6 +1244,11 @@ Potion</string>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rZw-nh-qSJ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rZw-nh-qSJ" firstAttribute="trailing" secondItem="u91-nE-EvO" secondAttribute="trailing" constant="175.81999999999999" id="WoW-qi-aY8"/>
+                            <constraint firstItem="u91-nE-EvO" firstAttribute="leading" secondItem="rZw-nh-qSJ" secondAttribute="leading" constant="175.18000000000001" id="hRV-Dz-yWp"/>
+                            <constraint firstItem="rZw-nh-qSJ" firstAttribute="bottom" secondItem="u91-nE-EvO" secondAttribute="bottom" constant="120" id="pVs-VC-hEG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sheriff Election" id="URv-h9-8Vz">
                         <barButtonItem key="rightBarButtonItem" title="Roles" id="km5-08-IGP">
@@ -1395,10 +1419,9 @@ Potion</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="q0s-38-MKP"/>
-        <segue reference="dZR-Ld-Zhq"/>
-        <segue reference="oyE-uO-P8G"/>
-        <segue reference="9rO-Fz-iAA"/>
+        <segue reference="S95-9L-nFe"/>
+        <segue reference="hBk-dz-Udj"/>
+        <segue reference="HhA-EO-5fy"/>
         <segue reference="GQF-ts-W1F"/>
     </inferredMetricsTieBreakers>
     <resources>

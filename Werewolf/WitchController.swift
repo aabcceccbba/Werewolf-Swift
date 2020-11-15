@@ -38,7 +38,15 @@ class WitchController: UIViewController {
     }
     
     @IBAction func healing(_ sender: Any) {
-        print("potential victim: ")
+        // no witch number specified
+        if witchTF.text == "" {
+            let alert = UIAlertController(title: "The Witch number can't be empty", message: "To use Healing Potion, you must have a Witch in the game", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+        
         if(RolesController.potentialVictim != -1 && RolesController.healing == 1 && witchTF.text != ""){
             let alert = UIAlertController(title: "Are you sure to use Healing Potion?", message: "", preferredStyle: .alert)
             
@@ -68,7 +76,7 @@ class WitchController: UIViewController {
 //    }
     
     func updatePotion() {
-        potionLabel.text = "Healing Potion: " + String(RolesController.healing) + "\nPoison Potion: " + String(RolesController.poison)
+        potionLabel.text = String(RolesController.healing) + " Healing Potion left\n" + String(RolesController.poison) + " Poison Potion left"
     }
     
     func check(withIdentifier identifier: String) -> Bool {
@@ -113,7 +121,7 @@ class WitchController: UIViewController {
         else {
             // when clicking Use Poison Potion
             if identifier == "usePoisonPotion" && RolesController.special["Witch"] == nil {
-                let alert = UIAlertController(title: "The Witch number can't be empty", message: "To use Poison Potion, you must have a Witch", preferredStyle: .alert)
+                let alert = UIAlertController(title: "The Witch number can't be empty", message: "To use Poison Potion, you must have a Witch in the game", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 

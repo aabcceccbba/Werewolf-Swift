@@ -177,7 +177,7 @@ class WerewolvesController: UIViewController {
             print("text 6 is " + wolf6TF.text!)
         }
         
-        print("hello world")
+//        print("hello world")
         // little girl is detected -> little girl will be the victim
         if RolesController.littleGirlDetected == true {
 //            print("little Gril detected")
