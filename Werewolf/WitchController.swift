@@ -53,7 +53,7 @@ class WitchController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                 RolesController.healing = 0
                 self.updatePotion()
-                RolesController.potentialVictim = -1
+                RolesController.useHealingPotion = true
             }))
             alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
             
@@ -100,7 +100,7 @@ class WitchController: UIViewController {
                 let alert = UIAlertController(title: "The Witch ID is conflicted with another role", message: "This ID number has already been assigned to " + String(RolesController.map[witch]!) + ".", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 self.present(alert, animated: true)
                 return false
             }
@@ -131,9 +131,14 @@ class WitchController: UIViewController {
             
             // can't be empty if used potions
             if RolesController.healing * RolesController.poison == 0 {
-                let alert = UIAlertController(title: "The Witch number can't be empty", message: "You have used potion(s), which indicates a Witch is required. The previous Witch ID is automatically restored", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Are you sure you don't have Witch character in this game?", message: "You have used potion(s), which only Witch has the ability to use. If there is a Witch in the game, please specify the Witch number", preferredStyle: .alert)
                 
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                    RolesController.healing = 1
+                    RolesController.poison = 1
+                    self.updatePotion()
+                }))
+                alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
                     self.witchTF.text = String(RolesController.special["Witch"]!)
                 }))
                 
@@ -146,6 +151,7 @@ class WitchController: UIViewController {
                 RolesController.map.removeValue(forKey:RolesController.special["Witch"]!)
                     RolesController.special["Witch"] = nil
             }
+            RolesController.useHealingPotion = false
         }
         
         return true

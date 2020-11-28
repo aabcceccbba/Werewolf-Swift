@@ -20,7 +20,7 @@ class DayController: UIViewController {
     override func viewDidLoad() {
         retaliateTF.isHidden = true
 
-        if(RolesController.potentialVictim != -1){
+        if(RolesController.potentialVictim != -1 && RolesController.useHealingPotion == false){
             died.insert(RolesController.potentialVictim)
         }
         

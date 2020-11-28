@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Werewolf Game!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJI-C4-odz">
-                                <rect key="frame" x="83.669607769692902" y="257.00000000000011" width="220.99999999999994" height="21.000000000000078"/>
+                                <rect key="frame" x="84" y="257.00000000000011" width="220.99999999999994" height="21.000000000000078"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1419,8 +1419,9 @@ Potion</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="udS-pK-zJU"/>
         <segue reference="S95-9L-nFe"/>
-        <segue reference="hBk-dz-Udj"/>
+        <segue reference="oyE-uO-P8G"/>
         <segue reference="HhA-EO-5fy"/>
         <segue reference="GQF-ts-W1F"/>
     </inferredMetricsTieBreakers>

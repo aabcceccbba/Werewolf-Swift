@@ -34,6 +34,7 @@ class RolesController: UIViewController {
     static var potentialVictim = -1
     // potentialPoison is poisoned by Witch
     static var potentialPoison = -1
+    static var useHealingPotion = false
     static var healing = 1;
     static var poison = 1;
     
