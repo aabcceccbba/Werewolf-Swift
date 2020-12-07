@@ -1419,7 +1419,6 @@ Potion</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="udS-pK-zJU"/>
         <segue reference="S95-9L-nFe"/>
         <segue reference="oyE-uO-P8G"/>
         <segue reference="HhA-EO-5fy"/>

@@ -47,6 +47,7 @@ class LoversController: UIViewController {
                 self.present(alert, animated: true)
                 return false
             }
+            // input both lovers
             else {
                 let lover1ID = Int(lover1TF.text!)!
                 let lover2ID = Int(lover2TF.text!)!
@@ -74,6 +75,7 @@ class LoversController: UIViewController {
                     return false
                 }
                 
+                // update lover ID
                 if RolesController.lover1 == -1 || RolesController.lover1 != lover1ID {
                     RolesController.lover1 = lover1ID
                 }

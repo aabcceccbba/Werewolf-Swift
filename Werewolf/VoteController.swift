@@ -20,6 +20,17 @@ class VoteController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // update third party set
+        if(RolesController.special["Cupido"] != nil){
+            if RolesController.third.isSubset(of: RolesController.wolves) || RolesController.third.isDisjoint(with: RolesController.wolves) {
+                RolesController.third = Set<Int>()
+            }
+            else {
+                RolesController.third.insert(RolesController.special["Cupido"]!)
+            }
+        }
+        print("third: ", RolesController.third)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

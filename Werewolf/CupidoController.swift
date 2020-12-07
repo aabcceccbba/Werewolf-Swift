@@ -79,7 +79,7 @@ class CupidoController: UIViewController {
                 RolesController.special["Cupido"] = cupidoID
                 RolesController.map[cupidoID] = "Cupido"
             }
-            RolesController.third.insert(cupidoID)
+//            RolesController.third.insert(cupidoID)
         }
         // else the text field is empty
         else {
