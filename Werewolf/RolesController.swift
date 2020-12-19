@@ -49,14 +49,14 @@ class RolesController: UIViewController {
         }
         if RolesController.wolves.capacity > 0 {
             roles += "Wolves: "
-            for wid in RolesController.wolves {
+            for wid in RolesController.wolves.sorted() {
 //            content.text! += "\(key): \(value)\n"
                 roles += "\(wid) "
 //            print("\(key) = \(value)")
             }
             roles += "\n"
         }
-        print(roles)
+//        print(roles)
         content.text = roles;
         super.viewDidLoad()
 
