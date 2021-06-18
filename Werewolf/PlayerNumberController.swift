@@ -10,21 +10,6 @@ import UIKit
 
 class PlayerNumberController: UIViewController, UITextFieldDelegate {
     static var num = Int()
-
-    var wpv: [[Int]] = [
-        [2, 3, 3],
-        [3, 3, 3],
-        [3, 3, 4],
-        [3, 4, 4],
-        [4, 4, 4],
-        [4, 4, 5],
-        [4, 5, 5],
-        [5, 5, 5],
-        [5, 5, 6],
-        [5, 6, 6],
-        [6, 6, 6]]
-    
-    var current_wpv:[Int] = []
     
     @IBOutlet weak var playerNumberTF: UITextField!
     
@@ -32,39 +17,32 @@ class PlayerNumberController: UIViewController, UITextFieldDelegate {
         if playerNumberTF.text != ""
         {
             PlayerNumberController.num = Int(playerNumberTF.text!)!
-            if (PlayerNumberController.num<8 || PlayerNumberController.num>18) {
+            if (PlayerNumberController.num < 8 || PlayerNumberController.num > 18) {
                 let alert = UIAlertController(title: "The player number is out of range", message: "The number could be only between 8 to 18 players", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 
                 self.present(alert, animated: true)
             }
-            
-            RolesController.alive = Set<Int>()
-            for index in 1...PlayerNumberController.num {
-                RolesController.alive.insert(index)
+            else{
+                RolesController.alive = Set<Int>()
+                for index in 1...PlayerNumberController.num {
+                    RolesController.alive.insert(index)
+                }
             }
-            //performSegue(withIdentifier: "playerSegue", sender: self)
         }
         else{
             let alert = UIAlertController(title: "Please enter a number", message: "The player number could be only between 8 to 18", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             
             self.present(alert, animated: true)
         }
         
-//        for index in 1...PlayerNumberController.num {
-//            RolesController.alive.insert(index)
-//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let nextController = segue.destination as! RoleConformationController
-//        nextController.player = playerNumberTF.text!
-        
+        // notify the sague is about to perform
     }
     
     override func viewDidLoad() {

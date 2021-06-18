@@ -10,16 +10,12 @@ import UIKit
 
 class CupidoController: UIViewController {
     
-    static var cupido = -1
+//    static var cupido = -1
 
     @IBOutlet weak var cupidoTF: UITextField!
     @IBOutlet weak var cupidoIntroLabel1: UILabel!
     @IBOutlet weak var cupidoIntroLabel2: UILabel!
     @IBOutlet weak var cupidoLabel: UILabel!
-    
-    //    @IBAction func showRoles(_ sender: Any) {
-//        self.performSegue(withIdentifier: "RolesController", sender:self)
-//    }
     
     override func viewDidLoad() {
         if RolesController.special["Cupido"] != nil {
@@ -46,7 +42,7 @@ class CupidoController: UIViewController {
     func check() -> Bool {
         if cupidoTF.text != "" {
             let cupidoID = Int(cupidoTF.text!)!
-            CupidoController.cupido = Int(cupidoTF.text!)!
+//            CupidoController.cupido = Int(cupidoTF.text!)!
             // out of range
             if cupidoID < 1 || cupidoID > PlayerNumberController.num {
                 
@@ -86,7 +82,7 @@ class CupidoController: UIViewController {
             if RolesController.special["Cupido"] != nil {
                 RolesController.map.removeValue(forKey: RolesController.special["Cupido"]!)
                 RolesController.special["Cupido"] = nil
-                CupidoController.cupido = -1
+//                CupidoController.cupido = -1
             }
             RolesController.third = Set<Int>()
         }
@@ -96,7 +92,6 @@ class CupidoController: UIViewController {
     
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
         return check()
     }
 
