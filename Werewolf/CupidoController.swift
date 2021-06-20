@@ -10,12 +10,14 @@ import UIKit
 
 class CupidoController: UIViewController {
     
-//    static var cupido = -1
+    static var cupido = -1
 
     @IBOutlet weak var cupidoTF: UITextField!
     @IBOutlet weak var cupidoIntroLabel1: UILabel!
     @IBOutlet weak var cupidoIntroLabel2: UILabel!
     @IBOutlet weak var cupidoLabel: UILabel!
+    
+    var checkObject = Check()
     
     override func viewDidLoad() {
         if RolesController.special["Cupido"] != nil {
@@ -42,18 +44,20 @@ class CupidoController: UIViewController {
     func check() -> Bool {
         if cupidoTF.text != "" {
             let cupidoID = Int(cupidoTF.text!)!
-//            CupidoController.cupido = Int(cupidoTF.text!)!
+            CupidoController.cupido = Int(cupidoTF.text!)!
             // out of range
-            if cupidoID < 1 || cupidoID > PlayerNumberController.num {
-                
-                let alert = UIAlertController(title: "The Cupido ID is out of range", message: "The Cupido number could be only between 1 to " + String(PlayerNumberController.num) + ".", preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
-                
-                return false
-            }
+//            if cupidoID < 1 || cupidoID > PlayerNumberController.num {
+//                let alert = UIAlertController(title: "The Cupido ID is out of range", message: "The Cupido number could be only between 1 to " + String(PlayerNumberController.num) + ".", preferredStyle: .alert)
+//
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//                print(self)
+//                self.present(alert, animated: true)
+//
+//                return false
+//            }
+            
+            return checkObject.check(controller: self, TF: cupidoTF, role: "Cupido")
             
             // if the ID is conflicted to other roles
             if RolesController.map[cupidoID] != nil && RolesController.map[cupidoID] != "Cupido"  {
@@ -82,7 +86,7 @@ class CupidoController: UIViewController {
             if RolesController.special["Cupido"] != nil {
                 RolesController.map.removeValue(forKey: RolesController.special["Cupido"]!)
                 RolesController.special["Cupido"] = nil
-//                CupidoController.cupido = -1
+                CupidoController.cupido = -1
             }
             RolesController.third = Set<Int>()
         }

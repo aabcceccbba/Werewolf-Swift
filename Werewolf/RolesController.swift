@@ -62,10 +62,6 @@ class RolesController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-    func outOfPlayerNumberRange() -> Bool {
-        return false
-    }
 
     /*
     // MARK: - Navigation
