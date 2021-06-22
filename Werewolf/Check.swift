@@ -16,33 +16,61 @@ class Check: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func alert(controller: UIViewController, role: String, type: String) {
+    // create and present an alert
+    func alert(controller: UIViewController, role: String, id: Int, type: String) {
         var title = "Error";
         var message = "";
         
+        // out of the player number range
         if type == "out of range" {
             title = "The input ID is " + type
             message = "The " + role + " number could be only between 1 to " + String(PlayerNumberController.num) + "."
+        }
+        // the same id has already been assigned to another role
+        else if type == "conflict roles" {
+            title = "The input ID is conflicted with another role"
+            message = "This ID number has already been assigned to " + String(RolesController.map[id]!) + "."
+        }
+        // Cupido in on -> both lovers are required
+        else if type == "both lovers" {
+            title = "Please enter both Lovers Number"
+            message = "The lovers numbers need to be assigned by Cupido."
+        }
+        
+        // Lover IDs can't duplicate
+        else if type == "duplicate lovers" {
+            title = "The Lover IDs are duplicate"
+            message = "The Lovers have to be 2 distinct players."
         }
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         controller.present(alert, animated: true)
     }
     
-    func check(controller: UIViewController, TF: UITextField, role: String) -> Bool {
-        let id = Int(TF.text!)!
-        
-        // out of players range
-        if id < 1 || id > PlayerNumberController.num {
-            alert(controller: controller, role: role, type: "out of range")
-            return false
+    // pre-update the special role and its info
+    func updateSpecial(role: String, id: Int) {
+        if RolesController.special[role] == nil{
+            RolesController.special[role] = id
+            RolesController.map[id] = role
         }
-        
-        return true
+        else if RolesController.special[role] != id {
+            RolesController.map.removeValue(forKey:  RolesController.special[role]!)
+            RolesController.special[role] = id
+            RolesController.map[id] = role
+        }
     }
+    
+    // pre-clear the special role and its info if needed
+    func clearSpecial(role: String) {
+        if RolesController.special[role] != nil {
+            RolesController.map.removeValue(forKey: RolesController.special[role]!)
+            RolesController.special[role] = nil
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -46,48 +46,24 @@ class CupidoController: UIViewController {
             let cupidoID = Int(cupidoTF.text!)!
             CupidoController.cupido = Int(cupidoTF.text!)!
             // out of range
-//            if cupidoID < 1 || cupidoID > PlayerNumberController.num {
-//                let alert = UIAlertController(title: "The Cupido ID is out of range", message: "The Cupido number could be only between 1 to " + String(PlayerNumberController.num) + ".", preferredStyle: .alert)
-//
-//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//                print(self)
-//                self.present(alert, animated: true)
-//
-//                return false
-//            }
-            
-            return checkObject.check(controller: self, TF: cupidoTF, role: "Cupido")
-            
+            if cupidoID < 1 || cupidoID > PlayerNumberController.num {
+                checkObject.alert(controller: self, role: "Cupido", id: cupidoID, type: "out of range")
+                return false
+            }
+                        
             // if the ID is conflicted to other roles
             if RolesController.map[cupidoID] != nil && RolesController.map[cupidoID] != "Cupido"  {
-                let alert = UIAlertController(title: "The Cupido ID is conflicted with another role", message: "This ID number has already been assigned to " + String(RolesController.map[cupidoID]!) + ".", preferredStyle: .alert)
-
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                checkObject.alert(controller: self, role: "Cupido", id: cupidoID, type: "conflict roles")
                 return false
             }
             
             // if Cupido ID is nil or changed
-            if RolesController.special["Cupido"] == nil{
-                RolesController.special["Cupido"] = cupidoID
-                RolesController.map[cupidoID] = "Cupido"
-            }
-            else if RolesController.special["Cupido"] != cupidoID {
-                RolesController.map.removeValue(forKey:  RolesController.special["Cupido"]!)
-                RolesController.special["Cupido"] = cupidoID
-                RolesController.map[cupidoID] = "Cupido"
-            }
-//            RolesController.third.insert(cupidoID)
+            checkObject.updateSpecial(role: "Cupido", id: cupidoID)
         }
         // else the text field is empty
         else {
-            if RolesController.special["Cupido"] != nil {
-                RolesController.map.removeValue(forKey: RolesController.special["Cupido"]!)
-                RolesController.special["Cupido"] = nil
-                CupidoController.cupido = -1
-            }
+            checkObject.clearSpecial(role: "Cupido")
+            CupidoController.cupido = -1
             RolesController.third = Set<Int>()
         }
         
@@ -96,6 +72,9 @@ class CupidoController: UIViewController {
     
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "toRoles" {
+            return true
+        }
         return check()
     }
 

@@ -14,6 +14,8 @@ class LittleGirlController: UIViewController {
     @IBOutlet weak var littleGirlLabel1: UILabel!
     @IBOutlet weak var littleGirlLabel2: UILabel!
     
+    var checkObject = Check()
+    
     override func viewDidLoad() {
         RolesController.littleGirlDetected = false
         
@@ -37,35 +39,27 @@ class LittleGirlController: UIViewController {
             
             // ID out of range
             if littleGirl > PlayerNumberController.num || littleGirl < 1 {
-                let alert = UIAlertController(title: "The Little Girl ID is out of range", message: "The Little Girl ID should be only between 1 and " + String(PlayerNumberController.num), preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                
-                self.present(alert, animated: true)
+                checkObject.alert(controller: self, role: "Little Girl", id: littleGirl, type: "out of range")
                 return false
             }
             
             // if the ID is conflicted to other roles
             if RolesController.map[littleGirl] != nil && RolesController.map[littleGirl] != "Little Girl" {
-                let alert = UIAlertController(title: "The Little Girl ID is conflicted with another role", message: "This ID number has already been assigned to " + String(RolesController.map[littleGirl]!) + ".", preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                checkObject.alert(controller: self, role: "Little Girl", id: littleGirl, type: "conflict roles")
                 return false
             }
             
             // if Little Girl ID is nil or changed
-            if RolesController.special["Little Girl"] == nil {
-                RolesController.special["Little Girl"] = littleGirl
-                RolesController.map[littleGirl] = "Little Girl"
-            }
-            else if RolesController.special["LittleGirl"] != littleGirl {
-                RolesController.map.removeValue(forKey: RolesController.special["Little Girl"]!)
-                RolesController.special["Little Girl"] = littleGirl
-                RolesController.map[littleGirl] = "Little Girl"
-            }
+            checkObject.updateSpecial(role: "Little Girl", id: littleGirl)
+//            if RolesController.special["Little Girl"] == nil {
+//                RolesController.special["Little Girl"] = littleGirl
+//                RolesController.map[littleGirl] = "Little Girl"
+//            }
+//            else if RolesController.special["LittleGirl"] != littleGirl {
+//                RolesController.map.removeValue(forKey: RolesController.special["Little Girl"]!)
+//                RolesController.special["Little Girl"] = littleGirl
+//                RolesController.map[littleGirl] = "Little Girl"
+//            }
         }
         
         else {
@@ -81,8 +75,14 @@ class LittleGirlController: UIViewController {
     
     // check if the input number is valid
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
-        return check()
+        if identifier != "toRoles" {
+            return check()
+        }
+        return true
+//        if check() || identifier == "toRoles" {
+//            return true
+//        }
+//        return false
     }
     
     // used to implement back bar button

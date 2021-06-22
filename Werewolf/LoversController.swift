@@ -16,6 +16,8 @@ class LoversController: UIViewController {
     @IBOutlet weak var lover1Label: UILabel!
     @IBOutlet weak var lover2Label: UILabel!
     
+    var checkObject = Check()
+    
     override func viewDidLoad() {
         if RolesController.nextNight == true {
             loversLabel.isHidden = true
@@ -39,12 +41,7 @@ class LoversController: UIViewController {
         // later will add the condition whether lovers are dead
         if CupidoController.cupido != -1 {
             if lover1TF.text == "" || lover2TF.text == "" {
-                let alert = UIAlertController(title: "Please enter both Lovers Number", message: "The lovers number has been assigned by Cupido", preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                
-                self.present(alert, animated: true)
+                checkObject.alert(controller: self, role: "Lovers", id: -1, type: "both lovers")
                 return false
             }
             // input both lovers
@@ -54,24 +51,13 @@ class LoversController: UIViewController {
                 
                 // loverID out of range
                 if lover1ID < 1 || lover1ID > PlayerNumberController.num || lover2ID < 1 || lover2ID > PlayerNumberController.num {
-                    
-                    let alert = UIAlertController(title: "The Lover ID is out of range", message: "The Lover number could be only between 1 to " + String(PlayerNumberController.num) + ".", preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                    self.present(alert, animated: true)
-                    
+                    checkObject.alert(controller: self, role: "Lovers", id: -1, type: "out of range")                    
                     return false
                 }
                 
                 // loverID duplicate
                 if lover1ID == lover2ID {
-                    let alert = UIAlertController(title: "The Lover IDs are duplicate", message: "The Lovers have to be 2 distinct players.", preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                    self.present(alert, animated: true)
-                    
+                    checkObject.alert(controller: self, role: "Lovers", id: -1, type: "duplicate lovers")
                     return false
                 }
                 
@@ -99,7 +85,6 @@ class LoversController: UIViewController {
         if identifier == "toRoles" {
             return true
         }
-        
         return check()
     }
     
